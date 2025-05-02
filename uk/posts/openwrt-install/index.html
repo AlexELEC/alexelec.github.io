@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="uk" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  OpenWRT: простий спосіб встановлення системи для архітектури х86-64.
+  #
+
+На сайті «OpenWRT» описано доволі складний спосіб встановлення цієї системи навіть для підготовленого користувача. В цій інструкції розповідається як це зробити простіше.
+Створення завантажувальної USB-флешки буде відбуватися в системі «Windows».
+Нам знадобиться USB-флешка об’ємом від 8Гб. Проміжною системою (з якої буде встановлюватися OpenWRT) я вибрав Ubuntu 24.04, а її образ займає приблизно 6 Гб. Звідси і розмір флешки. Як і рекомендують самі розробники Ubuntu, образ «ubuntu-24.04-desktop-amd64.iso» записуємо на флеш-накопичувач за допомогою «balenaEtcher».">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://alexelec.github.io/uk/posts/openwrt-install/">
+  <meta property="og:site_name" content="AlexELEC">
+  <meta property="og:title" content="OpenWRT: встановлення системи">
+  <meta property="og:description" content="OpenWRT: простий спосіб встановлення системи для архітектури х86-64. # На сайті «OpenWRT» описано доволі складний спосіб встановлення цієї системи навіть для підготовленого користувача. В цій інструкції розповідається як це зробити простіше.
+Створення завантажувальної USB-флешки буде відбуватися в системі «Windows».
+Нам знадобиться USB-флешка об’ємом від 8Гб. Проміжною системою (з якої буде встановлюватися OpenWRT) я вибрав Ubuntu 24.04, а її образ займає приблизно 6 Гб. Звідси і розмір флешки. Як і рекомендують самі розробники Ubuntu, образ «ubuntu-24.04-desktop-amd64.iso» записуємо на флеш-накопичувач за допомогою «balenaEtcher».">
+  <meta property="og:locale" content="uk">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2014-09-28T00:00:00+00:00">
+    <meta property="article:modified_time" content="2014-09-28T00:00:00+00:00">
+<title>OpenWRT: встановлення системи | AlexELEC</title>
+<link rel="icon" href="/icon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://alexelec.github.io/uk/posts/openwrt-install/">
+<link rel="stylesheet" href="/book.min.e9f68c3fff3d8236a489d16a9caf6de5e4d1a29c20eb4b5524e42cd30be4d319.css" integrity="sha256-6faMP/89gjakidFqnK9t5eTRopwg60tVJOQs0wvk0xk=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/uk.search.min.31d2ac636d23652cffe8b710b06766753478ee2e16a0e99dcd3805074ffb7525.js" integrity="sha256-MdKsY20jZSz/6LcQsGdmdTR47i4WoOmdzTgFB0/7dSU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/uk/"><img src="/icon.png" alt="Logo" class="book-icon" /><span>AlexELEC</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Пошук" aria-label="Пошук" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+  
+
+
+
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex justify-between">
+      <a role="button" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        Українська
+      </a>
+    </label>
+
+    <ul>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-be8cf2fedc7fdcca58ae0597a4bbe13e" class="toggle"  />
+    <label for="section-be8cf2fedc7fdcca58ae0597a4bbe13e" class="flex justify-between">
+      <a role="button" class="">TVLINK</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/overview/" class="">Огляд</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/install/" class="">Встановлення та оновлення</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/quick-start/" class="">Швидкий старт</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/srv-config/" class="">Налаштування сервера та потоків</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/source/" class="">Налаштування джерел каналів</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/epg/" class="">Розклад передач (EPG)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/profiles/" class="">Профілі користувачів</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/channels/" class="">Канали</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/gpoups/" class="">Групи каналів</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/status/" class="">Статус роботи та оновлення програми</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/pvr-tvlink-client/" class="">PVR TVLINK Client</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/tvlink-simple-conrol/" class="">TVLINK Simple Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/addons-api/" class="">TVLINK addons API</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/uk/posts/"  >
+        Новини
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>OpenWRT: встановлення системи</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#openwrt-простий-спосіб-встановлення-системи-для-архітектури-х86-64">OpenWRT: простий спосіб встановлення системи для архітектури х86-64.</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown book-post">
+  <h1>
+    OpenWRT: встановлення системи
+  </h1>
+  
+  <div class="flex align-center text-small book-post-date">
+    <img src="/svg/calendar.svg" class="book-icon " alt="" />
+    <span>вересня 28, 2014</span>
+  </div>
+
+
+
+  
+
+  
+
+
+  <div class="book-post-content"><h2 id="openwrt-простий-спосіб-встановлення-системи-для-архітектури-х86-64">
+  OpenWRT: простий спосіб встановлення системи для архітектури х86-64.
+  <a class="anchor" href="#openwrt-%d0%bf%d1%80%d0%be%d1%81%d1%82%d0%b8%d0%b9-%d1%81%d0%bf%d0%be%d1%81%d1%96%d0%b1-%d0%b2%d1%81%d1%82%d0%b0%d0%bd%d0%be%d0%b2%d0%bb%d0%b5%d0%bd%d0%bd%d1%8f-%d1%81%d0%b8%d1%81%d1%82%d0%b5%d0%bc%d0%b8-%d0%b4%d0%bb%d1%8f-%d0%b0%d1%80%d1%85%d1%96%d1%82%d0%b5%d0%ba%d1%82%d1%83%d1%80%d0%b8-%d1%8586-64">#</a>
+</h2>
+<p>На сайті «OpenWRT» описано доволі складний спосіб встановлення цієї системи навіть для підготовленого користувача. В цій інструкції розповідається як це зробити простіше.</p>
+<p>Створення завантажувальної USB-флешки буде відбуватися в системі «Windows».</p>
+<p>Нам знадобиться USB-флешка об’ємом від 8Гб. Проміжною системою (з якої буде встановлюватися OpenWRT) я вибрав Ubuntu 24.04, а її образ займає приблизно 6 Гб. Звідси і розмір флешки. Як і рекомендують самі розробники Ubuntu, образ «ubuntu-24.04-desktop-amd64.iso» записуємо на флеш-накопичувач за допомогою «balenaEtcher».</p>
+<p>Після цього, в програмі «MiniTool Partition Wizard», не задіяну область флешки (повний об’єм якої складає 8Гб), відформатуйте у FAT32 та вкажіть назву розділу «Data».</p>
+<p>img</p>
+<p>Скопіюйте розпакований образ останньої стабільної версії OpenWRT для x86-64. На цей момент такою є «openwrt-23.05.3-x86-64-generic-ext4-combined-efi.img».</p>
+<p>img</p>
+<p>На цьому етап підготовки закінчено.</p>
+<p>Вставляємо флешку в комп’ютер на який ми хочемо встановити «OpenWRT», змінюємо порядок завантаження в BIOS і завантажуємося в «Ubuntu». Як Ви, напевно знаєте, «Ubuntu» за замовчуванням завантажується в режимі LiveCD. Після того як з’явиться робочий стіл закрийте вікно «Welcome to Ubuntu».</p>
+<p>img</p>
+<p>Перше, що я рекомендую зробити, це запустити програму «GParted» і видалити всі розділи на внутрішньому HDD або SSD-диску (на тому, куди ми будемо ставити OpenWRT). Не забувайте застосовувати зміни. На зображенні нижче, встановлення буде відбуватися на SSD-диск об’ємом 256 Гб.</p>
+<p>img</p>
+<p>Відкриваємо розділ нашої флешки (ми назвали його «Data» при створенні) де лежить образ OpenWRT і в контекстному меню файлу «Open with…» вибираємо «Disk Image Writer». В опції «Destination» вказуємо наш диск і тиснемо «Start Restoring…».</p>
+<p>img</p>
+<p>Знову відкриваємо «GParted».</p>
+<p>В моїй системі, на цьому етапі, «GParted» завжди видає два попередження.</p>
+<p>img</p>
+<p>На першому натисніть «ОК», на другому «Fix».</p>
+<p>Розширюємо розділ «/dev/sda2» на весь обсяг нерозміченого простору. Справа в тому, що OpenWRT не має власного інсталятора, а «root» розділ після запису образу становить близько 100Мб. Решта місця на диску не задіяна.</p>
+<p>img</p>
+<p>Зверніть увагу. Щоб все пройшло добре, потрібно зменшити новий розмір розділу (New size) на 1MiB. Без цього «GParted» у мене видавав помилку.</p>
+<p>Ще раз: не забувайте застосовувати зміни!</p>
+<p>На цьому встановлення OpenWRT закінчено. Можете перезавантажити систему та налаштовувати мережу. За замовчуванням LAN-інтерфейс в OpenWRT має адресу «192.168.1.1», пароль для «root» не встановлений (залиште це поле порожнім при вході в веб-інтерфейс).</p>
+<p>img</p>
+</div>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#openwrt-простий-спосіб-встановлення-системи-для-архітектури-х86-64">OpenWRT: простий спосіб встановлення системи для архітектури х86-64.</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

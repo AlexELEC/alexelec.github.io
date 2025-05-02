@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="uk" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Задачі які ми ставимо.
+  #
+
+Задачі які ми ставимо.
+Ми будемо приймати «DVB-T2» сигнал на USB-тюнер який підключено до комп’ютера з системою «LibreELEC (ae-fork)» за допомогою програми «MuMuDVB». Цю програму (MuMuDVB) ми налаштуємо так щоб вона видавала потоки в HLS-форматі.
+Ми налаштуємо простий HTTP-сервер (httpd), для того щоб у нас була можливість отримувати HLS-потоки каналів за допомогою «TVLINK», або будь-якого іншого IPTV-програвача.
+Нарешті, ми добавимо ці потоки в «TVLINK» і зробимо деякі налаштування для них.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://alexelec.github.io/uk/posts/dvbt2-to-iptv/">
+  <meta property="og:site_name" content="AlexELEC">
+  <meta property="og:title" content="Сервер трансляції «DVB-T2 to IPTV»">
+  <meta property="og:description" content="Задачі які ми ставимо. # Задачі які ми ставимо.
+Ми будемо приймати «DVB-T2» сигнал на USB-тюнер який підключено до комп’ютера з системою «LibreELEC (ae-fork)» за допомогою програми «MuMuDVB». Цю програму (MuMuDVB) ми налаштуємо так щоб вона видавала потоки в HLS-форматі.
+Ми налаштуємо простий HTTP-сервер (httpd), для того щоб у нас була можливість отримувати HLS-потоки каналів за допомогою «TVLINK», або будь-якого іншого IPTV-програвача.
+Нарешті, ми добавимо ці потоки в «TVLINK» і зробимо деякі налаштування для них.">
+  <meta property="og:locale" content="uk">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2014-09-29T00:00:00+00:00">
+    <meta property="article:modified_time" content="2014-09-29T00:00:00+00:00">
+<title>Сервер трансляції «DVB-T2 to IPTV» | AlexELEC</title>
+<link rel="icon" href="/icon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://alexelec.github.io/uk/posts/dvbt2-to-iptv/">
+<link rel="stylesheet" href="/book.min.e9f68c3fff3d8236a489d16a9caf6de5e4d1a29c20eb4b5524e42cd30be4d319.css" integrity="sha256-6faMP/89gjakidFqnK9t5eTRopwg60tVJOQs0wvk0xk=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/uk.search.min.31d2ac636d23652cffe8b710b06766753478ee2e16a0e99dcd3805074ffb7525.js" integrity="sha256-MdKsY20jZSz/6LcQsGdmdTR47i4WoOmdzTgFB0/7dSU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/uk/"><img src="/icon.png" alt="Logo" class="book-icon" /><span>AlexELEC</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Пошук" aria-label="Пошук" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+  
+
+
+
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex justify-between">
+      <a role="button" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        Українська
+      </a>
+    </label>
+
+    <ul>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-be8cf2fedc7fdcca58ae0597a4bbe13e" class="toggle"  />
+    <label for="section-be8cf2fedc7fdcca58ae0597a4bbe13e" class="flex justify-between">
+      <a role="button" class="">TVLINK</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/overview/" class="">Огляд</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/install/" class="">Встановлення та оновлення</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/quick-start/" class="">Швидкий старт</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/srv-config/" class="">Налаштування сервера та потоків</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/source/" class="">Налаштування джерел каналів</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/epg/" class="">Розклад передач (EPG)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/profiles/" class="">Профілі користувачів</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/channels/" class="">Канали</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/gpoups/" class="">Групи каналів</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/status/" class="">Статус роботи та оновлення програми</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/pvr-tvlink-client/" class="">PVR TVLINK Client</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/tvlink-simple-conrol/" class="">TVLINK Simple Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/addons-api/" class="">TVLINK addons API</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/uk/posts/"  >
+        Новини
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Сервер трансляції «DVB-T2 to IPTV»</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#задачі-які-ми-ставимо">Задачі які ми ставимо.</a></li>
+        <li><a href="#вибір-обладнання">Вибір обладнання.</a></li>
+        <li><a href="#налаштування-mumudvb">Налаштування «MuMuDVB».</a></li>
+        <li><a href="#налаштування-http-сервера">Налаштування HTTP сервера.</a></li>
+        <li><a href="#налаштування-tvlink">Налаштування «TVLINK».</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown book-post">
+  <h1>
+    Сервер трансляції «DVB-T2 to IPTV»
+  </h1>
+  
+  <div class="flex align-center text-small book-post-date">
+    <img src="/svg/calendar.svg" class="book-icon " alt="" />
+    <span>вересня 29, 2014</span>
+  </div>
+
+
+
+  
+
+  
+
+
+  <div class="book-post-content"><h2 id="задачі-які-ми-ставимо">
+  Задачі які ми ставимо.
+  <a class="anchor" href="#%d0%b7%d0%b0%d0%b4%d0%b0%d1%87%d1%96-%d1%8f%d0%ba%d1%96-%d0%bc%d0%b8-%d1%81%d1%82%d0%b0%d0%b2%d0%b8%d0%bc%d0%be">#</a>
+</h2>
+<p>Задачі які ми ставимо.</p>
+<p>Ми будемо приймати «DVB-T2» сигнал на USB-тюнер який підключено до комп’ютера з системою «LibreELEC (ae-fork)» за допомогою програми «MuMuDVB». Цю програму (MuMuDVB) ми налаштуємо так щоб вона видавала потоки в HLS-форматі.</p>
+<p>Ми налаштуємо простий HTTP-сервер (httpd), для того щоб у нас була можливість отримувати HLS-потоки каналів за допомогою «TVLINK», або будь-якого іншого IPTV-програвача.</p>
+<p>Нарешті, ми добавимо ці потоки в «TVLINK» і зробимо деякі налаштування для них.</p>
+<p>Чому саме ми хочемо отримати потоки в HLS-форматі:</p>
+<p>канали будуть перемикатися дуже швидко
+це набагато надійніше, з точки зору передачі даних, чим в TS-форматі. А отже ми маємо стабільні трансляції</p>
+<h2 id="вибір-обладнання">
+  Вибір обладнання.
+  <a class="anchor" href="#%d0%b2%d0%b8%d0%b1%d1%96%d1%80-%d0%be%d0%b1%d0%bb%d0%b0%d0%b4%d0%bd%d0%b0%d0%bd%d0%bd%d1%8f">#</a>
+</h2>
+<p>При написанні цієї інструкції використовувався USB-тюнер «Astrometa DVB-T2». Напевно, це самий дешевий пристрій на ринку (коштує біля 16$) і дуже добре підходить для цієї задачі.</p>
+<p>Як Ви розумієте, для того щоб транслювати одразу всі доступні Т2-канали, вам знадобиться стільки тюнерів, скільки частот транслюються в вашій місцевості. Наприклад, в Києві транслюються чотири Т2-частоти (514, 538, 554 та 698 МГц), а отже щоб прийняти одразу всі частоти знадобиться 4 окремих USB-тюнери. Звісно, ви можете транслювати тільки одну частоту (це приблизно 8 каналів), якщо у вас тільки один тюнер. Також зверніть увагу, чи є в вашому комп’ютері достатня кількість USB-портів. Якщо ні, то можна використати активний (із зовнішнім живленням) USB-хаб.</p>
+<p>Зауважте: якщо ви збираєтесь підключити декілька тюнерів, подбайте про те, щоб це були тюнери однієї і тієї ж самої моделі. Якщо це будуть різні тюнери (наприклад: «Astrometa DVB-T2» і «GENIATECH MyGica Т2»), ви можете зіткнутися з проблемою. А саме: при перезавантаженні система може міняти номери адаптерів. І якщо таке стається, то файл конфігурації який ви зробили для «Astrometa» починає використовується для тюнера «MyGica», тоді і виникають проблеми.  В цьому випадку прийдеться робити «прив’язку» тюнерів до імен за допомогою «udev symlink», або вирішувати проблему в інший спосіб.</p>
+<h2 id="налаштування-mumudvb">
+  Налаштування «MuMuDVB».
+  <a class="anchor" href="#%d0%bd%d0%b0%d0%bb%d0%b0%d1%88%d1%82%d1%83%d0%b2%d0%b0%d0%bd%d0%bd%d1%8f-mumudvb">#</a>
+</h2>
+<p>Спершу давайте подивимося, чи правильно визначила система наш DVB-адаптер/адаптери і завантажила потрібні драйвери.</p>
+<p>За допомогою «PuTTY» під’єднуємося до терміналу системи. Нагадаю:</p>
+<p>login – «root»
+password – «mcpc».
+Вводимо команду «mc» (це файловий менеджер Midnight Commander) і дивимося каталог «/dev/dvb». Якщо в системі не має такого каталогу, це зазвичай означає що в системі відсутні потрібні драйвери. В моєму випадку (підключений тільки один тюнер Astrometa) це виглядає так.</p>
+<p>img</p>
+<p>Як бачите, тюнер «Astrometa DVB-T2» має два фронтєнда (frontend0 і frontend1), а отже адаптер визначився системою вірно. За приймання Т2 сигналу відповідає «frontend1», ця інформація нам знадобиться пізніше.</p>
+<p>Тепер налаштуємо конфігураційний файл для запуску «MuMuDVB».</p>
+<p>Під’єднаємося до системи з допомогою «WinSCP», так простіше редагувати файли. В каталозі «/storage/.config/mumudvb» уже є всі потрібні файли і приклади. Відкрийте і налаштуйте під себе файл «Kyiv-t2.conf» (потім ви можете змінити його назву). Подивимося параметри які задіяні в цьому файлі. Детальний опис всіх параметрів для «MuMuDVB» ви можете побачити тут.</p>
+<p>unicast – активуємо одноадресну передачу HTTP
+port_http – порт прослуховування для unicast а також порт Web-інтерфейса
+card – номер адаптера
+tuner – номер фронтєнда
+delivery_system – система доставки може бути: DVBT, DVBT2, DVBS, DVBS2 і тд.
+freq – частота транспондера
+multicast_ipv4 – вимикаємо групову передачу IPv4, вона нам не потрібна
+autoconfiguration – дозволяє визначити всі канали та їх параметри автоматично
+autoconf_scrambled – вважаємо закодовані канали дійсними під час автоконфігурації
+hls – вмикаємо HLS формат
+hls_rotate_count – кількість фрагментів HLS у плейлисті
+hls_rotate_time – тривалість фрагментів HLS у секундах hls_storage_dir – каталог в якому будуть зберігатися фрагменти HLS і плейлисти
+Розглянемо параметри які обов’язково потрібно змінити для інших файлів конфігурації, якщо ви використовуйте декілька тюнерів.</p>
+<p>port_http – якщо в першому файлі у вас стояло значення «4242», в наступній конфігурації зробіть «4243» і так далі. Не обов’язково встановлювати саме такі значення, але порти в різних конфігураціях повинні бути різні.
+card – значення (adapter) в жодній конфігурації не повинні повторюватись якщо ми маємо справу з USB-адаптерами про які згадується у цій інструкції.
+tuner – номер тюнера (frontend) для «Astrometa DVB-T2» потрібно вказати «1» якщо ви хочете приймати DVB-T2 сигнал. Фронтєнд «0» це для DVB-T.
+freq – частоти повинні бути різні. Навіщо приймати ті самі канали на декілька адаптерів.
+autoconf_scrambled – тут ми нічого не міняємо (скрізь стоїть 1), просто хочу пояснити. Якщо вимкнути цей параметр то «MuMuDVB» може не знайти канали. Хоча самі канали не закодовані, можливо програма бачить якийсь параметр в потоці що вказує на кодування.
+hls_playlist_name – назва основного плейлиста (плейлист зі списком каналів). Цього параметра немає в прикладі, але це важливий параметр якщо у вас декілька адаптерів.
+В кожній конфігурації вам потрібно вказати різні назви (в hls_playlist_name), тому що всі HLS-файли у нас будуть в одному каталозі. Наприклад ми можемо зробити назви в різних конфігураціях по частотах:</p>
+<p>hls_playlist_name=514. m3u8
+hls_playlist_name=538. m3u8
+і так далі.</p>
+<p>Тепер давайте перевіримо як працює «MuMuDVB» с вашою конфігурацією.</p>
+<p>Будемо вважати, що у вас підключена і налаштована антена.</p>
+<p>Введіть в терміналі команду:</p>
+<pre><code>mumudvb -d -c /storage/.config/mumudvb/Kyiv-t2.conf
+</code></pre>
+<p>img</p>
+<p>Опис параметрів «MuMuDVB» ви можете подивитись тут.</p>
+<p>Ви можете зайти у веб-інтерфейс «http://your-ip:your-port» (наприклад: «http://192.168.1.72:4242») і перевірити як все працює.</p>
+<p>img</p>
+<p>В каталозі «/tmp/mumudvb» або в іншому, який ви вказали в «hls_storage_dir», ви повинні побачити HLS-файли.</p>
+<p>img</p>
+<p>Ви можете перевірити як працюють канали будь яким IPTV плеєром (наприклад VLC), але поки що це будуть TS-потоки. Щоб отримати HLS-трансляції нам потрібно налаштувати HTTP-сервер.</p>
+<p>Тепер налаштуємо сервіс/сервіси для автоматичного запуску «MuMuDVB».</p>
+<p>Скопіюйте файл «/storage/.config/mumudvb/mumudvb.service» в каталог «/storage/.config/system.d».</p>
+<p>Якщо у вас декілька адаптерів, зробіть це для кожного із них, звісно з різними іменами. Наприклад:</p>
+<p>mumudvb1.service
+mumudvb2.service
+і тд.</p>
+<p>Відредактуйте в цих файлах рядок:</p>
+<pre><code>ExecStart=/storage/.config/mumudvb/mumudvb.run 0 1 &quot;Kyiv-t2.conf&quot;
+</code></pre>
+<p>А саме, три останні параметри. Де:</p>
+<p>0 – номер адаптера
+1 – номер фронтєнда
+Kyiv-t2.conf – назва файлу конфігурації
+Після цього можна запустити і активувати сервіс/сервіси:</p>
+<pre><code>systemctl start mumudvb1
+systemctl start mumudvb2
+systemctl enable mumudvb1
+systemctl enable mumudvb2
+</code></pre>
+<h2 id="налаштування-http-сервера">
+  Налаштування HTTP сервера.
+  <a class="anchor" href="#%d0%bd%d0%b0%d0%bb%d0%b0%d1%88%d1%82%d1%83%d0%b2%d0%b0%d0%bd%d0%bd%d1%8f-http-%d1%81%d0%b5%d1%80%d0%b2%d0%b5%d1%80%d0%b0">#</a>
+</h2>
+<p>Як згадувалось раніше, для того щоб мати можливість дивитись HLS-трансляції, нам потрібен HTTP-сервер. Ми будемо використовувати простий «httpd».</p>
+<p>Файл «/storage/.config/mumudvb/httpd.conf» це конфігурація нашого HTTP-сервера. Там є довідка і він уже налаштований. Якщо ви змінили каталог в параметрі «hls_storage_dir» тоді відредактуйте рядок (замініть на ваш каталог):</p>
+<pre><code>H:/tmp/mumudvb
+</code></pre>
+<p>Скопіюйте файл «/storage/.config/mumudvb/httpd.service» в каталог «/storage/.config/system.d». Запустіть і активуйте сервіс:</p>
+<pre><code>systemctl start httpd
+systemctl enable httpd
+</code></pre>
+<p>Тепер, в залежності від того яку назву мають ваші плейлисти (параметр «hls_playlist_name») ви можете отримати трансляції в HLS-форматі. У моїй конфігурації використовується назва за замовчуванням, отже плейлист буде за адресою «http://192.168.1.72/playlist.m3u8».</p>
+<h2 id="налаштування-tvlink">
+  Налаштування «TVLINK».
+  <a class="anchor" href="#%d0%bd%d0%b0%d0%bb%d0%b0%d1%88%d1%82%d1%83%d0%b2%d0%b0%d0%bd%d0%bd%d1%8f-tvlink">#</a>
+</h2>
+<p>Нам знадобиться «TVLINK» не нижче версії 4.0.2, який може обробляти HLS-плейлисти від «MuMuDVB».</p>
+<p>Додаєм плейлист (або плейлисти) і канали.</p>
+<p>img</p>
+<p>В налаштуваннях потоків для цього джерела ввімкніть параметри «HLS Stream Data» і «HLS Live Restart».</p>
+<p>img</p>
+<p>Перший гарантує швидке перемикання каналів. Другий вмикати не обов’язково, але в нашому випадку «TVLINK» дуже швидко скачає всі сегменти і буде часто перевіряти наявність нових. А це трохи сповільнить його.</p>
+</div>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#задачі-які-ми-ставимо">Задачі які ми ставимо.</a></li>
+        <li><a href="#вибір-обладнання">Вибір обладнання.</a></li>
+        <li><a href="#налаштування-mumudvb">Налаштування «MuMuDVB».</a></li>
+        <li><a href="#налаштування-http-сервера">Налаштування HTTP сервера.</a></li>
+        <li><a href="#налаштування-tvlink">Налаштування «TVLINK».</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="uk" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Доповнення «TVLINK Simple Control» для Kodi.
+  #
+
+img
+Дає змогу контролювати потоки каналу (вмикати/вимикати) та показує (виділяє жовтим кольором) посилання на потік який транслюється в цей момент.
+img
+Також дає можливість:
+послідовно перемикати потоки каналу
+оновлювати джерела каналів «TVLINK»
+показувати інформацію по підключеним до «TVLINK» клієнтам
+показувати інформацію по використанню оперативної пам’яті та сокетам
+
+  Налаштування.
+  #
+
+img
+«IP-address TVLINK» – ip-адреса сервера «TVLINK»
+«Port TVLINK» – порт сервера «TVLINK»">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://alexelec.github.io/uk/docs/tvlink/docs/tvlink-simple-conrol/">
+  <meta property="og:site_name" content="AlexELEC">
+  <meta property="og:title" content="TVLINK Simple Control">
+  <meta property="og:description" content="Доповнення «TVLINK Simple Control» для Kodi. # img
+Дає змогу контролювати потоки каналу (вмикати/вимикати) та показує (виділяє жовтим кольором) посилання на потік який транслюється в цей момент.
+img
+Також дає можливість:
+послідовно перемикати потоки каналу оновлювати джерела каналів «TVLINK» показувати інформацію по підключеним до «TVLINK» клієнтам показувати інформацію по використанню оперативної пам’яті та сокетам
+Налаштування. # img
+«IP-address TVLINK» – ip-адреса сервера «TVLINK» «Port TVLINK» – порт сервера «TVLINK»">
+  <meta property="og:locale" content="uk">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>TVLINK Simple Control | AlexELEC</title>
+<link rel="icon" href="/icon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://alexelec.github.io/uk/docs/tvlink/docs/tvlink-simple-conrol/">
+  <link rel="alternate" hreflang="en" href="https://alexelec.github.io/docs/tvlink/docs/tvlink-simple-conrol/" title="TVLINK Simple Control">
+<link rel="stylesheet" href="/book.min.e9f68c3fff3d8236a489d16a9caf6de5e4d1a29c20eb4b5524e42cd30be4d319.css" integrity="sha256-6faMP/89gjakidFqnK9t5eTRopwg60tVJOQs0wvk0xk=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/uk.search.min.31d2ac636d23652cffe8b710b06766753478ee2e16a0e99dcd3805074ffb7525.js" integrity="sha256-MdKsY20jZSz/6LcQsGdmdTR47i4WoOmdzTgFB0/7dSU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/uk/"><img src="/icon.png" alt="Logo" class="book-icon" /><span>AlexELEC</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Пошук" aria-label="Пошук" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+  
+
+
+
+
+  
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex justify-between">
+      <a role="button" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        Українська
+      </a>
+    </label>
+
+    <ul>
+      
+      <li>
+        <a href="/docs/tvlink/docs/tvlink-simple-conrol/">
+          English
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-be8cf2fedc7fdcca58ae0597a4bbe13e" class="toggle" checked />
+    <label for="section-be8cf2fedc7fdcca58ae0597a4bbe13e" class="flex justify-between">
+      <a role="button" class="">TVLINK</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/overview/" class="">Огляд</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/install/" class="">Встановлення та оновлення</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/quick-start/" class="">Швидкий старт</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/srv-config/" class="">Налаштування сервера та потоків</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/source/" class="">Налаштування джерел каналів</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/epg/" class="">Розклад передач (EPG)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/profiles/" class="">Профілі користувачів</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/channels/" class="">Канали</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/gpoups/" class="">Групи каналів</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/status/" class="">Статус роботи та оновлення програми</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/pvr-tvlink-client/" class="">PVR TVLINK Client</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/tvlink-simple-conrol/" class="active">TVLINK Simple Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/addons-api/" class="">TVLINK addons API</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/uk/posts/"  >
+        Новини
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>TVLINK Simple Control</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#доповнення-tvlink-simple-control-для-kodi">Доповнення «TVLINK Simple Control» для Kodi.</a></li>
+        <li><a href="#налаштування">Налаштування.</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h2 id="доповнення-tvlink-simple-control-для-kodi">
+  Доповнення «TVLINK Simple Control» для Kodi.
+  <a class="anchor" href="#%d0%b4%d0%be%d0%bf%d0%be%d0%b2%d0%bd%d0%b5%d0%bd%d0%bd%d1%8f-tvlink-simple-control-%d0%b4%d0%bb%d1%8f-kodi">#</a>
+</h2>
+<p>img</p>
+<p>Дає змогу контролювати потоки каналу (вмикати/вимикати) та показує (виділяє жовтим кольором) посилання на потік який транслюється в цей момент.</p>
+<p>img</p>
+<p>Також дає можливість:</p>
+<p>послідовно перемикати потоки каналу
+оновлювати джерела каналів «TVLINK»
+показувати інформацію по підключеним до «TVLINK» клієнтам
+показувати інформацію по використанню оперативної пам’яті та сокетам</p>
+<h2 id="налаштування">
+  Налаштування.
+  <a class="anchor" href="#%d0%bd%d0%b0%d0%bb%d0%b0%d1%88%d1%82%d1%83%d0%b2%d0%b0%d0%bd%d0%bd%d1%8f">#</a>
+</h2>
+<p>img</p>
+<p>«IP-address TVLINK» – ip-адреса сервера «TVLINK»
+«Port TVLINK» – порт сервера «TVLINK»</p>
+<p>Якщо сервер «TVLINK» і «TVLINK Simple Control» знаходиться на одній машині, і адреса сервера «TVLINK» в «PVR TVLINK Client» встановлена як «127.0.0.1», ви можете залишити налаштування за замовчуванням. Якщо не вказано «IP-address TVLINK», «TVLINK Simple Control» використовує адресу «127.0.0.1».</p>
+<p>В модифікованих (ae-fork) ELEC-системах доповнення викликається довгим утриманням (longpress) кнопки «і» (info) клавіатури. Для пульта ДУ в цих системах зроблені такі налаштування файлу «keyboard.xml» в Kodi.</p>
+<pre><code>&lt;FullscreenLiveTV&gt;
+    &lt;keyboard&gt;
+        …
+        &lt;i mod=&quot;longpress&quot;&gt;RunAddon(script.tvlink.conrol)&lt;/i&gt;
+    &lt;/keyboard&gt;
+&lt;/FullscreenLiveTV&gt;
+</code></pre>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#доповнення-tvlink-simple-control-для-kodi">Доповнення «TVLINK Simple Control» для Kodi.</a></li>
+        <li><a href="#налаштування">Налаштування.</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

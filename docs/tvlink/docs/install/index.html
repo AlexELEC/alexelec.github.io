@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Installation
+  #
+
+
+«TVLINK» releases are compiled only for «Linux».
+
+The program uses «Streamlink» Python modules,
+therefore the following must be installed on the system:
+
+Python. The required Python version is specified in the release description.
+«Runtime» dependencies for «Streamlink», which you can see here.
+
+
+You do not need to install «Streamlink» itself, and it is not recommended. This will cause conflicts
+in the program&rsquo;s operation. The «Streamlink» modules are part of «TVLINK».">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://alexelec.github.io/docs/tvlink/docs/install/">
+  <meta property="og:site_name" content="AlexELEC">
+  <meta property="og:title" content="Installation">
+  <meta property="og:description" content="Installation # «TVLINK» releases are compiled only for «Linux».
+The program uses «Streamlink» Python modules, therefore the following must be installed on the system:
+Python. The required Python version is specified in the release description. «Runtime» dependencies for «Streamlink», which you can see here. You do not need to install «Streamlink» itself, and it is not recommended. This will cause conflicts in the program’s operation. The «Streamlink» modules are part of «TVLINK».">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Installation | AlexELEC</title>
+<link rel="icon" href="/icon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://alexelec.github.io/docs/tvlink/docs/install/">
+  <link rel="alternate" hreflang="uk" href="https://alexelec.github.io/uk/docs/tvlink/docs/install/" title="Встановлення та оновлення">
+<link rel="stylesheet" href="/book.min.e9f68c3fff3d8236a489d16a9caf6de5e4d1a29c20eb4b5524e42cd30be4d319.css" integrity="sha256-6faMP/89gjakidFqnK9t5eTRopwg60tVJOQs0wvk0xk=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.aa61e281c9638b61f2057a70b8eb1f2d87a396f308eb33e984576dee16dbf8a0.js" integrity="sha256-qmHigclji2HyBXpwuOsfLYejlvMI6zPphFdt7hbb&#43;KA=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/icon.png" alt="Logo" class="book-icon" /><span>AlexELEC</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+  
+
+
+
+
+  
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex justify-between">
+      <a role="button" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        English
+      </a>
+    </label>
+
+    <ul>
+      
+      <li>
+        <a href="/uk/docs/tvlink/docs/install/">
+          Українська
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-756553081c1b2cc791b9c27edc4450dc" class="toggle" checked />
+    <label for="section-756553081c1b2cc791b9c27edc4450dc" class="flex justify-between">
+      <a role="button" class="">TVLINK</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/overview/" class="">Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/install/" class="active">Installation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/quick-start/" class="">Швидкий старт</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/srv-config/" class="">Налаштування сервера та потоків</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/source/" class="">Налаштування джерел каналів</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/epg/" class="">Розклад передач (EPG)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/profiles/" class="">Профілі користувачів</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/channels/" class="">Канали</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/gpoups/" class="">Групи каналів</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/status/" class="">Статус роботи та оновлення програми</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/pvr-tvlink-client/" class="">PVR TVLINK Client</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/tvlink-simple-conrol/" class="">TVLINK Simple Control</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Installation</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#update">Update</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h2 id="installation">
+  Installation
+  <a class="anchor" href="#installation">#</a>
+</h2>
+<blockquote class="book-hint info">
+<p>«TVLINK» releases are compiled only for «Linux».</p>
+</blockquote>
+<p>The program uses «<a target='_blank' href="https://streamlink.github.io/">Streamlink</a>» Python modules,
+therefore the following must be installed on the system:</p>
+<ul>
+<li><strong>Python</strong>. The required Python version is specified in the release description.</li>
+<li>«Runtime» dependencies for «Streamlink», which you can see <a target='_blank' href="https://streamlink.github.io/install.html#dependencies">here</a>.</li>
+</ul>
+<blockquote class="book-hint warning">
+<p>You do not need to install «Streamlink» itself, and it is not recommended. This will cause conflicts
+in the program&rsquo;s operation. The «Streamlink» modules are part of «TVLINK».</p>
+</blockquote>
+<div class="book-tabs">
+
+
+
+<input type="radio" class="toggle" name="tabs-2" id="tabs-2-0" checked="checked" />
+<label for="tabs-2-0">LibreELEC/CoreELEC</label>
+<div class="book-tabs-content markdown-inner"><h2 id="libreeleccoreelec">
+  LibreELEC/CoreELEC
+  <a class="anchor" href="#libreeleccoreelec">#</a>
+</h2>
+<blockquote class="book-hint info">
+  <p>This refers to modified systems (ae-fork) in which all the necessary dependencies
+are already present. Installation is not possible on the original ELEC systems.</p>
+</blockquote>
+<p>In the system settings («System» -&gt; «TV Services» -&gt; «TVLINK Server»), click «Enable TVLINK».
+The program will be automatically installed and launched.</p>
+</div>
+
+
+
+<input type="radio" class="toggle" name="tabs-2" id="tabs-2-1"  />
+<label for="tabs-2-1">Ubuntu/Debian</label>
+<div class="book-tabs-content markdown-inner"><h2 id="ubuntudebian">
+  Ubuntu/Debian
+  <a class="anchor" href="#ubuntudebian">#</a>
+</h2>
+<blockquote class="book-hint info">
+  <p>Please remember that you must have the appropriate version of «Python» installed on your system.</p>
+</blockquote>
+<p>For these systems, you can download and install «TVLINK» using a deb package.
+Releases are published here. After you have downloaded the program, enter the following commands in the terminal:</p>
+<pre><code>apt install ./tvlink_4.1.4_amd64.deb
+systemctl start tvlink
+systemctl enable tvlink
+</code></pre>
+<h2 id="також-ви-можете-встановити-tvlink-з-архіву">
+  Також Ви можете встановити «TVLINK» з архіву.
+  <a class="anchor" href="#%d1%82%d0%b0%d0%ba%d0%be%d0%b6-%d0%b2%d0%b8-%d0%bc%d0%be%d0%b6%d0%b5%d1%82%d0%b5-%d0%b2%d1%81%d1%82%d0%b0%d0%bd%d0%be%d0%b2%d0%b8%d1%82%d0%b8-tvlink-%d0%b7-%d0%b0%d1%80%d1%85%d1%96%d0%b2%d1%83">#</a>
+</h2>
+<p>В «TVLINK» використовуються утиліта «ping», встановимо її, а також деякі утиліти які нам знадобляться.</p>
+<pre><code>apt install -y iputils-ping tar wget
+</code></pre>
+<p>Встановимо залежності для модуля «python3-streamlink». Це можна зробити однією командою:</p>
+<pre><code>apt install -y $(apt-cache depends python3-streamlink | grep Depends | sed &quot;s/.*ends:\ //; s/&lt;.*&gt;//&quot; | tr '\n' ' ')
+</code></pre>
+<p>Тут команда «apt-cache depends python3-streamlink» виводить інформацію по залежностям модулів «Streamlink» ,
+а «grep, sed, tr» роблять із неї список який передається «apt install».</p>
+<p>Завантажимо та встановимо «TVLINK» (релізи програми публікуються тут).</p>
+<pre><code>mkdir -p /opt/tvlink
+cd /opt
+wget https://github.com/AlexELEC/TVLINK-x86_64/releases/download/3.3.3/TVLINK-3.3.3.tar.bz2
+tar -jxf TVLINK-3.3.3.tar.bz2 --directory /opt/tvlink
+rm -f TVLINK-3.3.3.tar.bz2
+</code></pre>
+<p>Запустимо «TVLINK» щоб перевірити:</p>
+<pre><code>root@intel:/# /opt/tvlink/tvlink
+
+— Starting TVLINK (version: 3.3.3) on 127.0.0.1:2020 / 192.168.1.33:2020 —
+</code></pre>
+<p>Рекомендується зайти в веб-інтерфейс (наприклад: http://192.168.1.33:2020), додати канали і перевірити їх роботу.
+Помилки пов’язані з залежностями ви можете бачити тільки в терміналі, в журнал роботи «TVLINK» вони не записуються.</p>
+<p>Якщо все гаразд, завершуємо роботу «TVLINK» (Ctrl+C) та  додаємо його в автостарт системи:</p>
+<pre><code>wget https://raw.githubusercontent.com/AlexELEC/TVLINK-x86_64/master/tvlink.service -O /etc/systemd/system/tvlink.service
+
+systemctl enable tvlink
+systemctl start tvlink
+</code></pre>
+</div>
+
+
+
+<input type="radio" class="toggle" name="tabs-2" id="tabs-2-2"  />
+<label for="tabs-2-2">OpenWRT</label>
+<div class="book-tabs-content markdown-inner"><h2 id="openwrt">
+  OpenWRT
+  <a class="anchor" href="#openwrt">#</a>
+</h2>
+<blockquote class="book-hint info">
+  <p>Простий спосіб встановлення системи OpenWRT для архітектури х86-64 описано тут.</p>
+</blockquote>
+<p>Релізи для «OpenWRT x86-64» публікуються на цій сторінці.</p>
+<blockquote class="book-hint info">
+  <p>Версія «OpenWRT» для якої скомпільована програма, вказана в описі релізу.</p>
+</blockquote>
+<p>Оновимо репозиторії пакетів та встановимо залежності для модуля «Streamlink», який входить до складу «TVLINK».
+Послідовно дамо команди в терміналі:</p>
+<pre><code>opkg update
+opkg install python3 python3-certifi python3-chardet python3-cryptodome python3-pip python3-requests python3-six tar wget
+python -m pip install --upgrade pip
+pip install pycountry isodate pysocks
+</code></pre>
+<p>Завантажуємо та встановлюємо сам «TVLINK».</p>
+<pre><code>wget https://github.com/AlexELEC/TVLINK-x86_64-OpenWRT/releases/download/4.1.4/TVLINK-4.1.4.tar.bz2 -O TVLINK-4.1.4.tar.bz2
+mkdir -p /opt/tvlink
+tar -jxf TVLINK-4.1.4.tar.bz2 -C /opt/tvlink
+rm -f TVLINK-4.1.4.tar.bz2
+</code></pre>
+<p>Перевіряємо чи працює програма.</p>
+<pre><code>/opt/tvlink/tvlink
+</code></pre>
+<p>Якщо «TVLINK» запустився без помилок, закриваємо його (Ctrl+C). Завантажимо та додамо сервіс в автозавантаження.</p>
+<pre><code>cd /etc/init.d
+wget https://raw.githubusercontent.com/AlexELEC/NanoPi-R1/ae/tvlink -O tvlink &amp;&amp; chmod +x tvlink
+
+service tvlink enable
+service tvlink start
+</code></pre>
+</div>
+
+
+
+</div>
+
+<h2 id="update">
+  Update
+  <a class="anchor" href="#update">#</a>
+</h2>
+<p>Read how to update the program here.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#update">Update</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

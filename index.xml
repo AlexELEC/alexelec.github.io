@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Introduction on AlexELEC</title>
+    <link>https://alexelec.github.io/</link>
+    <description>Recent content in Introduction on AlexELEC</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://alexelec.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Overview</title>
+      <link>https://alexelec.github.io/docs/tvlink/docs/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://alexelec.github.io/docs/tvlink/docs/overview/</guid>
+      <description>&lt;h2 id=&#34;general-info&#34;&gt;&#xA;  General info&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#general-info&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;«TVLINK Server» is a repeater and aggregator of IPTV channels with a user-friendly web interface.&#xA;It retransmits streams specified by the user from sources such as: IPTV playlists, Acestream, Ministra/Stаlker Middleware or add-ons.&lt;/p&gt;&#xA;&lt;p&gt;The main goal of the program is to provide uninterrupted operation of IPTV channels. You can automatically&#xA;or manually combine streams of the same channel from different sources, and «TVLINK», depending&#xA;on the priority of the source and its operability, will select and retransmit the best stream.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

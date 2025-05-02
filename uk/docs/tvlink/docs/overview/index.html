@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="uk" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Загальна інформація
+  #
+
+«TVLINK сервер» це ретранслятор та агрегатор IPTV каналів із зручним веб-інтерфейсом.
+Він ретранслює потоки вказані користувачем з джерел, таких як: IPTV-плейлисти, Acestream, Ministra/Stаlker Middleware
+або доповнення.
+Головна мета програми, надати безперебійну роботу IPTV-каналів. Ви можете в автоматичному або ручному
+режимі об’єднувати потоки одного каналу з різних джерел, а «TVLINK» залежно від пріоритету джерела та
+його працездатності буде вибирати і ретранслювати кращий потік.
+Якщо з якоїсь причини зупиниться трансляція попереднього потоку, програма автоматично переключиться на
+наступний потік цього каналу. Такий цикл буде відбуватися, поки хоч один потік із набору буде працювати.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://alexelec.github.io/uk/docs/tvlink/docs/overview/">
+  <meta property="og:site_name" content="AlexELEC">
+  <meta property="og:title" content="Огляд">
+  <meta property="og:description" content="Загальна інформація # «TVLINK сервер» це ретранслятор та агрегатор IPTV каналів із зручним веб-інтерфейсом. Він ретранслює потоки вказані користувачем з джерел, таких як: IPTV-плейлисти, Acestream, Ministra/Stаlker Middleware або доповнення.
+Головна мета програми, надати безперебійну роботу IPTV-каналів. Ви можете в автоматичному або ручному режимі об’єднувати потоки одного каналу з різних джерел, а «TVLINK» залежно від пріоритету джерела та його працездатності буде вибирати і ретранслювати кращий потік.
+Якщо з якоїсь причини зупиниться трансляція попереднього потоку, програма автоматично переключиться на наступний потік цього каналу. Такий цикл буде відбуватися, поки хоч один потік із набору буде працювати.">
+  <meta property="og:locale" content="uk">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Огляд | AlexELEC</title>
+<link rel="icon" href="/icon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://alexelec.github.io/uk/docs/tvlink/docs/overview/">
+  <link rel="alternate" hreflang="en" href="https://alexelec.github.io/docs/tvlink/docs/overview/" title="Overview">
+<link rel="stylesheet" href="/book.min.e9f68c3fff3d8236a489d16a9caf6de5e4d1a29c20eb4b5524e42cd30be4d319.css" integrity="sha256-6faMP/89gjakidFqnK9t5eTRopwg60tVJOQs0wvk0xk=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/uk.search.min.bf53691c3d213ff40a14d50a027bc755b9ce0e09f27b4f5cf6988915d11c344c.js" integrity="sha256-v1NpHD0hP/QKFNUKAnvHVbnODgnye09c9piJFdEcNEw=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/uk/"><img src="/icon.png" alt="Logo" class="book-icon" /><span>AlexELEC</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Пошук" aria-label="Пошук" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+  
+
+
+
+
+  
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex justify-between">
+      <a role="button" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        Українська
+      </a>
+    </label>
+
+    <ul>
+      
+      <li>
+        <a href="/docs/tvlink/docs/overview/">
+          English
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f1ab66c78da02bdc35305e50e3dd78a0" class="toggle" checked />
+    <label for="section-f1ab66c78da02bdc35305e50e3dd78a0" class="flex justify-between">
+      <a role="button" class="">TVLINK</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/overview/" class="active">Огляд</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Огляд</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#загальна-інформація">Загальна інформація</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h2 id="загальна-інформація">
+  Загальна інформація
+  <a class="anchor" href="#%d0%b7%d0%b0%d0%b3%d0%b0%d0%bb%d1%8c%d0%bd%d0%b0-%d1%96%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d1%96%d1%8f">#</a>
+</h2>
+<p>«TVLINK сервер» це ретранслятор та агрегатор IPTV каналів із зручним веб-інтерфейсом.
+Він ретранслює потоки вказані користувачем з джерел, таких як: IPTV-плейлисти, Acestream, Ministra/Stаlker Middleware
+або доповнення.</p>
+<p>Головна мета програми, надати безперебійну роботу IPTV-каналів. Ви можете в автоматичному або ручному
+режимі об’єднувати потоки одного каналу з різних джерел, а «TVLINK» залежно від пріоритету джерела та
+його працездатності буде вибирати і ретранслювати кращий потік.</p>
+<p>Якщо з якоїсь причини зупиниться трансляція попереднього потоку, програма автоматично переключиться на
+наступний потік цього каналу. Такий цикл буде відбуватися, поки хоч один потік із набору буде працювати.</p>
+<p>Програма підтримує IPTV-архіви (catchup) з можливістю перемикання на наступний потік, навіть якщо типи
+архівів у цих потоках відрізняються. Для роботи цієї функції підходить будь-який IPTV-програвач із підтримкою
+типу архіву «Shift». Навіть якщо в такому плеєрі відсутня підтримка інших типів архіву (Append, Flussonic) він
+все одно буде їх відтворювати завдяки внутрішньому перетворенню типів архівів в «TVLINK».</p>
+<p>Також програма надає:</p>
+<ul>
+<li>зручне налаштування та видачу EPG (програму передач у XMLTV форматі)</li>
+<li>вбудований API для самостійного написання доповнень</li>
+<li>необмежену кількість користувачів та джерел IPTV (залежить тільки від апаратного забезпечення)</li>
+<li>можливість (за допомогою профілів) надавати різні набори каналів різним користувачам</li>
+<li>редагувати (змінювати назву, вимикати, видаляти) канали, групи (по одинці або групами)</li>
+<li>сортувати, встановлювати номери для каналів та груп, встановлювати іконки для каналів</li>
+<li>можливість автоматично (за розкладом) оновлювати джерела каналів та EPG</li>
+<li>захист за допомогою «токенів» ваших канали від стороннього доступу</li>
+<li>статус роботи потоків та журнал роботи програми в веб-интерфейсі</li>
+</ul>
+<p>В програмі використовуються Python-модуль <a target='_blank' href="https://streamlink.github.io/">«Streamlink»</a>.
+Це, в свою чергу, дає можливість використовувати велику кількість <a target='_blank' href="https://streamlink.github.io/plugins.html">доповнень</a>
+самого «Streamlink» (ті що не потребують підтримки субмодуля <a target='_blank' href="https://streamlink.github.io/api/webbrowser.html">«webbrowser»</a>).
+Наприклад, дивитися Live-трансляції ТВ-каналів з YouTube та багато інших джерел.</p>
+<blockquote class="book-hint info">
+<p>«TVLINK» може використовуватись з будь-яким IPTV програвачем, але для того щоб отримати всі переваги
+сервера, необхідно використовувати «PVR TVLINK Client» для «Kodi».</p>
+</blockquote>
+<details ><summary>Обмеження роботи програми.</summary>
+  <div class="markdown-inner">
+<hr>
+<p>Програма не працює на території Росії та Білорусі.
+Але, якщо Ви не підтримуйте російську агресію в Україні, створіть файл «<em>Glory_to_Ukraine</em>» в основному
+каталозі «TVLINK», наприклад:</p>
+<pre><code>touch /opt/tvlink/Glory_to_Ukraine
+</code></pre>
+<p>Таким чином буде вимкнена перевірка геолокації при старті програми.</p>
+  </div>
+</details>
+<p>Релізи «TVLINK» компілюються тільки для «Linux». Підтримуються архітектури:</p>
+<ul>
+<li>x86-64</li>
+<li>arm7</li>
+<li>aarch64</li>
+</ul>
+<p>Програма не потребує багато ресурсів. Наприклад, при обслуговуванні двох клієнтів в середньому займає 70 мб оперативної пам’яті.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#загальна-інформація">Загальна інформація</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TVLINK on AlexELEC</title>
+    <link>https://alexelec.github.io/uk/docs/tvlink/</link>
+    <description>Recent content in TVLINK on AlexELEC</description>
+    <generator>Hugo</generator>
+    <language>uk</language>
+    <atom:link href="https://alexelec.github.io/uk/docs/tvlink/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Огляд</title>
+      <link>https://alexelec.github.io/uk/docs/tvlink/docs/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://alexelec.github.io/uk/docs/tvlink/docs/overview/</guid>
+      <description>&lt;h2 id=&#34;загальна-інформація&#34;&gt;&#xA;  Загальна інформація&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#%d0%b7%d0%b0%d0%b3%d0%b0%d0%bb%d1%8c%d0%bd%d0%b0-%d1%96%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d1%96%d1%8f&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;«TVLINK сервер» це ретранслятор та агрегатор IPTV каналів із зручним веб-інтерфейсом.&#xA;Він ретранслює потоки вказані користувачем з джерел, таких як: IPTV-плейлисти, Acestream, Ministra/Stаlker Middleware&#xA;або доповнення.&lt;/p&gt;&#xA;&lt;p&gt;Головна мета програми, надати безперебійну роботу IPTV-каналів. Ви можете в автоматичному або ручному&#xA;режимі об’єднувати потоки одного каналу з різних джерел, а «TVLINK» залежно від пріоритету джерела та&#xA;його працездатності буде вибирати і ретранслювати кращий потік.&lt;/p&gt;&#xA;&lt;p&gt;Якщо з якоїсь причини зупиниться трансляція попереднього потоку, програма автоматично переключиться на&#xA;наступний потік цього каналу. Такий цикл буде відбуватися, поки хоч один потік із набору буде працювати.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Профілі користувачів.
+  #
+
+
+Налаштування профілів потрібно проводити після того як ви добавили канали в «TVLINK» (channel mapping).
+
+Профілі надають змогу мати різні набори каналів та груп для різних клієнтів. Канали та групи в профілях беруться із основного набору каналів на сторінці «Channels» (головний профіль), тому спочатку потрібно добавити в «Channels» всі канали які можуть вам знадобитися в профілях.
+Також, при створенні профілю ви маєте можливість встановити IP-адресу для потоків та плейлистів цього профілю та маркер автентифікації (token), якщо це потрібно.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://alexelec.github.io/docs/tvlink/docs/profiles/">
+  <meta property="og:site_name" content="AlexELEC">
+  <meta property="og:title" content="Профілі користувачів">
+  <meta property="og:description" content="Профілі користувачів. # Налаштування профілів потрібно проводити після того як ви добавили канали в «TVLINK» (channel mapping).
+Профілі надають змогу мати різні набори каналів та груп для різних клієнтів. Канали та групи в профілях беруться із основного набору каналів на сторінці «Channels» (головний профіль), тому спочатку потрібно добавити в «Channels» всі канали які можуть вам знадобитися в профілях.
+Також, при створенні профілю ви маєте можливість встановити IP-адресу для потоків та плейлистів цього профілю та маркер автентифікації (token), якщо це потрібно.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Профілі користувачів | AlexELEC</title>
+<link rel="icon" href="/icon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://alexelec.github.io/docs/tvlink/docs/profiles/">
+  <link rel="alternate" hreflang="uk" href="https://alexelec.github.io/uk/docs/tvlink/docs/profiles/" title="Профілі користувачів">
+<link rel="stylesheet" href="/book.min.e9f68c3fff3d8236a489d16a9caf6de5e4d1a29c20eb4b5524e42cd30be4d319.css" integrity="sha256-6faMP/89gjakidFqnK9t5eTRopwg60tVJOQs0wvk0xk=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.aa61e281c9638b61f2057a70b8eb1f2d87a396f308eb33e984576dee16dbf8a0.js" integrity="sha256-qmHigclji2HyBXpwuOsfLYejlvMI6zPphFdt7hbb&#43;KA=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/icon.png" alt="Logo" class="book-icon" /><span>AlexELEC</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+  
+
+
+
+
+  
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex justify-between">
+      <a role="button" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        English
+      </a>
+    </label>
+
+    <ul>
+      
+      <li>
+        <a href="/uk/docs/tvlink/docs/profiles/">
+          Українська
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-756553081c1b2cc791b9c27edc4450dc" class="toggle" checked />
+    <label for="section-756553081c1b2cc791b9c27edc4450dc" class="flex justify-between">
+      <a role="button" class="">TVLINK</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/overview/" class="">Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/install/" class="">Installation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/quick-start/" class="">Швидкий старт</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/srv-config/" class="">Налаштування сервера та потоків</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/source/" class="">Налаштування джерел каналів</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/epg/" class="">Розклад передач (EPG)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/profiles/" class="active">Профілі користувачів</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/channels/" class="">Канали</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/gpoups/" class="">Групи каналів</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/status/" class="">Статус роботи та оновлення програми</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/pvr-tvlink-client/" class="">PVR TVLINK Client</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/tvlink-simple-conrol/" class="">TVLINK Simple Control</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Профілі користувачів</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#профілі-користувачів">Профілі користувачів.</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h2 id="профілі-користувачів">
+  Профілі користувачів.
+  <a class="anchor" href="#%d0%bf%d1%80%d0%be%d1%84%d1%96%d0%bb%d1%96-%d0%ba%d0%be%d1%80%d0%b8%d1%81%d1%82%d1%83%d0%b2%d0%b0%d1%87%d1%96%d0%b2">#</a>
+</h2>
+<blockquote class="book-hint info">
+<p>Налаштування профілів потрібно проводити після того як ви добавили канали в «TVLINK» (channel mapping).</p>
+</blockquote>
+<p>Профілі надають змогу мати різні набори каналів та груп для різних клієнтів. Канали та групи в профілях беруться із основного набору каналів на сторінці «Channels» (головний профіль), тому спочатку потрібно добавити в «Channels» всі канали які можуть вам знадобитися в профілях.</p>
+<p>Також, при створенні профілю ви маєте можливість встановити IP-адресу для потоків та плейлистів цього профілю та маркер автентифікації (token), якщо це потрібно.</p>
+<p>Натисніть кнопку «Add user» в «User Profiles» та заповніть форму «Add user profile».</p>
+<p>«User» – ім’я клієнта. Латинськими літерами та без спеціальних символів (тире, пробіл, тощо).
+«Playlist IP» – адреса яка буде використовуватися для плейлистів та потоків цього профілю.
+«Token for playlist/streams» – токен який буде використовуватися для плейлистів та потоків цього профілю якщо активовано опцію «Authentication Token». Якщо залишити рядок пустим, токен буде створено автоматично.
+«Comment» – будь який коментар.
+Окрім рядка «User», всі інші заповнювати не обов’язково.</p>
+<p>img</p>
+<p>Після підтвердження (Save changes), ім’я профілю (User) стає посиланням. Перехід за цим посиланням відкриває налаштування груп і каналів профілю.</p>
+<p>img</p>
+<p>Ви можете вимикати (вмикати) групи або канали які не повинні бути у цьому профі.</p>
+<p>Іконка «Налаштування» біля імені профілю, дозволяє змінити всі опції (Playlist IP, Token, Comment).</p>
+<p>Після будь-яких змін в налаштуваннях «Токенів» потрібно застосувати налаштування («Apply Settings» внизу сторінки) або перезавантажити програму.</p>
+<p>Якщо у Вас ввімкнена опція «Create static playlist» то при будь-яких змінах в налаштуваннях «Токенів» або «Playlist IP», не забувайте оновити статичні плейлисти (натисніть «Update all sources» на сторінці «Sources»).</p>
+<p>Іконка «Видалення» – видаляє профіль.</p>
+<p>В колонці «Playlist URL» відображаються посилання на плейлист профілю в форматі:</p>
+<pre><code>http://&lt;ip-address&gt;:&lt;port&gt;/&lt;token&gt;/playlist/&lt;user&gt;
+</code></pre>
+<ul>
+<li>token – якщо активовано «Authentication Token»</li>
+<li>user – ім’я профілю</li>
+</ul>
+<p>Для «PVR TVLINK Client» ім’я профілю та токен достатньо вказати в налаштуваннях.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#профілі-користувачів">Профілі користувачів.</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
