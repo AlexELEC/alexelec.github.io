@@ -26,6 +26,18 @@
                 href="https://alexelec.github.io/docs/tvlink/"
                 />
   </url><url>
+    <loc>https://alexelec.github.io/docs/tvlink/docs/install/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="uk"
+                href="https://alexelec.github.io/uk/docs/tvlink/docs/install/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://alexelec.github.io/docs/tvlink/docs/install/"
+                />
+  </url><url>
     <loc>https://alexelec.github.io/categories/</loc>
     <xhtml:link
                 rel="alternate"
