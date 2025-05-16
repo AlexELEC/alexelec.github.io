@@ -62,6 +62,18 @@
                 href="https://alexelec.github.io/docs/tvlink/docs/sources/"
                 />
   </url><url>
+    <loc>https://alexelec.github.io/docs/tvlink/docs/epg/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="uk"
+                href="https://alexelec.github.io/uk/docs/tvlink/docs/epg/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://alexelec.github.io/docs/tvlink/docs/epg/"
+                />
+  </url><url>
     <loc>https://alexelec.github.io/categories/</loc>
     <xhtml:link
                 rel="alternate"

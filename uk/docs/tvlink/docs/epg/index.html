@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="uk" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Розклад передач (EPG)
+  #
+
+
+Налаштування EPG необхідно проводити після того, як ви додали канали в «TVLINK» (channel mapping).
+
+Ви можете використовувати джерела EPG, які вже присутні в програмі (EPG Static sources),
+або створити свої (EPG Custom sources). Активуйте потрібний перемикач.
+
+  
+
+Для створення власного джерела натисніть кнопку «Add EPG» і заповніть форму «Add new EPG».
+
+  
+
+
+«EPG name» — будь-яка назва на ваш вибір. Вона має бути латинськими літерами, без спеціальних символів (пробілів, тире та інше) та не може починатися з цифри.
+«EPG url» — адреса XMLTV-файлу. Може бути заархівованим (.tar.gz) або не заархівованим (.xmltv).
+
+Натисніть «Save changes», щоб зберегти налаштування.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://alexelec.github.io/uk/docs/tvlink/docs/epg/">
+  <meta property="og:site_name" content="AlexELEC">
+  <meta property="og:title" content="Розклад телевізійних передач (EPG)">
+  <meta property="og:description" content="Розклад передач (EPG) # Налаштування EPG необхідно проводити після того, як ви додали канали в «TVLINK» (channel mapping).
+Ви можете використовувати джерела EPG, які вже присутні в програмі (EPG Static sources), або створити свої (EPG Custom sources). Активуйте потрібний перемикач.
+Для створення власного джерела натисніть кнопку «Add EPG» і заповніть форму «Add new EPG».
+«EPG name» — будь-яка назва на ваш вибір. Вона має бути латинськими літерами, без спеціальних символів (пробілів, тире та інше) та не може починатися з цифри. «EPG url» — адреса XMLTV-файлу. Може бути заархівованим (.tar.gz) або не заархівованим (.xmltv). Натисніть «Save changes», щоб зберегти налаштування.">
+  <meta property="og:locale" content="uk">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Розклад телевізійних передач (EPG) | AlexELEC</title>
+<link rel="icon" href="/icon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://alexelec.github.io/uk/docs/tvlink/docs/epg/">
+  <link rel="alternate" hreflang="en" href="https://alexelec.github.io/docs/tvlink/docs/epg/" title="Electronic Program Guide">
+<link rel="stylesheet" href="/book.min.e9f68c3fff3d8236a489d16a9caf6de5e4d1a29c20eb4b5524e42cd30be4d319.css" integrity="sha256-6faMP/89gjakidFqnK9t5eTRopwg60tVJOQs0wvk0xk=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/uk.search.min.8163a877c035601556c699f7669489dd184ae5167cb68c4c48c07b3eaf1e03e2.js" integrity="sha256-gWOod8A1YBVWxpn3ZpSJ3RhK5RZ8toxMSMB7Pq8eA&#43;I=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/uk/"><img src="/icon.png" alt="Logo" class="book-icon" /><span>AlexELEC</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Пошук" aria-label="Пошук" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+  
+
+
+
+
+  
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex justify-between">
+      <a role="button" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        Українська
+      </a>
+    </label>
+
+    <ul>
+      
+      <li>
+        <a href="/docs/tvlink/docs/epg/">
+          English
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f1ab66c78da02bdc35305e50e3dd78a0" class="toggle" checked />
+    <label for="section-f1ab66c78da02bdc35305e50e3dd78a0" class="flex justify-between">
+      <a role="button" class="">TVLINK</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/overview/" class="">Огляд</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/install/" class="">Встановлення та оновлення</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/quick-start/" class="">Швидкий старт</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/sources/" class="">Налаштування джерел каналів</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/epg/" class="active">Розклад телевізійних передач (EPG)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Розклад телевізійних передач (EPG)</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#розклад-передач-epg">Розклад передач (EPG)</a>
+          <ul>
+            <li><a href="#опції">Опції</a></li>
+            <li><a href="#кнопки">Кнопки</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h2 id="розклад-передач-epg">
+  Розклад передач (EPG)
+  <a class="anchor" href="#%d1%80%d0%be%d0%b7%d0%ba%d0%bb%d0%b0%d0%b4-%d0%bf%d0%b5%d1%80%d0%b5%d0%b4%d0%b0%d1%87-epg">#</a>
+</h2>
+<blockquote class="book-hint info">
+<p>Налаштування EPG необхідно проводити після того, як ви додали канали в «TVLINK» (channel mapping).</p>
+</blockquote>
+<p>Ви можете використовувати джерела EPG, які вже присутні в програмі (EPG Static sources),
+або створити свої (EPG Custom sources). Активуйте потрібний перемикач.</p>
+<p align="center">
+  <a href="/tvlink/epg/01.png"><img src="/tvlink/epg/01.png" width="480"/></a>
+</p>
+<p>Для створення власного джерела натисніть кнопку «Add EPG» і заповніть форму «Add new EPG».</p>
+<p align="center">
+  <a href="/tvlink/epg/02.png"><img src="/tvlink/epg/02.png" width="480"/></a>
+</p>
+<ul>
+<li>«EPG name» — будь-яка назва на ваш вибір. Вона має бути латинськими літерами, без спеціальних символів (пробілів, тире та інше) та не може починатися з цифри.</li>
+<li>«EPG url» — адреса XMLTV-файлу. Може бути заархівованим (.tar.gz) або не заархівованим (.xmltv).</li>
+</ul>
+<p>Натисніть «Save changes», щоб зберегти налаштування.</p>
+<p align="center">
+  <a href="/tvlink/epg/03.png"><img src="/tvlink/epg/03.png" width="480"/></a>
+</p>
+<h3 id="опції">
+  Опції
+  <a class="anchor" href="#%d0%be%d0%bf%d1%86%d1%96%d1%97">#</a>
+</h3>
+<ul>
+<li>«Name» — ім’я джерела та посилання (коли джерело активне й оновлене) на редагування (співставлення) каналів цього джерела.</li>
+<li>«Enable» — увімкнення/вимкнення джерела.</li>
+<li>«Prio» — пріоритет. Якщо активно кілька джерел, «TVLINK» шукатиме відповідності між каналом і програмою в порядку пріоритету джерел. Те, чого не знайде в першому джерелі, шукатиме в другому і так далі.</li>
+<li>«File date» — якщо джерело XMLTV надає таку інформацію, тут буде вказана дата створення XMLTV-файлу джерела. Якщо така інформація не надається, тут буде вказана дата останнього завантаження файлу.</li>
+<li>«Update» — інформація про останнє зіставлення каналів і створення програми, а також кнопка «Оновити». Її дії обмежуються завантаженням та автоматичним зіставленням назв каналів із програмою.
+Це потрібно, щоб ви могли вручну зіставити ті канали, які «TVLINK» не зміг зіставити автоматично, або змінити автоматичне зіставлення, якщо це потрібно.</li>
+<li>«Channels» — загальна кількість назв каналів у джерелі. Це лише інформація, оскільки не всі канали, вказані в джерелі, можуть містити програму.</li>
+</ul>
+<h3 id="кнопки">
+  Кнопки
+  <a class="anchor" href="#%d0%ba%d0%bd%d0%be%d0%bf%d0%ba%d0%b8">#</a>
+</h3>
+<ul>
+<li>«Create EPG» — створює програму. XMLTV-файл буде доступний за адресою: «http://ip-address:port/xmltv»</li>
+<li>«Clean manual EPG mapping» — очищає всі зіставлення, які ви зробили вручну.</li>
+</ul>
+<p>Після того, як ви натиснули кнопку в колонці «Update», можна перейти за посиланням з колонки «Name» і зіставити канали, які не зміг зіставити «TVLINK», або змінити зіставлення каналів, які вас не влаштовують.</p>
+<p align="center">
+  <a href="/tvlink/epg/04.png"><img src="/tvlink/epg/04.png" width="480"/></a>
+</p>
+<ul>
+<li>«Auto EPG mapping» — в цій колонці відображаються назви каналів з XMLTV-джерела, які «TVLINK» зіставив автоматично.</li>
+<li>«Manual EPG mapping» — тут можна зіставити канали вручну.</li>
+</ul>
+<p align="center">
+  <a href="/tvlink/epg/05.png"><img src="/tvlink/epg/05.png" width="480"/></a>
+</p>
+<p>Відсортувавши таблицю по колонці «Auto EPG mapping», ми отримаємо вгорі списку всі канали, які автоматично не були зіставлені (для зручності).</p>
+<p>Оскільки випадаючий список колонки «Manual EPG mapping» містить всі назви каналів з EPG-джерела, знайти потрібну досить важко.
+Щоб спростити завдання, потрібно ввести перші літери з назви каналу й список переміститься у потрібну позицію.</p>
+<p>Після налаштування поверніться на сторінку «Sources» і натисніть кнопку «Create EPG».</p>
+<p>У джерелах «EPG Static sources» ви маєте можливість змінити URL-адресу, якщо це необхідно. Для цього натисніть іконку «Edit» біля назви джерела.</p>
+<p>Періодичність оновлення джерел EPG задається на сторінці «Settings» у підрозділі «EPG settings».</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#розклад-передач-epg">Розклад передач (EPG)</a>
+          <ul>
+            <li><a href="#опції">Опції</a></li>
+            <li><a href="#кнопки">Кнопки</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
