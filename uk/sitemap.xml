@@ -50,6 +50,18 @@
                 href="https://alexelec.github.io/uk/docs/tvlink/docs/quick-start/"
                 />
   </url><url>
+    <loc>https://alexelec.github.io/uk/docs/tvlink/docs/sources/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://alexelec.github.io/docs/tvlink/docs/sources/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="uk"
+                href="https://alexelec.github.io/uk/docs/tvlink/docs/sources/"
+                />
+  </url><url>
     <loc>https://alexelec.github.io/uk/categories/</loc>
     <xhtml:link
                 rel="alternate"

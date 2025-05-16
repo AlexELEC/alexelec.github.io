@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="uk" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Налаштування джерел каналів
+  #
+
+На сторінці «Sources» ви маєте можливість зробити такі налаштування:
+
+плейлисти (Playlists sources)
+доповнення (Addon sources)
+портали Stаlker/Ministra (Portal sources)
+джерела для Acestream (AceStream sources)
+розклад передач каналів (XMLTV EPG sources)
+профілі користувачів (User Profiles)
+
+
+  Джерела плейлистів
+  #
+
+Активуйте перемикач «Playlists sources». Натисніть кнопку «Add playlist».
+
+  
+
+У вікні «Add new playlist»:
+
+Введіть назву плейлиста. Вона має бути латинськими літерами, без спеціальних символів
+(пробілів, тире та інше) та не може починатися з цифри.
+Введіть url-адресу плейлиста. Якщо файл плейлиста збережений на локальному комп’ютері, формат
+адреси повинен бути таким: «file:///path_to/your_playlist_file» (наприклад, file:///Data/list/playlist.m3u).
+
+Натисніть кнопку «Save changes».">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://alexelec.github.io/uk/docs/tvlink/docs/sources/">
+  <meta property="og:site_name" content="AlexELEC">
+  <meta property="og:title" content="Налаштування джерел каналів">
+  <meta property="og:description" content="Налаштування джерел каналів # На сторінці «Sources» ви маєте можливість зробити такі налаштування:
+плейлисти (Playlists sources) доповнення (Addon sources) портали Stаlker/Ministra (Portal sources) джерела для Acestream (AceStream sources) розклад передач каналів (XMLTV EPG sources) профілі користувачів (User Profiles) Джерела плейлистів # Активуйте перемикач «Playlists sources». Натисніть кнопку «Add playlist».
+У вікні «Add new playlist»:
+Введіть назву плейлиста. Вона має бути латинськими літерами, без спеціальних символів (пробілів, тире та інше) та не може починатися з цифри. Введіть url-адресу плейлиста. Якщо файл плейлиста збережений на локальному комп’ютері, формат адреси повинен бути таким: «file:///path_to/your_playlist_file» (наприклад, file:///Data/list/playlist.m3u). Натисніть кнопку «Save changes».">
+  <meta property="og:locale" content="uk">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Налаштування джерел каналів | AlexELEC</title>
+<link rel="icon" href="/icon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://alexelec.github.io/uk/docs/tvlink/docs/sources/">
+  <link rel="alternate" hreflang="en" href="https://alexelec.github.io/docs/tvlink/docs/sources/" title="Channel Sources Configuration">
+<link rel="stylesheet" href="/book.min.e9f68c3fff3d8236a489d16a9caf6de5e4d1a29c20eb4b5524e42cd30be4d319.css" integrity="sha256-6faMP/89gjakidFqnK9t5eTRopwg60tVJOQs0wvk0xk=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/uk.search.min.8d6ef2af9df02b8e07393fc02e6f7fe6628daeef8f8fcc88552291bd60a0a41e.js" integrity="sha256-jW7yr53wK44HOT/ALm9/5mKNru&#43;Pj8yIVSKRvWCgpB4=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/uk/"><img src="/icon.png" alt="Logo" class="book-icon" /><span>AlexELEC</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Пошук" aria-label="Пошук" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+  
+
+
+
+
+  
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex justify-between">
+      <a role="button" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        Українська
+      </a>
+    </label>
+
+    <ul>
+      
+      <li>
+        <a href="/docs/tvlink/docs/sources/">
+          English
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f1ab66c78da02bdc35305e50e3dd78a0" class="toggle" checked />
+    <label for="section-f1ab66c78da02bdc35305e50e3dd78a0" class="flex justify-between">
+      <a role="button" class="">TVLINK</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/overview/" class="">Огляд</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/install/" class="">Встановлення та оновлення</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/quick-start/" class="">Швидкий старт</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/sources/" class="active">Налаштування джерел каналів</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Налаштування джерел каналів</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#налаштування-джерел-каналів">Налаштування джерел каналів</a></li>
+        <li><a href="#джерела-плейлистів">Джерела плейлистів</a></li>
+        <li><a href="#джерела-доповнень">Джерела доповнень</a></li>
+        <li><a href="#джерела-ministrastаlker-middleware">Джерела Ministra/Stаlker Middleware</a></li>
+        <li><a href="#джерела-acestream">Джерела AceStream</a></li>
+        <li><a href="#таблиця-джерела">Таблиця Джерела</a></li>
+        <li><a href="#додавання-каналів-до-списку">Додавання каналів до списку</a></li>
+        <li><a href="#автоматичне-обєднання-каналів">Автоматичне об&rsquo;єднання каналів</a></li>
+        <li><a href="#архіви-каналів-catchup">Архіви каналів (Catchup)</a></li>
+        <li><a href="#пріоритет-джерела-prio">Пріоритет джерела (Prio)</a></li>
+        <li><a href="#обмеження-зєднань-з-джерелом-limit">Обмеження з’єднань з джерелом (Limit)</a></li>
+        <li><a href="#нижня-частина-сторінки-sources">Нижня частина сторінки «Sources»</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h2 id="налаштування-джерел-каналів">
+  Налаштування джерел каналів
+  <a class="anchor" href="#%d0%bd%d0%b0%d0%bb%d0%b0%d1%88%d1%82%d1%83%d0%b2%d0%b0%d0%bd%d0%bd%d1%8f-%d0%b4%d0%b6%d0%b5%d1%80%d0%b5%d0%bb-%d0%ba%d0%b0%d0%bd%d0%b0%d0%bb%d1%96%d0%b2">#</a>
+</h2>
+<p>На сторінці «Sources» ви маєте можливість зробити такі налаштування:</p>
+<ul>
+<li>плейлисти (Playlists sources)</li>
+<li>доповнення (Addon sources)</li>
+<li>портали Stаlker/Ministra (Portal sources)</li>
+<li>джерела для Acestream (AceStream sources)</li>
+<li>розклад передач каналів (XMLTV EPG sources)</li>
+<li>профілі користувачів (User Profiles)</li>
+</ul>
+<h2 id="джерела-плейлистів">
+  Джерела плейлистів
+  <a class="anchor" href="#%d0%b4%d0%b6%d0%b5%d1%80%d0%b5%d0%bb%d0%b0-%d0%bf%d0%bb%d0%b5%d0%b9%d0%bb%d0%b8%d1%81%d1%82%d1%96%d0%b2">#</a>
+</h2>
+<p>Активуйте перемикач «Playlists sources». Натисніть кнопку «Add playlist».</p>
+<p align="center">
+  <a href="/tvlink/sources/01.png"><img src="/tvlink/sources/01.png" width="480"/></a>
+</p>
+<p>У вікні «Add new playlist»:</p>
+<ul>
+<li>Введіть назву плейлиста. Вона має бути латинськими літерами, без спеціальних символів
+(пробілів, тире та інше) та не може починатися з цифри.</li>
+<li>Введіть url-адресу плейлиста. Якщо файл плейлиста збережений на локальному комп’ютері, формат
+адреси повинен бути таким: «file:///path_to/your_playlist_file» (наприклад, file:///Data/list/playlist.m3u).</li>
+</ul>
+<p>Натисніть кнопку «Save changes».</p>
+<p align="center">
+  <a href="/tvlink/sources/02.png"><img src="/tvlink/sources/02.png" width="480"/></a>
+</p>
+<h2 id="джерела-доповнень">
+  Джерела доповнень
+  <a class="anchor" href="#%d0%b4%d0%b6%d0%b5%d1%80%d0%b5%d0%bb%d0%b0-%d0%b4%d0%be%d0%bf%d0%be%d0%b2%d0%bd%d0%b5%d0%bd%d1%8c">#</a>
+</h2>
+<p>Натисніть кнопку «Add addon». У вікні «Add new addon» натисніть (для деяких браузерів потрібне подвійне натискання)
+на поле «Addon name». З’явиться перелік готових доповнень, що вже присутні у репозиторію.
+Виберіть той, що вам потрібен, і натисніть «Save changes».</p>
+<p align="center">
+  <a href="/tvlink/sources/03.png"><img src="/tvlink/sources/03.png" width="480"/></a>
+</p>
+<blockquote class="book-hint info">
+<p>Ви також можете створити власне доповнення. Інструкцію щодо цього дивіться тут.</p>
+</blockquote>
+<h2 id="джерела-ministrastаlker-middleware">
+  Джерела Ministra/Stаlker Middleware
+  <a class="anchor" href="#%d0%b4%d0%b6%d0%b5%d1%80%d0%b5%d0%bb%d0%b0-ministrast%d0%b0lker-middleware">#</a>
+</h2>
+<p>Натисніть кнопку «Add portal». У вікні «Add new Portal (Stаlker Middleware)» введіть наступні дані:</p>
+<ul>
+<li>Назву порталу (Portal name). Вона має бути латинськими літерами, без спеціальних символів (пробілів, тире тощо) та не може починатися з цифри.</li>
+<li>Url-адресу порталу (Portal url).</li>
+<li>MAC-адресу для доступу до порталу (User MAC).</li>
+</ul>
+<p>Необов’язковий перемикач «Use HLS streams» дозволяє отримувати HLS-потоки, якщо це підтримується Порталом.
+На етапі створення порталу рекомендується не вмикати цей параметр, якщо немає впевненості у підтримці HLS-потоків.</p>
+<p align="center">
+  <a href="/tvlink/sources/04.png"><img src="/tvlink/sources/04.png" width="480"/></a>
+</p>
+<p>Після того як ви натиснете кнопку «Save changes», у каталозі «tvlink/scrapers» буде створено файл з іменем вашого порталу.
+Наприклад, «tvlink/scrapers/Portal.py». Цей файл містить три змінні, які ви можете редагувати (це необов’язково):</p>
+<ul>
+<li>
+<p>INCLUDE_GROUP – це список груп каналів для отримання. Усі інші групи будуть ігноруватися (не потраплять до списку).
+Зауважте, що перевіряється точний збіг з урахуванням регістру символів.</p>
+</li>
+<li>
+<p>EXCLUDE_NAME – це список, в якому можна задати символи, що будуть виключені з назви каналу.
+Наприклад, якщо назва каналу «US Discovery HD», а ви хочете мати «Discovery HD», зробіть EXCLUDE_NAME = [&lsquo;US &lsquo;].
+Зауважте, у цьому прикладі є пробіл в кінці &lsquo;US &lsquo;.</p>
+</li>
+<li>
+<p>DEFAULT_LOGO – це URL-адреса іконки, яка буде застосована для каналів, де іконка відсутня,
+або якщо в налаштуваннях джерела ввімкнено опцію «Disable load icons».</p>
+</li>
+</ul>
+<blockquote class="book-hint info">
+<p>Після редагування цих змінних потрібно натиснути «Apply Settings» на сторінці «Settings», або перезавантажити програму.</p>
+</blockquote>
+<p align="center">
+  <a href="/tvlink/sources/05.png"><img src="/tvlink/sources/05.png" width="480"/></a>
+</p>
+<p>Після створення Порталу ви можете змінювати опції «Portal url», «User MAC», «Use HLS streams», «Disable load icons»
+та «Repeat source streams» без перезавантаження налаштувань. Однак потрібно оновити джерело (натиснути на іконку «Update»).</p>
+<p align="center">
+  <a href="/tvlink/sources/06.png"><img src="/tvlink/sources/06.png" width="480"/></a>
+</p>
+<ul>
+<li>
+<p>«Disable load icons» — вимикає отримання іконок каналів з порталу. На деяких порталах можуть бути прописані недійсні адреси іконок.
+Це призводить до затримки (залежить від вашого браузера) відображення списків каналів у веб-інтерфейсі програми.</p>
+</li>
+<li>
+<p>«Repeat source streams» — дозволяє встановити кількість повторів програвання потоку під час збоїв. Ця опція не має відношення до
+Streamlink-опції «Stream retry count». Значення «always» — повтори не обмежені, «0» — функція відключена (за замовчуванням),
+інші значення — кількість повторів.</p>
+</li>
+</ul>
+<blockquote class="book-hint info">
+<p>Якщо ваш канал має лише один потік і цей потік хоч якось працює, «TVLINK» нескінченно намагатиметься перезапустити цей потік.
+Функція «Repeat source streams» робить те саме для джерела (потоку цього джерела) каналу, де більше ніж один потік.
+Таким чином, переключення на наступний потік цього каналу відбудеться за умови: або потік зовсім перестав працювати,
+або за вибраною вами кількістю повторів. Якщо вибрано «always» — то тільки якщо потік перестав хоч щось віддавати.</p>
+</blockquote>
+<h2 id="джерела-acestream">
+  Джерела AceStream
+  <a class="anchor" href="#%d0%b4%d0%b6%d0%b5%d1%80%d0%b5%d0%bb%d0%b0-acestream">#</a>
+</h2>
+<p>Натисніть кнопку «Add Acestream». У вікні «Add new AceStream source» введіть:</p>
+<ul>
+<li>
+<p>Назву джерела (Source name). Вона має бути латинськими літерами, без спеціальних символів
+(пробілів, тире та інше) та не може починатися з цифри.</p>
+</li>
+<li>
+<p>URL-адресу сервера <a target='_blank' href="https://wiki.acestream.media/Main_Page">«AceStream»</a> у форматі http://ip-address:port (наприклад: «http://192.168.1.1:6878»).</p>
+</li>
+<li>
+<p>Необов’язковий перемикач «Use HLS streams» дозволяє отримувати HLS-потоки.
+Не рекомендується вмикати, якщо сервер «AceStream» працює у вашій локальній мережі, оскільки це значно збільшить час перемикання каналів.</p>
+</li>
+</ul>
+<p>Після того як ви натиснете кнопку «Save changes», ви можете в налаштуваннях джерела ввести групу/групи каналів, які ви хочете отримати,
+в поле «Channel Categories (comma-delimited)». За замовчуванням це поле порожнє, і це означає, що будуть завантажені всі канали всіх груп (їх близько 3000).
+Назви офіційних груп ви знайдете <a target='_blank' href="https://wiki.acestream.media/Channel_Category">тут</a>.
+Користувачі, які запускають трансляції, можуть створювати свої назви груп або зовсім ігнорувати створення групи.
+Тому якщо вам потрібні всі канали, які є в базі «AceStream», то залиште поле «Channel Categories (comma-delimited)» пустим.</p>
+<p align="center">
+  <a href="/tvlink/sources/07.png"><img src="/tvlink/sources/07.png" width="480"/></a>
+</p>
+<p>База каналів завантажується напряму з <a target='_blank' href="https://wiki.acestream.media/Search_API">«AceStream Server-side Search API»</a>
+і не залежить від інших ресурсів (наприклад: pomoyka.i2p).</p>
+<h2 id="таблиця-джерела">
+  Таблиця Джерела
+  <a class="anchor" href="#%d1%82%d0%b0%d0%b1%d0%bb%d0%b8%d1%86%d1%8f-%d0%b4%d0%b6%d0%b5%d1%80%d0%b5%d0%bb%d0%b0">#</a>
+</h2>
+<p>Після того як буде створено джерело каналів, ви побачите таку таблицю:</p>
+<p align="center">
+  <a href="/tvlink/sources/08.png"><img src="/tvlink/sources/08.png" width="480"/></a>
+</p>
+<ul>
+<li>«Name» — ім’я джерела, налаштування та видалення цього джерела. Коли джерело активне й оновлене, його назва стає посиланням на редагування («співставлення») каналів для цього джерела.
+Іконка налаштувань відображається синім кольором, якщо джерело має налаштування потоків «за замовчуванням», і зеленим кольором, якщо користувач змінив параметри.</li>
+<li>«Catchup» — вибір архіву. Підтримуються типи: «Append», «Shift» та «Flussonic».</li>
+<li>«Enable» — вмикання або вимикання джерела.</li>
+<li>«Prio» — пріоритет джерела. Чим менше значення, тим вищий пріоритет.</li>
+<li>«Limit» — обмежує доступ клієнтів до джерела. Значення — це максимальна кількість клієнтів, які можуть дивитися одночасно з цього джерела.</li>
+<li>«Add channels» — якщо цей перемикач увімкнений, і ви оновите джерело, усі канали джерела будуть автоматично додані до списку каналів «TVLINK» («зіставлення каналів»).
+Це працює лише при ручному (примусовому) оновленні каналів, але при автоматичному оновленні ця опція ігнорується.</li>
+<li>«New channels» — якщо цей перемикач увімкнений, при оновленні джерела до списку каналів «TVLINK» додаватимуться нові канали, якщо вони з’являться в цьому джерелі.</li>
+<li>«Update period» — час (у годинах), через який джерело буде автоматично оновлюватися. Нуль означає, що оновлення вимкнено.</li>
+<li>«Update» — негайне оновлення джерела, а також час останнього оновлення.</li>
+<li>«Links» — кількість посилань на потоки (канали), які містить це джерело.</li>
+</ul>
+<h2 id="додавання-каналів-до-списку">
+  Додавання каналів до списку
+  <a class="anchor" href="#%d0%b4%d0%be%d0%b4%d0%b0%d0%b2%d0%b0%d0%bd%d0%bd%d1%8f-%d0%ba%d0%b0%d0%bd%d0%b0%d0%bb%d1%96%d0%b2-%d0%b4%d0%be-%d1%81%d0%bf%d0%b8%d1%81%d0%ba%d1%83">#</a>
+</h2>
+<p>Є два варіанти, як ви можете додати канали з джерела до списку каналів «TVLINK» (зіставлення каналів):</p>
+<ol>
+<li>Увімкнути перемикач «Add channels» та натиснути «Update». В цьому разі всі канали джерела будуть автоматично додані до списку каналів «TVLINK».</li>
+<li>Оновити джерело, натиснувши «Update». Після цього назва джерела стає посиланням на сторінку, де ви можете додавати канали в ручному режимі.</li>
+</ol>
+<p align="center">
+  <a href="/tvlink/sources/09.png"><img src="/tvlink/sources/09.png" width="480"/></a>
+</p>
+<p>Перемикач «Map» додає канал до списку каналів «TVLINK», при додаванні каналів створюється група, до якої належить канал, і переноситься його іконка.</p>
+<h2 id="автоматичне-обєднання-каналів">
+  Автоматичне об&rsquo;єднання каналів
+  <a class="anchor" href="#%d0%b0%d0%b2%d1%82%d0%be%d0%bc%d0%b0%d1%82%d0%b8%d1%87%d0%bd%d0%b5-%d0%be%d0%b1%d1%94%d0%b4%d0%bd%d0%b0%d0%bd%d0%bd%d1%8f-%d0%ba%d0%b0%d0%bd%d0%b0%d0%bb%d1%96%d0%b2">#</a>
+</h2>
+<p>«TVLINK» автоматично об’єднує канали з однаковими назвами. Тому кількість каналів джерела («Links») не завжди відповідає кількості каналів у списку «TVLINK».
+При об’єднанні регістр символів та пробіли у назві каналу ігноруються. Наприклад, усі канали з такими іменами будуть вважатися одним і тим самим каналом:</p>
+<ul>
+<li>Channel 25</li>
+<li>CHANNEL 25</li>
+<li>ChaNNel25</li>
+</ul>
+<blockquote class="book-hint info">
+<p>Якщо у джерела присутні групи каналів, їх також буде експортовано.
+Якщо груп немає, усім каналам джерела буде присвоєно групу з назвою самого джерела.</p>
+</blockquote>
+<h2 id="архіви-каналів-catchup">
+  Архіви каналів (Catchup)
+  <a class="anchor" href="#%d0%b0%d1%80%d1%85%d1%96%d0%b2%d0%b8-%d0%ba%d0%b0%d0%bd%d0%b0%d0%bb%d1%96%d0%b2-catchup">#</a>
+</h2>
+<p>Якщо ваш IPTV-провайдер надає таку функцію, виберіть один із типів архіву:</p>
+<ul>
+<li>Append</li>
+<li>Flussonic</li>
+<li>Shift</li>
+<li>none – означає, що функцію вимкнено.</li>
+</ul>
+<p>Який саме у вас тип архіву, ви можете дізнатися у свого IPTV-провайдера.</p>
+<p>«TVLINK» підтримує автоматичне перемикання архівних потоків під час збою, незалежно від типів архіву.
+Це означає, що при проблемі з архівним потоком із джерела, де стоїть тип «Shift», станеться переключення на архівний потік із джерела з «Flussonic».
+Порядок перемикання залежить від пріоритету джерел. Тобто така сама функціональність, що й зі звичайними потоками.</p>
+<p>Якщо ви використовуєте сторонній IPTV-плеєр (не PVR TVLINK Client), в його налаштуваннях потрібно встановити тип архіву «Shift».
+Тобто сам «TVLINK», незалежно від того, який тип архіву в джерела, буде видавати архіви у форматі «Shift».</p>
+<h2 id="пріоритет-джерела-prio">
+  Пріоритет джерела (Prio)
+  <a class="anchor" href="#%d0%bf%d1%80%d1%96%d0%be%d1%80%d0%b8%d1%82%d0%b5%d1%82-%d0%b4%d0%b6%d0%b5%d1%80%d0%b5%d0%bb%d0%b0-prio">#</a>
+</h2>
+<p>Якщо обидва джерела містять один і той же канал, то першим буде використано потік із джерела з вищим пріоритетом (нижчою цифрою).
+Якщо цей потік не працює або припинив трансляцію під час роботи, «TVLINK» переключиться на наступне джерело з нижчим пріоритетом і так далі по колу.</p>
+<h2 id="обмеження-зєднань-з-джерелом-limit">
+  Обмеження з’єднань з джерелом (Limit)
+  <a class="anchor" href="#%d0%be%d0%b1%d0%bc%d0%b5%d0%b6%d0%b5%d0%bd%d0%bd%d1%8f-%d0%b7%d1%94%d0%b4%d0%bd%d0%b0%d0%bd%d1%8c-%d0%b7-%d0%b4%d0%b6%d0%b5%d1%80%d0%b5%d0%bb%d0%be%d0%bc-limit">#</a>
+</h2>
+<p>Якщо джерело має обмеження на кількість підключень до потоків, встановіть потрібне значення.
+Це потрібно для того, щоб ваш IPTV-провайдер не заблокував вам доступ. «TVLINK» буде автоматично перемикати на наступний потік, якщо ліміт буде перевищено.</p>
+<p>«TVLINK» перемикає канали в асинхронному режимі; це означає, що програма не чекає на закриття попереднього потоку перед тим, як відкрити наступний.
+В іншому випадку канали б перемикалися дуже повільно.
+Ідентифікація клієнтів відбувається за їхніми IP-адресами.
+Ці два факти накладають деякі обмеження на роботу опції «Limit». А саме: для клієнтів, які мають одну й ту саму IP-адресу, «TVLINK» автоматично збільшує ліміт підключень.
+В журналі роботи програми ви побачите наступний запис:</p>
+<pre><code>Increase MaxStream count [1+1 HD] from [MySouce]: set max stream [2] - limit [1]
+</code></pre>
+<p>Це означає, що для джерела «MySouce» встановлено ліміт на одне підключення.
+Але оскільки при перемиканні каналу попередній потік ще не закрився, «TVLINK» автоматично збільшив ліміт (на одиницю).
+Якщо б цього не сталося, джерело «MySouce» не було б доступне в цей момент.</p>
+<p>Також, якщо два клієнти мають однакову IP-адресу (на одному й тому ж комп&rsquo;ютері запущено два IPTV-програвачі) та роблять запит до одного джерела,
+ліміт цього джерела теж буде збільшено на одиницю. Адже «TVLINK» не має можливості визначити, чи це запит на перемикання каналу одного й того самого клієнта,
+чи це запит від іншого клієнта, оскільки IP-адреси у них однакові.</p>
+<h2 id="нижня-частина-сторінки-sources">
+  Нижня частина сторінки «Sources»
+  <a class="anchor" href="#%d0%bd%d0%b8%d0%b6%d0%bd%d1%8f-%d1%87%d0%b0%d1%81%d1%82%d0%b8%d0%bd%d0%b0-%d1%81%d1%82%d0%be%d1%80%d1%96%d0%bd%d0%ba%d0%b8-sources">#</a>
+</h2>
+<ul>
+<li>«Update all sources» — натисніть, якщо вам потрібно оновити всі джерела каналів разом.
+Якщо в налаштуваннях сервера (Settings) ввімкнена опція «Create static playlist», також буде створено статичний плейлист.</li>
+<li>«Create static playlist» — якщо в налаштуваннях (сторінка Settings) у вас увімкнена опція «Create static playlist»,
+то внизу, на сторінці джерел (Sources), з’явиться посилання «Create static playlist».
+Це дозволяє оновити статичний плейлист, не оновлюючи всі джерела.</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#налаштування-джерел-каналів">Налаштування джерел каналів</a></li>
+        <li><a href="#джерела-плейлистів">Джерела плейлистів</a></li>
+        <li><a href="#джерела-доповнень">Джерела доповнень</a></li>
+        <li><a href="#джерела-ministrastаlker-middleware">Джерела Ministra/Stаlker Middleware</a></li>
+        <li><a href="#джерела-acestream">Джерела AceStream</a></li>
+        <li><a href="#таблиця-джерела">Таблиця Джерела</a></li>
+        <li><a href="#додавання-каналів-до-списку">Додавання каналів до списку</a></li>
+        <li><a href="#автоматичне-обєднання-каналів">Автоматичне об&rsquo;єднання каналів</a></li>
+        <li><a href="#архіви-каналів-catchup">Архіви каналів (Catchup)</a></li>
+        <li><a href="#пріоритет-джерела-prio">Пріоритет джерела (Prio)</a></li>
+        <li><a href="#обмеження-зєднань-з-джерелом-limit">Обмеження з’єднань з джерелом (Limit)</a></li>
+        <li><a href="#нижня-частина-сторінки-sources">Нижня частина сторінки «Sources»</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
