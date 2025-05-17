@@ -4,29 +4,30 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
-  General info
+  User Profiles
   #
 
-«TVLINK Server» is an IPTV channel repeater and aggregator with a user-friendly web interface.
-It retransmits streams specified by the user from sources such as IPTV playlists, Acestream, Ministra/Stalker Middleware, or add-ons.
-The main goal of the program is to provide uninterrupted operation of IPTV channels. You can automatically
-or manually combine streams of a single channel from various sources, and «TVLINK», depending on the source&rsquo;s
-priority and its operability, will select and retransmit the best stream.">
+
+Profile settings need to be configured after you have added channels to «TVLINK» (channel mapping).
+
+User profiles allow you to have different sets of channels and groups for different clients.
+Channels and groups in profiles are taken from the main set of channels on the «Channels» page (main profile),
+so you first need to add all the channels that you might need in profiles to «Channels».">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://alexelec.github.io/docs/tvlink/docs/overview/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://alexelec.github.io/docs/tvlink/docs/profiles/">
   <meta property="og:site_name" content="AlexELEC">
-  <meta property="og:title" content="Overview">
-  <meta property="og:description" content="General info # «TVLINK Server» is an IPTV channel repeater and aggregator with a user-friendly web interface. It retransmits streams specified by the user from sources such as IPTV playlists, Acestream, Ministra/Stalker Middleware, or add-ons.
-The main goal of the program is to provide uninterrupted operation of IPTV channels. You can automatically or manually combine streams of a single channel from various sources, and «TVLINK», depending on the source’s priority and its operability, will select and retransmit the best stream.">
+  <meta property="og:title" content="User Profiles">
+  <meta property="og:description" content="User Profiles # Profile settings need to be configured after you have added channels to «TVLINK» (channel mapping).
+User profiles allow you to have different sets of channels and groups for different clients. Channels and groups in profiles are taken from the main set of channels on the «Channels» page (main profile), so you first need to add all the channels that you might need in profiles to «Channels».">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>Overview | AlexELEC</title>
+<title>User Profiles | AlexELEC</title>
 <link rel="icon" href="/icon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://alexelec.github.io/docs/tvlink/docs/overview/">
-  <link rel="alternate" hreflang="uk" href="https://alexelec.github.io/uk/docs/tvlink/docs/overview/" title="Огляд">
+<link rel="canonical" href="https://alexelec.github.io/docs/tvlink/docs/profiles/">
+  <link rel="alternate" hreflang="uk" href="https://alexelec.github.io/uk/docs/tvlink/docs/profiles/" title="Профілі користувачів">
 <link rel="stylesheet" href="/book.min.e9f68c3fff3d8236a489d16a9caf6de5e4d1a29c20eb4b5524e42cd30be4d319.css" integrity="sha256-6faMP/89gjakidFqnK9t5eTRopwg60tVJOQs0wvk0xk=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.cac0f4eb020998227b255e0fe99875b2cdaaa0859faefd0119515e56da9b4bfa.js" integrity="sha256-ysD06wIJmCJ7JV4P6Zh1ss2qoIWfrv0BGVFeVtqbS/o=" crossorigin="anonymous"></script>
@@ -82,7 +83,7 @@ https://github.com/alex-shpak/hugo-book
     <ul>
       
       <li>
-        <a href="/uk/docs/tvlink/docs/overview/">
+        <a href="/uk/docs/tvlink/docs/profiles/">
           Українська
         </a>
       </li>
@@ -130,7 +131,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/tvlink/docs/overview/" class="active">Overview</a>
+    <a href="/docs/tvlink/docs/overview/" class="">Overview</a>
   
 
         </li>
@@ -195,7 +196,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/tvlink/docs/profiles/" class="">User Profiles</a>
+    <a href="/docs/tvlink/docs/profiles/" class="active">User Profiles</a>
   
 
         </li>
@@ -241,7 +242,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <h3>Overview</h3>
+  <h3>User Profiles</h3>
 
   <label for="toc-control">
     
@@ -259,7 +260,7 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li>
       <ul>
-        <li><a href="#general-info">General info</a></li>
+        <li><a href="#user-profiles">User Profiles</a></li>
       </ul>
     </li>
   </ul>
@@ -274,59 +275,60 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h2 id="general-info">
-  General info
-  <a class="anchor" href="#general-info">#</a>
+  <article class="markdown book-article"><h2 id="user-profiles">
+  User Profiles
+  <a class="anchor" href="#user-profiles">#</a>
 </h2>
-<p>«TVLINK Server» is an IPTV channel repeater and aggregator with a user-friendly web interface.
-It retransmits streams specified by the user from sources such as IPTV playlists, Acestream, Ministra/Stalker Middleware, or add-ons.</p>
-<p>The main goal of the program is to provide uninterrupted operation of IPTV channels. You can automatically
-or manually combine streams of a single channel from various sources, and «TVLINK», depending on the source&rsquo;s
-priority and its operability, will select and retransmit the best stream.</p>
-<p>If the previous stream stops broadcasting for any reason, the program will automatically switch to the next
-available stream of the same channel. This cycle will continue as long as at least one stream from the set is working.</p>
-<p>The program supports IPTV archives (catchup) with the ability to switch to the next stream,
-even if the archive types in these streams differ. Any IPTV player with support for the «Shift» archive
-type is suitable for this function. Even if such a player does not support other archive types
-(Append, Flussonic), it will still play them due to the internal conversion of archive types in «TVLINK».</p>
-<p>The program also provides:</p>
-<ul>
-<li>convenient setup and provision of EPG (Electronic Program Guide in XMLTV format)</li>
-<li>built-in API for independent add-on development</li>
-<li>unlimited number of users and IPTV sources (depends only on hardware capabilities)</li>
-<li>ability (using profiles) to provide different sets of channels to different users</li>
-<li>edit (change name, disable, delete) channels, groups (individually or in groups)</li>
-<li>sort, set numbers for channels and groups, set icons for channels</li>
-<li>ability to automatically (on a schedule) update channel sources and EPG</li>
-<li>protection of your channels from unauthorized access using «tokens»</li>
-<li>stream status and program log in the web interface</li>
-</ul>
-<p>The program uses the Python module <a target='_blank' href="https://streamlink.github.io/">«Streamlink»</a>.
-This, in turn, makes it possible to use a large number of <a target='_blank' href="https://streamlink.github.io/plugins.html">add-ons</a>
-for «Streamlink» itself (those that do not require the support of the <a target='_blank' href="https://streamlink.github.io/api/webbrowser.html">«webbrowser»</a> submodule).
-For example, watch live broadcasts of TV channels from YouTube and many other sources.</p>
 <blockquote class="book-hint info">
-<p>«TVLINK» can be used with any IPTV player, but to get all the benefits of the server, you should
-use «PVR TVLINK Client» for Kodi.</p>
+<p>Profile settings need to be configured after you have added channels to «TVLINK» (channel mapping).</p>
 </blockquote>
-<details ><summary>Program limitations.</summary>
-  <div class="markdown-inner">
-<hr>
-<p>The program does not work in Russia and Belarus.
-However, if you do not support Russian aggression in Ukraine, create a file named «<em>Glory_to_Ukraine</em>»
-in the main «TVLINK» directory, for example:</p>
-<pre><code>touch /opt/tvlink/Glory_to_Ukraine
-</code></pre>
-<p>This way, you will disable geolocation checking when the program starts.</p>
-  </div>
-</details>
-<p>«TVLINK» <a target='_blank' href="https://github.com/AlexELEC/TVLINK-Releases/releases">releases</a> are compiled only for «Linux». The following architectures are supported:</p>
+<p>User profiles allow you to have different sets of channels and groups for different clients.
+Channels and groups in profiles are taken from the main set of channels on the «Channels» page (main profile),
+so you first need to add all the channels that you might need in profiles to «Channels».</p>
+<p>Also, when creating a profile, you can set the IP address for the streams and playlists of this profile and an authentication token, if necessary.</p>
+<p>Click the «Add user» button in the «User Profiles» section and fill out the «Add user profile» form.</p>
 <ul>
-<li>x86-64</li>
-<li>arm7</li>
-<li>aarch64</li>
+<li>«User» — The client&rsquo;s name. It must consist of Latin letters, not contain special characters (spaces, hyphens, etc.), and cannot start with a digit.</li>
+<li>«Playlist IP» — The address that will be used for the playlists and streams of this profile.</li>
+<li>«Token for playlist/streams» — The token that will be used for the playlists and streams of this profile if the «Authentication Token» option is activated.
+If this field is left empty, a token will be created automatically.</li>
+<li>«Comment» — Any comment.</li>
 </ul>
-<p>The program does not require many resources. For example, when serving two clients, it averages 70 MB of RAM usage.</p>
+<blockquote class="book-hint info">
+<p>Apart from the «User» field, filling in all other fields is optional.</p>
+</blockquote>
+<p align="center">
+  <a href="/tvlink/profiles/01.png"><img src="/tvlink/profiles/01.png" width="480"/></a>
+</p>
+<p>After confirming the changes («Save changes»), the profile name («User») becomes a link.
+Clicking on this link opens the group and channel settings of the profile.</p>
+<p align="center">
+  <a href="/tvlink/profiles/02.png"><img src="/tvlink/profiles/02.png" width="480"/></a>
+</p>
+<p align="center">
+  <a href="/tvlink/profiles/03.png"><img src="/tvlink/profiles/03.png" width="480"/></a>
+</p>
+<p>You can disable groups and individual channels that should not be in this profile, or enable the necessary ones.</p>
+<p>The «Settings» icon next to the profile name allows you to change all options (Playlist IP, Token, Comment).</p>
+<p align="center">
+  <a href="/tvlink/profiles/04.png"><img src="/tvlink/profiles/04.png" width="480"/></a>
+</p>
+<blockquote class="book-hint info">
+<p>After any changes to the «Tokens» settings, you need to apply the settings («Apply Settings» at the bottom of the page) or restart the application.</p>
+</blockquote>
+<blockquote class="book-hint warning">
+<p>If you have the «Create static playlist» option enabled, then after any changes to the «Tokens» or Playlist IP settings,
+do not forget to update the static playlists (click «Create static playlist» on the «Sources» page).</p>
+</blockquote>
+<p>The «Delete» icon deletes the profile.</p>
+<p>In the «Playlist URL» column, the links to the profile&rsquo;s playlist are displayed in the following format:</p>
+<pre><code>http://&lt;ip-address&gt;:&lt;port&gt;/&lt;token&gt;/playlist/&lt;user&gt;
+</code></pre>
+<ul>
+<li>token – if «Authentication Token» is activated</li>
+<li>user – profile name</li>
+</ul>
+<p>For «PVR TVLINK Client», it is sufficient to specify the profile name and token in the settings.</p>
 </article>
  
       
@@ -370,7 +372,7 @@ in the main «TVLINK» directory, for example:</p>
   <ul>
     <li>
       <ul>
-        <li><a href="#general-info">General info</a></li>
+        <li><a href="#user-profiles">User Profiles</a></li>
       </ul>
     </li>
   </ul>
