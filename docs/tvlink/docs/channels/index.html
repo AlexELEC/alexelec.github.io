@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Channels
+  #
+
+
+This information pertains to the settings on the page «Channels».
+
+
+  
+
+
+Channel lists on all interface pages are displayed in batches of 200 channels per page (there are buttons at the bottom for navigating between pages).
+When channels are deleted or linked, the pages themselves are not refreshed; only the elements are removed. This is done to speed up performance,
+so you don&rsquo;t have to wait for the page to reload after each action. However, this can lead to some confusion. For example, if you have a list of 300 channels:
+200 channels on one page and 100 on the other, if you delete 10 channels from the first page, you will see 90 channels when you navigate to the second page.
+When the page is refreshed, the list is read again, and the first page will again have 200 channels, while the second will have the rest.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://alexelec.github.io/docs/tvlink/docs/channels/">
+  <meta property="og:site_name" content="AlexELEC">
+  <meta property="og:title" content="Channels">
+  <meta property="og:description" content="Channels # This information pertains to the settings on the page «Channels».
+Channel lists on all interface pages are displayed in batches of 200 channels per page (there are buttons at the bottom for navigating between pages). When channels are deleted or linked, the pages themselves are not refreshed; only the elements are removed. This is done to speed up performance, so you don’t have to wait for the page to reload after each action. However, this can lead to some confusion. For example, if you have a list of 300 channels: 200 channels on one page and 100 on the other, if you delete 10 channels from the first page, you will see 90 channels when you navigate to the second page. When the page is refreshed, the list is read again, and the first page will again have 200 channels, while the second will have the rest.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Channels | AlexELEC</title>
+<link rel="icon" href="/icon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://alexelec.github.io/docs/tvlink/docs/channels/">
+  <link rel="alternate" hreflang="uk" href="https://alexelec.github.io/uk/docs/tvlink/docs/channels/" title="Канали">
+<link rel="stylesheet" href="/book.min.e9f68c3fff3d8236a489d16a9caf6de5e4d1a29c20eb4b5524e42cd30be4d319.css" integrity="sha256-6faMP/89gjakidFqnK9t5eTRopwg60tVJOQs0wvk0xk=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.1d9a58dac8240ed39a7893fc33113c24871680dbe4cd418f27192077ea186794.js" integrity="sha256-HZpY2sgkDtOaeJP8MxE8JIcWgNvkzUGPJxkgd&#43;oYZ5Q=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/icon.png" alt="Logo" class="book-icon" /><span>AlexELEC</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+  
+
+
+
+
+  
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex justify-between">
+      <a role="button" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        English
+      </a>
+    </label>
+
+    <ul>
+      
+      <li>
+        <a href="/uk/docs/tvlink/docs/channels/">
+          Українська
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d07a34546bb4e0ac882f6f54f9c10f00" class="toggle" checked />
+    <label for="section-d07a34546bb4e0ac882f6f54f9c10f00" class="flex justify-between">
+      <a role="button" class="">TVLINK</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/overview/" class="">Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/install/" class="">Installation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/quick-start/" class="">Quick Start</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/sources/" class="">Channel Sources Configuration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/epg/" class="">Electronic Program Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/profiles/" class="">User Profiles</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/channels/" class="active">Channels</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/gpoups/" class="">Channel Groups</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Channels</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#channels">Channels</a></li>
+        <li><a href="#channel-logos">Channel Logos</a></li>
+        <li><a href="#picons-utility">«picons» utility</a></li>
+        <li><a href="#channel-numbers">Channel Numbers</a></li>
+        <li><a href="#channel-names">Channel Names</a></li>
+        <li><a href="#channel-groups">Channel Groups</a></li>
+        <li><a href="#channel-parameters">Channel Parameters</a>
+          <ul>
+            <li><a href="#info">«Info»</a></li>
+            <li><a href="#join">«Join»</a></li>
+            <li><a href="#break">«Break»</a></li>
+            <li><a href="#delete">«Delete»</a></li>
+          </ul>
+        </li>
+        <li><a href="#channel-ids">Channel IDs</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h2 id="channels">
+  Channels
+  <a class="anchor" href="#channels">#</a>
+</h2>
+<blockquote class="book-hint info">
+<p>This information pertains to the settings on the page «Channels».</p>
+</blockquote>
+<p align="center">
+  <a href="/tvlink/channels/01.png"><img src="/tvlink/channels/01.png" width="480"/></a>
+</p>
+<blockquote class="book-hint warning">
+<p>Channel lists on all interface pages are displayed in batches of 200 channels per page (there are buttons at the bottom for navigating between pages).
+When channels are deleted or linked, the pages themselves are not refreshed; only the elements are removed. This is done to speed up performance,
+so you don&rsquo;t have to wait for the page to reload after each action. However, this can lead to some confusion. For example, if you have a list of 300 channels:
+200 channels on one page and 100 on the other, if you delete 10 channels from the first page, you will see 90 channels when you navigate to the second page.
+When the page is refreshed, the list is read again, and the first page will again have 200 channels, while the second will have the rest.</p>
+<p>Before performing the setup on this page, please wait for it to load completely.
+Links to channel logos from some sources may not work, which increases the page loading time in the browser.
+Your changes will not be applied until the page is fully loaded.</p>
+<p>Just keep this in mind while editing.</p>
+</blockquote>
+<h2 id="channel-logos">
+  Channel Logos
+  <a class="anchor" href="#channel-logos">#</a>
+</h2>
+<p>To set or change a channel logo, click the icon in the «Logo» column.
+In the form that appears, you can specify the URL address of the desired image and click «Save changes».
+It is preferable to use images in «png» format, but other formats (jpg, gif, bmp) are also allowed.</p>
+<p align="center">
+  <a href="/tvlink/channels/02.png"><img src="/tvlink/channels/02.png" width="480"/></a>
+</p>
+<p>If you have copied your own channel logos to the «tvlink/logos» folder, then by clicking the «Local logos» button, you can associate a channel logo.</p>
+<p align="center">
+  <a href="/tvlink/channels/03.png"><img src="/tvlink/channels/03.png" width="480"/></a>
+</p>
+<p>The highest priority is given to icons located in the «tvlink/logos» directory and having the format «Channel-ID.png» (for example: 7B7ADBFF.png).
+You can see the «Channel-ID» in the «ID» column. If such an icon does not exist, «TVLINK» uses the icon you specified above.</p>
+<p>If a channel does not have an icon, it will be automatically added when you perform a force update of any source with the «Add channels» option enabled,
+provided that the channel names match and the source has an icon for that channel.</p>
+<h2 id="picons-utility">
+  «picons» utility
+  <a class="anchor" href="#picons-utility">#</a>
+</h2>
+<p>Allows you to download channel icons from the «epg.one» website and automatically converts the logo names into a format understandable for «TVLINK»
+(for example: 7B7ADBFF.png).</p>
+<p>The utility is console-based and is launched in the terminal. It is located in the «tvlink» directory, so you need to specify the full path to it.
+For example:</p>
+<pre><code>/storage/.config/tvlink/picons
+</code></pre>
+<p>Arguments Reference:</p>
+<pre><code>/patch_to/tvlink/picons -h
+</code></pre>
+<p>Running the «picons» utility without arguments downloads and converts «transparent» icons.</p>
+<p>The same action – downloading and converting icons – can also be performed in the «TVLINK» web interface on the «Sources» page.</p>
+<p align="center">
+  <a href="/tvlink/channels/04.png"><img src="/tvlink/channels/04.png" width="480"/></a>
+</p>
+<p>Select the necessary options and click «Create picons».</p>
+<h2 id="channel-numbers">
+  Channel Numbers
+  <a class="anchor" href="#channel-numbers">#</a>
+</h2>
+<p>In the «Num» column, you can specify channel numbers. You can specify a number for only one channel or not specify any at all.
+In the playlist, channels will still be assigned numbers (in alphabetical order of channel names).
+If a number is specified for at least one channel, the numbering will start from it. If no number is specified for any channel, the numbering will start from one.</p>
+<h2 id="channel-names">
+  Channel Names
+  <a class="anchor" href="#channel-names">#</a>
+</h2>
+<p>In the «Name» column, you can edit channel names. Changes take effect immediately after the row with the channel name loses focus.</p>
+<h2 id="channel-groups">
+  Channel Groups
+  <a class="anchor" href="#channel-groups">#</a>
+</h2>
+<p>In the «Group» column, you can change the group to which a channel belongs. Groups are selected from a list.</p>
+<p>If you need to change the group for several channels at once:</p>
+<ol>
+<li>Place checkmarks in the «Clean» fields next to the channels whose group you want to change.</li>
+<li>Change the group for one of the checked channels. This will change the group for all selected channels.</li>
+</ol>
+<p align="center">
+  <a href="/tvlink/channels/05.png"><img src="/tvlink/channels/05.png" width="480"/></a>
+</p>
+<p>Clicking on the «Clean» label itself removes the checkmarks from all selected channels. This is in case you made a mistake in your selection.</p>
+<h2 id="channel-parameters">
+  Channel Parameters
+  <a class="anchor" href="#channel-parameters">#</a>
+</h2>
+<p>Icons in the «Control» column (from left to right):</p>
+<ul>
+<li>«Info» – channel information and stream management</li>
+<li>«Join» – joining channels and their streams</li>
+<li>«Break» – disconnecting channels</li>
+<li>«Delete» – deleting channels</li>
+</ul>
+<h3 id="info">
+  «Info»
+  <a class="anchor" href="#info">#</a>
+</h3>
+<p>If you need to disable or enable any channel streams, move the «Enable» switch to the desired position.</p>
+<p align="center">
+  <a href="/tvlink/channels/06.png"><img src="/tvlink/channels/06.png" width="480"/></a>
+</p>
+<p>In this table, the streams (links) are arranged in order of their priority.
+That is, in the sequence in which «TVLINK» will switch between them if a failure occurs in the preceding stream.</p>
+<h3 id="join">
+  «Join»
+  <a class="anchor" href="#join">#</a>
+</h3>
+<p>«TVLINK» automatically merges channels with the same names. The case of characters and spaces in the channel name are ignored.
+You can also merge channels manually. To do this, you need to select the channels (in the «Clean» column) that you would like
+to add and click «Join» on the channel you want to merge them with.</p>
+<p align="center">
+  <a href="/tvlink/channels/07.png"><img src="/tvlink/channels/07.png" width="480"/></a>
+</p>
+<h3 id="break">
+  «Break»
+  <a class="anchor" href="#break">#</a>
+</h3>
+<p>This procedure is the opposite of the previous one.</p>
+<p align="center">
+  <a href="/tvlink/channels/08.png"><img src="/tvlink/channels/08.png" width="480"/></a>
+</p>
+<h3 id="delete">
+  «Delete»
+  <a class="anchor" href="#delete">#</a>
+</h3>
+<p>Deletes the channel from the «Channels» list. In doing so, the channel becomes available again in its source.</p>
+<h2 id="channel-ids">
+  Channel IDs
+  <a class="anchor" href="#channel-ids">#</a>
+</h2>
+<p>This column displays the unique identifier of the channel and contains a direct link to this channel.
+This link can be pasted into a player (for example, VLC) to play the channel or simply record the stream in a browser.
+To then play the recorded channel in a player, add the «.ts» extension to the file.</p>
+<p>The «Play» icon next to the channel «ID» opens a simple web player.
+This is for convenience when you need to test the channel. The web player does not support stream switching and may also not play some channels.</p>
+<p align="center">
+  <a href="/tvlink/channels/09.png"><img src="/tvlink/channels/09.png" width="480"/></a>
+</p>
+<hr>
+<p>«Delete channels» at the bottom of the page removes all channels from the «Channels» list.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#channels">Channels</a></li>
+        <li><a href="#channel-logos">Channel Logos</a></li>
+        <li><a href="#picons-utility">«picons» utility</a></li>
+        <li><a href="#channel-numbers">Channel Numbers</a></li>
+        <li><a href="#channel-names">Channel Names</a></li>
+        <li><a href="#channel-groups">Channel Groups</a></li>
+        <li><a href="#channel-parameters">Channel Parameters</a>
+          <ul>
+            <li><a href="#info">«Info»</a></li>
+            <li><a href="#join">«Join»</a></li>
+            <li><a href="#break">«Break»</a></li>
+            <li><a href="#delete">«Delete»</a></li>
+          </ul>
+        </li>
+        <li><a href="#channel-ids">Channel IDs</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

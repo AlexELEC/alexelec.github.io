@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="uk" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Канали
+  #
+
+
+Ця інформація стосується налаштувань на сторінці «Channels».
+
+
+  
+
+
+Списки каналів на всіх сторінках інтерфейсу відображаються порціями по 200 каналів на сторінку (знизу є кнопки для перегортання сторінок).
+При видаленні або зв’язуванні каналів самі сторінки не оновлюються, лише видаляються елементи.
+Це зроблено для прискорення роботи, щоб не чекати оновлення сторінки після кожної дії. Однак це може спричинити певну плутанину.
+Наприклад, якщо у вас список складається з 300 каналів: 200 каналів на одній сторінці та 100 на іншій,
+то після видалення 10 каналів з першої сторінки при переході на другу ви побачите вже 90 каналів.
+При оновленні сторінки список зчитується заново, і на першій сторінці знову буде 200 каналів, а на другій – решта.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://alexelec.github.io/uk/docs/tvlink/docs/channels/">
+  <meta property="og:site_name" content="AlexELEC">
+  <meta property="og:title" content="Канали">
+  <meta property="og:description" content="Канали # Ця інформація стосується налаштувань на сторінці «Channels».
+Списки каналів на всіх сторінках інтерфейсу відображаються порціями по 200 каналів на сторінку (знизу є кнопки для перегортання сторінок). При видаленні або зв’язуванні каналів самі сторінки не оновлюються, лише видаляються елементи. Це зроблено для прискорення роботи, щоб не чекати оновлення сторінки після кожної дії. Однак це може спричинити певну плутанину. Наприклад, якщо у вас список складається з 300 каналів: 200 каналів на одній сторінці та 100 на іншій, то після видалення 10 каналів з першої сторінки при переході на другу ви побачите вже 90 каналів. При оновленні сторінки список зчитується заново, і на першій сторінці знову буде 200 каналів, а на другій – решта.">
+  <meta property="og:locale" content="uk">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Канали | AlexELEC</title>
+<link rel="icon" href="/icon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://alexelec.github.io/uk/docs/tvlink/docs/channels/">
+  <link rel="alternate" hreflang="en" href="https://alexelec.github.io/docs/tvlink/docs/channels/" title="Channels">
+<link rel="stylesheet" href="/book.min.e9f68c3fff3d8236a489d16a9caf6de5e4d1a29c20eb4b5524e42cd30be4d319.css" integrity="sha256-6faMP/89gjakidFqnK9t5eTRopwg60tVJOQs0wvk0xk=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/uk.search.min.cc8a8826f1a934ad33ae87872007cd6c29b764ddbe615d4f21c5a627d7aca323.js" integrity="sha256-zIqIJvGpNK0zroeHIAfNbCm3ZN2&#43;YV1PIcWmJ9esoyM=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/uk/"><img src="/icon.png" alt="Logo" class="book-icon" /><span>AlexELEC</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Пошук" aria-label="Пошук" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+  
+
+
+
+
+  
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex justify-between">
+      <a role="button" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        Українська
+      </a>
+    </label>
+
+    <ul>
+      
+      <li>
+        <a href="/docs/tvlink/docs/channels/">
+          English
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f1ab66c78da02bdc35305e50e3dd78a0" class="toggle" checked />
+    <label for="section-f1ab66c78da02bdc35305e50e3dd78a0" class="flex justify-between">
+      <a role="button" class="">TVLINK</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/overview/" class="">Огляд</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/install/" class="">Встановлення та оновлення</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/quick-start/" class="">Швидкий старт</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/sources/" class="">Налаштування джерел каналів</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/epg/" class="">Розклад телевізійних передач (EPG)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/profiles/" class="">Профілі користувачів</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/channels/" class="active">Канали</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/gpoups/" class="">Групи каналів</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Канали</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#канали">Канали</a></li>
+        <li><a href="#логотипи-каналів">Логотипи каналів</a></li>
+        <li><a href="#утиліта-picons">Утиліта «picons»</a></li>
+        <li><a href="#номери-каналів">Номери каналів</a></li>
+        <li><a href="#назви-каналів">Назви каналів</a></li>
+        <li><a href="#групи-каналів">Групи каналів</a></li>
+        <li><a href="#параметри-каналів">Параметри каналів</a>
+          <ul>
+            <li><a href="#info">«Info»</a></li>
+            <li><a href="#join">«Join»</a></li>
+            <li><a href="#break">«Break»</a></li>
+            <li><a href="#delete">«Delete»</a></li>
+          </ul>
+        </li>
+        <li><a href="#id-каналів">ID каналів</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h2 id="канали">
+  Канали
+  <a class="anchor" href="#%d0%ba%d0%b0%d0%bd%d0%b0%d0%bb%d0%b8">#</a>
+</h2>
+<blockquote class="book-hint info">
+<p>Ця інформація стосується налаштувань на сторінці «Channels».</p>
+</blockquote>
+<p align="center">
+  <a href="/tvlink/channels/01.png"><img src="/tvlink/channels/01.png" width="480"/></a>
+</p>
+<blockquote class="book-hint warning">
+<p>Списки каналів на всіх сторінках інтерфейсу відображаються порціями по 200 каналів на сторінку (знизу є кнопки для перегортання сторінок).
+При видаленні або зв’язуванні каналів самі сторінки не оновлюються, лише видаляються елементи.
+Це зроблено для прискорення роботи, щоб не чекати оновлення сторінки після кожної дії. Однак це може спричинити певну плутанину.
+Наприклад, якщо у вас список складається з 300 каналів: 200 каналів на одній сторінці та 100 на іншій,
+то після видалення 10 каналів з першої сторінки при переході на другу ви побачите вже 90 каналів.
+При оновленні сторінки список зчитується заново, і на першій сторінці знову буде 200 каналів, а на другій – решта.</p>
+<p>Перед тим як виконувати налаштування на цій сторінці, зачекайте її повного завантаження.
+Посилання на логотипи каналів з деяких джерел можуть не працювати, що збільшує час завантаження сторінки браузером.
+До повного завантаження ваші зміни не будуть застосовані.</p>
+<p>Просто пам’ятайте про це під час редагування.</p>
+</blockquote>
+<h2 id="логотипи-каналів">
+  Логотипи каналів
+  <a class="anchor" href="#%d0%bb%d0%be%d0%b3%d0%be%d1%82%d0%b8%d0%bf%d0%b8-%d0%ba%d0%b0%d0%bd%d0%b0%d0%bb%d1%96%d0%b2">#</a>
+</h2>
+<p>Щоб встановити або змінити логотип каналу, натисніть на іконку у стовпці «Logo».
+У формі, що з’явиться, ви можете вказати URL-адресу потрібного зображення та натиснути «Save changes».
+Бажано використовувати зображення у форматі «png», але допускаються й інші формати (jpg, gif, bmp).</p>
+<p align="center">
+  <a href="/tvlink/channels/02.png"><img src="/tvlink/channels/02.png" width="480"/></a>
+</p>
+<p>Якщо ви скопіювали власні логотипи каналів до папки «tvlink/logos», то, натиснувши кнопку «Local logos», ви зможете зіставити логотип каналу.</p>
+<p align="center">
+  <a href="/tvlink/channels/03.png"><img src="/tvlink/channels/03.png" width="480"/></a>
+</p>
+<p>Найвищий пріоритет мають іконки, розташовані в каталозі «tvlink/logos» та які мають формат «ID-каналу.png» (наприклад: 7B7ADBFF.png).
+«ID-каналу» ви можете побачити у стовпці «ID». Якщо такої іконки немає, «TVLINK» використовує іконку, яку ви зазначили раніше.</p>
+<p>Якщо канал не має іконки, її буде автоматично додано під час примусового оновлення будь-якого джерела з увімкненою опцією «Add channels»,
+за умови, що імена каналів збігаються і джерело має іконку для цього каналу.</p>
+<h2 id="утиліта-picons">
+  Утиліта «picons»
+  <a class="anchor" href="#%d1%83%d1%82%d0%b8%d0%bb%d1%96%d1%82%d0%b0-picons">#</a>
+</h2>
+<p>Дозволяє завантажувати іконки каналів із сайту «epg.one» та автоматично конвертувати імена логотипів у формат,
+зрозумілий для «TVLINK» (наприклад: 7B7ADBFF.png).</p>
+<p>Утиліта є консольною і запускається в терміналі. Вона розміщена в каталозі «tvlink», тому потрібно вказати повний шлях до неї.
+Наприклад:</p>
+<pre><code>/storage/.config/tvlink/picons
+</code></pre>
+<p>Довідка щодо аргументів:</p>
+<pre><code>/patch_to/tvlink/picons -h
+</code></pre>
+<p>Запуск утиліти «picons» без аргументів призводить до завантаження та конвертації прозорих (transparent) іконок.</p>
+<p>Те саме – завантажити й конвертувати іконки – можна зробити і в веб-інтерфейсі «TVLINK» на сторінці «Sources».</p>
+<p align="center">
+  <a href="/tvlink/channels/04.png"><img src="/tvlink/channels/04.png" width="480"/></a>
+</p>
+<p>Виберіть потрібні опції та натисніть «Create picons».</p>
+<h2 id="номери-каналів">
+  Номери каналів
+  <a class="anchor" href="#%d0%bd%d0%be%d0%bc%d0%b5%d1%80%d0%b8-%d0%ba%d0%b0%d0%bd%d0%b0%d0%bb%d1%96%d0%b2">#</a>
+</h2>
+<p>У стовпці «Num» ви можете вказати номери каналів. Можна вказати номер лише одному каналу або не вказувати його зовсім.
+У плейлисті каналам все одно буде присвоєно номери (в алфавітному порядку назв каналів).
+Якщо номер вказано хоча б одному каналу, відлік почнеться з нього. Якщо не вказати номер жодному каналу, відлік почнеться з одиниці.</p>
+<h2 id="назви-каналів">
+  Назви каналів
+  <a class="anchor" href="#%d0%bd%d0%b0%d0%b7%d0%b2%d0%b8-%d0%ba%d0%b0%d0%bd%d0%b0%d0%bb%d1%96%d0%b2">#</a>
+</h2>
+<p>У стовпці «Name» ви можете редагувати назви каналів. Зміни набувають чинності одразу після того, як рядок із назвою каналу втрачає фокус.</p>
+<h2 id="групи-каналів">
+  Групи каналів
+  <a class="anchor" href="#%d0%b3%d1%80%d1%83%d0%bf%d0%b8-%d0%ba%d0%b0%d0%bd%d0%b0%d0%bb%d1%96%d0%b2">#</a>
+</h2>
+<p>У стовпці «Group» ви можете змінювати групу, до якої належить канал. Групи вибираються зі списку.</p>
+<p>Якщо потрібно змінити групу для кількох каналів одночасно:</p>
+<ol>
+<li>Поставте позначки у полях «Clean» навпроти каналів, групу яких ви хочете змінити.</li>
+<li>Змініть групу на одному з позначених каналів. Таким чином ви зміните групу для всіх обраних каналів.</li>
+</ol>
+<p align="center">
+  <a href="/tvlink/channels/05.png"><img src="/tvlink/channels/05.png" width="480"/></a>
+</p>
+<p>Натискання на саму назву «Clean» знімає позначки з усіх обраних каналів. Це на той випадок, якщо ви помилилися з вибором.</p>
+<h2 id="параметри-каналів">
+  Параметри каналів
+  <a class="anchor" href="#%d0%bf%d0%b0%d1%80%d0%b0%d0%bc%d0%b5%d1%82%d1%80%d0%b8-%d0%ba%d0%b0%d0%bd%d0%b0%d0%bb%d1%96%d0%b2">#</a>
+</h2>
+<p>Іконки у стовпці «Control» (зліва направо):</p>
+<ul>
+<li>«Info» – інформація та керування потоками каналу</li>
+<li>«Join» – об’єднання каналів та їхніх потоків</li>
+<li>«Break» – роз’єднання каналів</li>
+<li>«Delete» – видалення каналів</li>
+</ul>
+<h3 id="info">
+  «Info»
+  <a class="anchor" href="#info">#</a>
+</h3>
+<p>Якщо вам потрібно вимкнути або ввімкнути якісь потоки каналу, переведіть перемикач «Enable» у потрібне положення.</p>
+<p align="center">
+  <a href="/tvlink/channels/06.png"><img src="/tvlink/channels/06.png" width="480"/></a>
+</p>
+<p>У цій таблиці потоки (посилання) розташовані в порядку їхнього пріоритету.
+Тобто, у тій послідовності, в якій «TVLINK» буде їх перемикати, якщо станеться збій попереднього потоку.</p>
+<h3 id="join">
+  «Join»
+  <a class="anchor" href="#join">#</a>
+</h3>
+<p>«TVLINK» автоматично об’єднує канали з однаковими назвами. Регістр символів та пробіли в назві каналу ігноруються.
+Також ви можете об’єднувати канали самостійно. Для цього потрібно вибрати канали (у стовпці «Clean»), які ви б хотіли додати,
+і натиснути «Join» каналу, з яким ви хочете їх об’єднати.</p>
+<p align="center">
+  <a href="/tvlink/channels/07.png"><img src="/tvlink/channels/07.png" width="480"/></a>
+</p>
+<h3 id="break">
+  «Break»
+  <a class="anchor" href="#break">#</a>
+</h3>
+<p>Ця процедура є протилежною до попередньої.</p>
+<p align="center">
+  <a href="/tvlink/channels/08.png"><img src="/tvlink/channels/08.png" width="480"/></a>
+</p>
+<h3 id="delete">
+  «Delete»
+  <a class="anchor" href="#delete">#</a>
+</h3>
+<p>Видаляє канал зі списку каналів «Channels». При цьому канал знову стає доступним у своєму джерелі.</p>
+<h2 id="id-каналів">
+  ID каналів
+  <a class="anchor" href="#id-%d0%ba%d0%b0%d0%bd%d0%b0%d0%bb%d1%96%d0%b2">#</a>
+</h2>
+<p>У цьому стовпці відображається унікальний ідентифікатор каналу та міститься пряме посилання на цей канал.
+Це посилання можна вставити в плеєр (наприклад, VLC), щоб відтворити канал, або просто записати потік у браузері.
+Щоб потім програвати записаний канал у плеєрі, додайте файлу розширення «.ts».</p>
+<p>Іконка «Play» біля «ID» каналу відкриває простий вебпрогравач.
+Це для зручності, коли вам потрібно протестувати канал. Вебпрогравач не підтримує перемикання потоків, а також може не відтворювати деякі канали.</p>
+<p align="center">
+  <a href="/tvlink/channels/09.png"><img src="/tvlink/channels/09.png" width="480"/></a>
+</p>
+<hr>
+<p>«Delete channels» унизу сторінки видаляє всі канали зі списку каналів «Channels».</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#канали">Канали</a></li>
+        <li><a href="#логотипи-каналів">Логотипи каналів</a></li>
+        <li><a href="#утиліта-picons">Утиліта «picons»</a></li>
+        <li><a href="#номери-каналів">Номери каналів</a></li>
+        <li><a href="#назви-каналів">Назви каналів</a></li>
+        <li><a href="#групи-каналів">Групи каналів</a></li>
+        <li><a href="#параметри-каналів">Параметри каналів</a>
+          <ul>
+            <li><a href="#info">«Info»</a></li>
+            <li><a href="#join">«Join»</a></li>
+            <li><a href="#break">«Break»</a></li>
+            <li><a href="#delete">«Delete»</a></li>
+          </ul>
+        </li>
+        <li><a href="#id-каналів">ID каналів</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

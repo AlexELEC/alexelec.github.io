@@ -86,6 +86,30 @@
                 href="https://alexelec.github.io/docs/tvlink/docs/profiles/"
                 />
   </url><url>
+    <loc>https://alexelec.github.io/docs/tvlink/docs/channels/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="uk"
+                href="https://alexelec.github.io/uk/docs/tvlink/docs/channels/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://alexelec.github.io/docs/tvlink/docs/channels/"
+                />
+  </url><url>
+    <loc>https://alexelec.github.io/docs/tvlink/docs/gpoups/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="uk"
+                href="https://alexelec.github.io/uk/docs/tvlink/docs/gpoups/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://alexelec.github.io/docs/tvlink/docs/gpoups/"
+                />
+  </url><url>
     <loc>https://alexelec.github.io/categories/</loc>
     <xhtml:link
                 rel="alternate"
