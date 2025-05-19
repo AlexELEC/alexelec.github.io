@@ -4,30 +4,45 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
-  User Profiles
+  Work Status and Program Updates
   #
 
 
-Profile settings need to be configured after you have added channels to «TVLINK» (channel mapping).
+This information pertains to the settings on the «Status» and «About» pages.
 
-User profiles allow you to have different sets of channels and groups for different clients.
-Channels and groups in profiles are taken from the main set of channels on the «Channels» page (main profile),
-so you first need to add all the channels that you might need in profiles to «Channels».">
+
+  Program Work Status
+  #
+
+
+  
+
+The table at the top of the «Status» page displays information about the program&rsquo;s usage of system resources.
+By default, the information is updated every 5 seconds. You can select the desired interval from the «Refresh page (sec)» list.
+
+«TVLINK uptime» – the time elapsed since the program was started (settings initialized).
+«TVLINK uses memory» – the amount of RAM the program is using (in megabytes).
+«TVLINK open sockets» – the number of currently open sockets.
+«Free system memory» – the percentage of free RAM in the system. This refers to the entire system and its processes.
+
+If stream broadcasting is currently in progress (clients are connected to the server), the «Active streams» table is displayed.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://alexelec.github.io/docs/tvlink/docs/profiles/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://alexelec.github.io/docs/tvlink/docs/status/">
   <meta property="og:site_name" content="AlexELEC">
-  <meta property="og:title" content="User Profiles">
-  <meta property="og:description" content="User Profiles # Profile settings need to be configured after you have added channels to «TVLINK» (channel mapping).
-User profiles allow you to have different sets of channels and groups for different clients. Channels and groups in profiles are taken from the main set of channels on the «Channels» page (main profile), so you first need to add all the channels that you might need in profiles to «Channels».">
+  <meta property="og:title" content="Work Status and Program Updates">
+  <meta property="og:description" content="Work Status and Program Updates # This information pertains to the settings on the «Status» and «About» pages.
+Program Work Status # The table at the top of the «Status» page displays information about the program’s usage of system resources.
+By default, the information is updated every 5 seconds. You can select the desired interval from the «Refresh page (sec)» list.
+«TVLINK uptime» – the time elapsed since the program was started (settings initialized). «TVLINK uses memory» – the amount of RAM the program is using (in megabytes). «TVLINK open sockets» – the number of currently open sockets. «Free system memory» – the percentage of free RAM in the system. This refers to the entire system and its processes. If stream broadcasting is currently in progress (clients are connected to the server), the «Active streams» table is displayed.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>User Profiles | AlexELEC</title>
+<title>Work Status and Program Updates | AlexELEC</title>
 <link rel="icon" href="/icon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://alexelec.github.io/docs/tvlink/docs/profiles/">
-  <link rel="alternate" hreflang="uk" href="https://alexelec.github.io/uk/docs/tvlink/docs/profiles/" title="Профілі користувачів">
+<link rel="canonical" href="https://alexelec.github.io/docs/tvlink/docs/status/">
+  <link rel="alternate" hreflang="uk" href="https://alexelec.github.io/uk/docs/tvlink/docs/status/" title="Статус роботи та оновлення програми">
 <link rel="stylesheet" href="/book.min.e9f68c3fff3d8236a489d16a9caf6de5e4d1a29c20eb4b5524e42cd30be4d319.css" integrity="sha256-6faMP/89gjakidFqnK9t5eTRopwg60tVJOQs0wvk0xk=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.97ac0b83e46dccdb9eac4dbd5d332b6f8e5d88435e1161680869633e63298df2.js" integrity="sha256-l6wLg&#43;RtzNuerE29XTMrb45diENeEWFoCGljPmMpjfI=" crossorigin="anonymous"></script>
@@ -83,7 +98,7 @@ https://github.com/alex-shpak/hugo-book
     <ul>
       
       <li>
-        <a href="/uk/docs/tvlink/docs/profiles/">
+        <a href="/uk/docs/tvlink/docs/status/">
           Українська
         </a>
       </li>
@@ -196,7 +211,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/tvlink/docs/profiles/" class="active">User Profiles</a>
+    <a href="/docs/tvlink/docs/profiles/" class="">User Profiles</a>
   
 
         </li>
@@ -248,7 +263,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/tvlink/docs/status/" class="">Work Status and Program Updates</a>
+    <a href="/docs/tvlink/docs/status/" class="active">Work Status and Program Updates</a>
   
 
         </li>
@@ -294,7 +309,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <h3>User Profiles</h3>
+  <h3>Work Status and Program Updates</h3>
 
   <label for="toc-control">
     
@@ -312,7 +327,9 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li>
       <ul>
-        <li><a href="#user-profiles">User Profiles</a></li>
+        <li><a href="#work-status-and-program-updates">Work Status and Program Updates</a></li>
+        <li><a href="#program-work-status">Program Work Status</a></li>
+        <li><a href="#program-update">Program Update</a></li>
       </ul>
     </li>
   </ul>
@@ -327,60 +344,54 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h2 id="user-profiles">
-  User Profiles
-  <a class="anchor" href="#user-profiles">#</a>
+  <article class="markdown book-article"><h2 id="work-status-and-program-updates">
+  Work Status and Program Updates
+  <a class="anchor" href="#work-status-and-program-updates">#</a>
 </h2>
 <blockquote class="book-hint info">
-<p>Profile settings need to be configured after you have added channels to «TVLINK» (channel mapping).</p>
+<p>This information pertains to the settings on the «Status» and «About» pages.</p>
 </blockquote>
-<p>User profiles allow you to have different sets of channels and groups for different clients.
-Channels and groups in profiles are taken from the main set of channels on the «Channels» page (main profile),
-so you first need to add all the channels that you might need in profiles to «Channels».</p>
-<p>Also, when creating a profile, you can set the IP address for the streams and playlists of this profile and an authentication token, if necessary.</p>
-<p>Click the «Add user» button in the «User Profiles» section and fill out the «Add user profile» form.</p>
+<h2 id="program-work-status">
+  Program Work Status
+  <a class="anchor" href="#program-work-status">#</a>
+</h2>
+<p align="center">
+  <a href="/tvlink/status/01.png"><img src="/tvlink/status/01.png" width="480"/></a>
+</p>
+<p>The table at the top of the «Status» page displays information about the program&rsquo;s usage of system resources.</p>
+<p>By default, the information is updated every 5 seconds. You can select the desired interval from the «Refresh page (sec)» list.</p>
 <ul>
-<li>«User» — The client&rsquo;s name. It must consist of Latin letters, not contain special characters (spaces, hyphens, etc.), and cannot start with a digit.</li>
-<li>«Playlist IP» — The address that will be used for the playlists and streams of this profile.</li>
-<li>«Token for playlist/streams» — The token that will be used for the playlists and streams of this profile if the «Authentication Token» option is activated.
-If this field is left empty, a token will be created automatically.</li>
-<li>«Comment» — Any comment.</li>
+<li>«TVLINK uptime» – the time elapsed since the program was started (settings initialized).</li>
+<li>«TVLINK uses memory» – the amount of RAM the program is using (in megabytes).</li>
+<li>«TVLINK open sockets» – the number of currently open sockets.</li>
+<li>«Free system memory» – the percentage of free RAM in the system. This refers to the entire system and its processes.</li>
 </ul>
-<blockquote class="book-hint info">
-<p>Apart from the «User» field, filling in all other fields is optional.</p>
-</blockquote>
-<p align="center">
-  <a href="/tvlink/profiles/01.png"><img src="/tvlink/profiles/01.png" width="480"/></a>
-</p>
-<p>After confirming the changes («Save changes»), the profile name («User») becomes a link.
-Clicking on this link opens the group and channel settings of the profile.</p>
-<p align="center">
-  <a href="/tvlink/profiles/02.png"><img src="/tvlink/profiles/02.png" width="480"/></a>
-</p>
-<p align="center">
-  <a href="/tvlink/profiles/03.png"><img src="/tvlink/profiles/03.png" width="480"/></a>
-</p>
-<p>You can disable groups and individual channels that should not be in this profile, or enable the necessary ones.</p>
-<p>The «Settings» icon next to the profile name allows you to change all options (Playlist IP, Token, Comment).</p>
-<p align="center">
-  <a href="/tvlink/profiles/04.png"><img src="/tvlink/profiles/04.png" width="480"/></a>
-</p>
-<blockquote class="book-hint info">
-<p>After any changes to the «Tokens» settings, you need to apply the settings («Apply Settings» at the bottom of the page) or restart the application.</p>
-</blockquote>
-<blockquote class="book-hint warning">
-<p>If you have the «Create static playlist» option enabled, then after any changes to the «Tokens» or Playlist IP settings,
-do not forget to update the static playlists (click «Create static playlist» on the «Sources» page).</p>
-</blockquote>
-<p>The «Delete» icon deletes the profile.</p>
-<p>In the «Playlist URL» column, the links to the profile&rsquo;s playlist are displayed in the following format:</p>
-<pre><code>http://&lt;ip-address&gt;:&lt;port&gt;/&lt;token&gt;/playlist/&lt;user&gt;
-</code></pre>
+<p>If stream broadcasting is currently in progress (clients are connected to the server), the «Active streams» table is displayed.</p>
 <ul>
-<li>token – if «Authentication Token» is activated</li>
-<li>user – profile name</li>
+<li>«Client» – the client&rsquo;s IP address and port.</li>
+<li>«Channel» – the channel being broadcast to the client.</li>
+<li>«Source» – the source from which the stream is being broadcast.</li>
+<li>«Start Time» – the time when the broadcast was started.</li>
+<li>«URL» – the address from which «TVLINK» retrieves the stream.</li>
 </ul>
-<p>For «PVR TVLINK Client», it is sufficient to specify the profile name and token in the settings.</p>
+<p>The red icon in the «Client» column allows switching the broadcast to the next stream for the client.</p>
+<p>The «View program Logs» link (at the bottom of the page) opens the program&rsquo;s log page.</p>
+<p align="center">
+  <a href="/tvlink/status/02.png"><img src="/tvlink/status/02.png" width="480"/></a>
+</p>
+<h2 id="program-update">
+  Program Update
+  <a class="anchor" href="#program-update">#</a>
+</h2>
+<p>The «About» page displays the program version, as well as links to download the playlist and EPG.</p>
+<p>If a new version of the program is available, information about it and an «Update» icon will appear. Click this icon and wait for the program to update.</p>
+<p align="center">
+  <a href="/tvlink/status/03.png"><img src="/tvlink/status/03.png" width="480"/></a>
+</p>
+<p>During the update, all settings are preserved. Just in case, you can save your settings by copying the «tvlink/data» directory and restore it if necessary.</p>
+<p align="center">
+  <a href="/tvlink/status/04.png"><img src="/tvlink/status/04.png" width="480"/></a>
+</p>
 </article>
  
       
@@ -424,7 +435,9 @@ do not forget to update the static playlists (click «Create static playlist» o
   <ul>
     <li>
       <ul>
-        <li><a href="#user-profiles">User Profiles</a></li>
+        <li><a href="#work-status-and-program-updates">Work Status and Program Updates</a></li>
+        <li><a href="#program-work-status">Program Work Status</a></li>
+        <li><a href="#program-update">Program Update</a></li>
       </ul>
     </li>
   </ul>
