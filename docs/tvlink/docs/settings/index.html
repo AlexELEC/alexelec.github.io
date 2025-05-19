@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Server Configuration
+  #
+
+
+This information pertains to the settings on the «Settings» page.
+
+
+  
+
+
+For most settings on this page, you need to reread the «TVLINK» configuration for the changes to take effect. There is an «Apply Settings» option at the bottom of the page for this.
+The «Refresh sources at playlist» and «Remove broken channels» options do not require this.
+
+
+
+«Server port» – defines the port on which «TVLINK» accepts requests. The port for streams will be one greater: «Server port &#43; 1».">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://alexelec.github.io/docs/tvlink/docs/settings/">
+  <meta property="og:site_name" content="AlexELEC">
+  <meta property="og:title" content="Server and Stream Configuration">
+  <meta property="og:description" content="Server Configuration # This information pertains to the settings on the «Settings» page.
+For most settings on this page, you need to reread the «TVLINK» configuration for the changes to take effect. There is an «Apply Settings» option at the bottom of the page for this. The «Refresh sources at playlist» and «Remove broken channels» options do not require this.
+«Server port» – defines the port on which «TVLINK» accepts requests. The port for streams will be one greater: «Server port &#43; 1».">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Server and Stream Configuration | AlexELEC</title>
+<link rel="icon" href="/icon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://alexelec.github.io/docs/tvlink/docs/settings/">
+  <link rel="alternate" hreflang="uk" href="https://alexelec.github.io/uk/docs/tvlink/docs/settings/" title="Налаштування сервера та потоків">
+<link rel="stylesheet" href="/book.min.e9f68c3fff3d8236a489d16a9caf6de5e4d1a29c20eb4b5524e42cd30be4d319.css" integrity="sha256-6faMP/89gjakidFqnK9t5eTRopwg60tVJOQs0wvk0xk=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.f941d0307ba937518d4b375c31022e074aafcded96a650abcf57db026427f0ba.js" integrity="sha256-&#43;UHQMHupN1GNSzdcMQIuB0qvze2WplCrz1fbAmQn8Lo=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/icon.png" alt="Logo" class="book-icon" /><span>AlexELEC</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+  
+
+
+
+
+  
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex justify-between">
+      <a role="button" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        English
+      </a>
+    </label>
+
+    <ul>
+      
+      <li>
+        <a href="/uk/docs/tvlink/docs/settings/">
+          Українська
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d07a34546bb4e0ac882f6f54f9c10f00" class="toggle" checked />
+    <label for="section-d07a34546bb4e0ac882f6f54f9c10f00" class="flex justify-between">
+      <a role="button" class="">TVLINK</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/overview/" class="">Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/install/" class="">Installation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/quick-start/" class="">Quick Start</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/sources/" class="">Channel Sources Configuration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/epg/" class="">Electronic Program Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/profiles/" class="">User Profiles</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/channels/" class="">Channels</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/gpoups/" class="">Channel Groups</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/settings/" class="active">Server and Stream Configuration</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Server and Stream Configuration</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#server-configuration">Server Configuration</a></li>
+        <li><a href="#authentication-token-for-streams-and-playlists">Authentication Token for Streams and Playlists</a></li>
+        <li><a href="#periodic-settings-reload">Periodic Settings Reload</a></li>
+        <li><a href="#empty-channel-link">«Empty channel link»</a></li>
+        <li><a href="#exclude-these-lines-from-channel-names-when-mapping">«Exclude these lines from channel names when mapping»</a></li>
+        <li><a href="#m3u-playlist-settings">«M3U playlist settings»</a></li>
+        <li><a href="#stream-settings">Stream Settings</a></li>
+        <li><a href="#stream-settings-for-individual-sources">Stream settings for individual sources</a></li>
+        <li><a href="#explanation-of-stream-configuration">Explanation of stream configuration</a></li>
+        <li><a href="#ffmpeg-transcode-stream">FFmpeg transcode stream</a></li>
+        <li><a href="#epg-update">EPG Update</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h2 id="server-configuration">
+  Server Configuration
+  <a class="anchor" href="#server-configuration">#</a>
+</h2>
+<blockquote class="book-hint info">
+<p>This information pertains to the settings on the «Settings» page.</p>
+</blockquote>
+<p align="center">
+  <a href="/tvlink/settings/01.png"><img src="/tvlink/settings/01.png" width="480"/></a>
+</p>
+<blockquote class="book-hint info">
+<p>For most settings on this page, you need to reread the «TVLINK» configuration for the changes to take effect. There is an «Apply Settings» option at the bottom of the page for this.
+The «Refresh sources at playlist» and «Remove broken channels» options do not require this.</p>
+</blockquote>
+<ul>
+<li>
+<p>«Server port» – defines the port on which «TVLINK» accepts requests. The port for streams will be one greater: «Server port + 1».</p>
+</li>
+<li>
+<p>«Playlist IP» – this is the address that «TVLINK» will use for playlists (when «Auto playlist IP» is disabled). The address can be selected from the list.</p>
+</li>
+<li>
+<p>«Auto playlist IP» – if this option is enabled, «TVLINK» will use the IP address in the playlist from which the client&rsquo;s request originates.</p>
+</li>
+<li>
+<p>«Check internet IP» – the IP address that «TVLINK» uses to check the internet connection. The default address is «8.8.8.8».
+If you need to change this address before running the program, create a file named «check-internet.ip» in the tvlink directory and enter the required address there.</p>
+</li>
+<li>
+<p>«Check internet max time» – the maximum time during which «TVLINK» checks the internet connection. The program will not start until it has internet access.</p>
+</li>
+<li>
+<p>«Refresh sources at startup» – refresh sources when the program starts.</p>
+</li>
+<li>
+<p>«Refresh sources at playlist» – refresh sources when a playlist is requested.</p>
+</li>
+<li>
+<p>«Create static playlist» – creates static playlist files (main and for profiles) in the «tvlink/playlist» directory and serves them upon client requests.
+This significantly speeds up operation when you have a large number of channels (100 or more).
+The static playlist is created (updated) each time the channel sources are automatically updated, or when you click «Update all sources/Create static playlist» on the «Sources» page.
+Static playlists are not created for tokens (Authentication Token).</p>
+</li>
+<li>
+<p>«Remove broken channels» – «TVLINK» will automatically delete all channels that are found to be non-functional.
+Be cautious with this option: if the internet connection is lost, «TVLINK» will start deleting every channel you try to turn on.</p>
+</li>
+<li>
+<p>«Authentication webUI» – simple authentication (login/password) for the web interface.
+After activation, you will immediately see a window to enter your credentials. You need to enter – «admin/admin».
+After that, you can specify your own login and password in the «Login (webUI)» and «Password (webUI)» fields respectively.
+If you enter an empty string or less than three characters in the «Login (webUI)» field, the login will be reset to the default value (admin).
+The same applies to the «Password (webUI)» field: an empty string or less than three characters will reset the password to «admin».</p>
+</li>
+</ul>
+<p>IP addresses for the «Playlist IP» list are taken from the system.
+If you need to add an IP address (or a domain name) that is not in the system (for example, if «TVLINK» is running behind NAT), create a file named «ip-address.ext» in the «tvlink/data» directory.
+Each line of the file must contain one IP address or one domain name. For example:</p>
+<pre><code>100.100.100.100
+200.200.200.200
+my.own.server.com
+</code></pre>
+<h2 id="authentication-token-for-streams-and-playlists">
+  Authentication Token for Streams and Playlists
+  <a class="anchor" href="#authentication-token-for-streams-and-playlists">#</a>
+</h2>
+<p align="center">
+  <a href="/tvlink/settings/02.png"><img src="/tvlink/settings/02.png" width="480"/></a>
+</p>
+<p>Protection against unauthorized access to streams and playlists.</p>
+<ul>
+<li>«Authentication Token» – enables support for authentication tokens.</li>
+<li>«Main Token for playlist/streams» – any sequence of case-sensitive Latin letters and/or digits.</li>
+</ul>
+<blockquote class="book-hint info">
+<p>After any changes to the «Tokens» settings, you need to apply the settings («Apply Settings» at the bottom of the page) or restart the program.</p>
+<p>If you have the «Create static playlist» option enabled, then after any changes to the «Tokens» settings, do not forget to update the static playlists (click «Update all sources» on the «Sources» page).</p>
+</blockquote>
+<p>If the «Authentication Token» option is activated, after applying the settings, access to streams and playlists will only be possible via the token. The token for the main playlist is set on the «Settings» page.</p>
+<p>Other tokens are set in the 
+  <a href="/docs/tvlink/docs/profiles/">«User Profiles»</a> section.</p>
+<h2 id="periodic-settings-reload">
+  Periodic Settings Reload
+  <a class="anchor" href="#periodic-settings-reload">#</a>
+</h2>
+<p align="center">
+  <a href="/tvlink/settings/03.png"><img src="/tvlink/settings/03.png" width="480"/></a>
+</p>
+<p>This function reloads the «TVLINK» settings at specified time intervals. This action is similar to clicking the «Apply Settings» button at the bottom of the page.
+It does not restart the program itself, but only re-initializes all settings. However, this helps to clear the RAM and close all network connections (sockets).
+Therefore, this function can be useful when the server operates 24/7.</p>
+<ul>
+<li>«Reload by interval» – reloads the «TVLINK» modules after a time interval (in hours) specified in the «Reload every hours» parameter.</li>
+<li>«Reload once a day» – reloads once a day at the time specified by the «Reload at o’clock» parameter.</li>
+</ul>
+<p>The time specified in these options is approximate. For example, if «Reload once a day» / «Reload at o’clock» is set to 4 o&rsquo;clock, the reload will occur between 4:00 and 5:00.</p>
+<p>The «Reload once a day» option has a higher priority. If you enable both parameters, the module reload will occur once a day.</p>
+<p>Reloads occur only under the following conditions:</p>
+<ol>
+<li>the number of open network connections (sockets) exceeds 10;</li>
+<li>the program uses more than 60 MB of RAM for systems with less than 1.5 GB of RAM, and more than 120 MB for systems with more than 1.5 GB of RAM;</li>
+</ol>
+<p>To avoid problems with stream broadcasting, these functions will only trigger if «TVLINK» is not currently broadcasting (no clients are connected).
+The module reload will occur immediately after the last client disconnects.</p>
+<p>If the «Ignore connected clients on Reload» option is enabled, the «TVLINK» modules will be reloaded regardless of whether there are connected clients.</p>
+<h2 id="empty-channel-link">
+  «Empty channel link»
+  <a class="anchor" href="#empty-channel-link">#</a>
+</h2>
+<p>Allows you to enter your own link to a stream that will be played if none of the main channel links are working.</p>
+<h2 id="exclude-these-lines-from-channel-names-when-mapping">
+  «Exclude these lines from channel names when mapping»
+  <a class="anchor" href="#exclude-these-lines-from-channel-names-when-mapping">#</a>
+</h2>
+<p>Excluding words from channel names. You can exclude any lines from a channel name for automatic linking.
+The channel name itself remains unchanged, however, during automatic linking, «TVLINK» will discard the part you specified from the name.
+The delimiter for words that need to be excluded from the name is a comma (without spaces).
+For example, with these settings, all channels with the following names will be considered the same channel – «Discovery Science HD».</p>
+<pre><code>«Discovery Science HD»
+«Discovery Science HD orig»
+«Discovery Science HD PREMIUM+»
+</code></pre>
+<p align="center">
+  <a href="/tvlink/settings/04.png"><img src="/tvlink/settings/04.png" width="480"/></a>
+</p>
+<blockquote class="book-hint info">
+<p>If there are channels in one source as shown above, then the stream (link to the stream) with the longest name will have the highest priority, i.e.,
+first «Discovery Science HD PREMIUM+», then «Discovery Science HD orig», and lastly «Discovery Science HD».</p>
+</blockquote>
+<h2 id="m3u-playlist-settings">
+  «M3U playlist settings»
+  <a class="anchor" href="#m3u-playlist-settings">#</a>
+</h2>
+<p>Allows you to add the elements you need after the «EXTM3U» and «EXTINF» tags in the «TVLINK» playlist.
+For example, this could be information for periodic updating of the channel list: «refresh=&ldquo;3600&rdquo;». Provided that your IPTV player supports this.</p>
+<h2 id="stream-settings">
+  Stream Settings
+  <a class="anchor" href="#stream-settings">#</a>
+</h2>
+<p align="center">
+  <a href="/tvlink/settings/05.png"><img src="/tvlink/settings/05.png" width="480"/></a>
+</p>
+<ul>
+<li>«Main User-Agent» – sets the default User-Agent. Some IPTV providers may have blocking based on the &ldquo;user-agent&rdquo;.
+They provide the stream only if the request comes from a specific application. You can specify «TVLINK» so that it identifies itself as another application.</li>
+</ul>
+<p>The following settings mostly relate to the «Streamlink» module and are responsible for working with streams.</p>
+<ul>
+<li>
+<p>«Stream Ring buffer» – sets the buffer size for streams (in megabytes).
+Corresponds to the <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-ringbuffer-size">«ringbuffer-size»</a> parameter in «Streamlink».</p>
+</li>
+<li>
+<p>«Chunk size» – sets the fragment size when reading a stream (in bytes). The larger the fragment size, the lower the CPU load.
+The smaller the fragment size, the faster the stream opens.</p>
+</li>
+<li>
+<p>«Threads job timeout» – the time (in seconds) after which the chain of reading/writing stream fragments will be stopped.
+Partially corresponds to the <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-stream-timeout">«stream-timeout»</a> parameter in «Streamlink».</p>
+</li>
+<li>
+<p>«General HTTP timeout Connect/Data» – the general timeout (in seconds) used for all HTTP requests, except those covered by other parameters.
+For understanding: in HLS streams, this will be the timeout for obtaining the segment list.
+The time (timeout) for connection and the time for receiving data are set separately, respectively.
+Corresponds to the <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-http-timeout">«http-timeout»</a> parameter in «Streamlink»,
+except that it allows setting different values for connection and data reading.</p>
+</li>
+<li>
+<p>«HLS segment timeout Connect/Data» – the timeout (in seconds) used for HLS segments (as well as DASH, etc.).
+The time (timeout) for connection and the time for receiving data are set separately, respectively.
+Corresponds to the <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-stream-segment-timeout">«stream-segment-timeout»</a> parameter in «Streamlink»,
+except that it allows setting different values for connection and data reading.</p>
+</li>
+<li>
+<p>«HLS segment queue threshold» – the multiplication factor of the target duration of the HLS playlist,
+after which the stream will be stopped prematurely if no new segments are added to the queue after the playlist update.
+Corresponds to the <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-hls-segment-queue-threshold">«hls-segment-queue-threshold»</a> parameter in «Streamlink».</p>
+</li>
+<li>
+<p>«Stream retry count» – this option sets the <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-stream-segment-attempts">«stream-segment-attempts»</a>
+and <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-hls-playlist-reload-attempts">«hls-playlist-reload-attempts»</a> parameters for «Streamlink».
+That is, the number of download attempts for segments and the segment list.</p>
+</li>
+<li>
+<p>«Segment threads» – the number of parallel segment downloads.
+This is the size of the thread pool used for downloading segments.
+Corresponds to the <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-stream-segment-threads">«stream-segment-threads»</a> parameter in «Streamlink».</p>
+</li>
+<li>
+<p>«Segments Queue» – the size of the segment queue. In «Streamlink», it is fixed at 20 segments.
+But this is too much for Live streams. The smaller the queue, the sooner streams will close, and there will also be less RAM consumption and fewer open sockets.
+It is better to set it to «as threads», which corresponds to the number of «Segment threads» but not less than 6 segments.</p>
+</li>
+<li>
+<p>«HLS live edge» – specifies how many HLS segments need to be downloaded when the stream starts.
+Corresponds to the <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-hls-live-edge">«hls-live-edge»</a> parameter in «Streamlink».</p>
+</li>
+<li>
+<p>«HLS playlist reload time» – controls the time after which a request is made to update the segment list.
+Partially corresponds to the <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-hls-playlist-reload-time">«hls-playlist-reload-time»</a> parameter in «Streamlink».
+The «segment» parameter has the same meaning as in «Streamlink». The «duration» value corresponds to «default» in «Streamlink».
+The «average» value is the average time of two segments. The «default» value is either one of the values
+corresponding to «duration» / «segment», or, if they are not present, the set time is 6 seconds.</p>
+</li>
+<li>
+<p>«HLS Stream Data» – if activated, immediately transfers data from the segment to the output buffer during download.
+Channels open quickly, without prior buffering before starting. If disabled, data is transferred only after the first segment is downloaded.
+Corresponds to the <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-hls-segment-stream-data">«hls-segment-stream-data»</a> parameter in «Streamlink».</p>
+</li>
+<li>
+<p>«HLS Live Restart» – if active, go to the beginning of the live broadcast or as far back as possible.
+Corresponds to the <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-hls-live-restart">«hls-live-restart»</a> parameter in «Streamlink».</p>
+</li>
+<li>
+<p>«Debug Streams» – adds the «Streamlink» module&rsquo;s log to the «TVLINK» log. The log file is located in the «tvlink/log» directory.</p>
+</li>
+<li>
+<p>«Sources Proxy» and «Streams Proxy» – allow you to set a proxy for sources and streams. Format: «http://login:password@your.proxy:port».
+The «login/password» values are optional. Supported protocols: http, https, socks5.</p>
+</li>
+</ul>
+<h2 id="stream-settings-for-individual-sources">
+  Stream settings for individual sources
+  <a class="anchor" href="#stream-settings-for-individual-sources">#</a>
+</h2>
+<p align="center">
+  <a href="/tvlink/settings/06.png"><img src="/tvlink/settings/06.png" width="480"/></a>
+</p>
+<p>Stream settings such as:</p>
+<ul>
+<li>Threads job timeout</li>
+<li>General HTTP timeout</li>
+<li>HLS segment timeout</li>
+<li>HLS segment queue threshold</li>
+<li>Stream retry count</li>
+<li>HLS live edge</li>
+<li>HLS Stream Data</li>
+<li>HLS Live Restart</li>
+</ul>
+<p>can be set individually for each source on the «Sources» page (icon next to the source name). In this case, there is no need to click «Apply Settings»; the changes take effect immediately.</p>
+<p>These same parameters do not require a reload on the «Settings» page either.</p>
+<p>The «Default» button in the «Streamer settings» form returns all individual stream settings for the source to the main settings on the «Settings» page.</p>
+<ul>
+<li>
+<p>Playlist URL – allows you to change the URL address of the source.</p>
+</li>
+<li>
+<p>User-Agent – allows you to set the “User-Agent” option for each source (streams within this source) individually. This overrides the «Main User-Agent» option.</p>
+</li>
+<li>
+<p>«Disable load icons» — disables fetching channel icons from the source. Some sources may have invalid icon addresses specified.
+This leads to a delay (depending on your browser) in displaying channel lists in the program&rsquo;s web interface.</p>
+</li>
+<li>
+<p>«Repeat source streams» — allows you to set the number of times a stream playback will be repeated during failures. This option is not related to the Streamlink option «Stream retry count».
+The value «always» means that repeats are unlimited, «0» — the function is disabled (by default), other values are the number of repeats.</p>
+</li>
+</ul>
+<blockquote class="book-hint info">
+<p>If your channel has only one stream and if that stream is working in some way, «TVLINK» will endlessly try to restart that stream.
+The «Repeat source streams» function does the same for the source (the stream of this source) of a channel where there is more than one stream.
+Thus, switching to the next stream of this channel will occur if either the stream has completely stopped working or after the number of repetitions
+you have selected. If «always» is selected — then only if the stream has stopped providing anything at all.</p>
+</blockquote>
+<p>Changes to these field settings take effect immediately after the field loses focus.</p>
+<h2 id="explanation-of-stream-configuration">
+  Explanation of stream configuration
+  <a class="anchor" href="#explanation-of-stream-configuration">#</a>
+</h2>
+<p>First, let&rsquo;s define the differences between connection timeouts and read data timeouts (Connect timeout and Read Data timeout).</p>
+<ul>
+<li>«Connect timeout»</li>
+</ul>
+<p>When a client (in this case, TVLINK is a client in relation to the server from which it requests streams) initiates a connection, it must receive a response from the server (a specific response code).
+It does not matter what specific response comes from the server. This could be a 200 (connection established), 302 (redirection), or any other response, the main thing is that the server responds.
+If a response from the server is not received within the time period specified in the connect timeout (connection timeout period), the client drops the connection.</p>
+<ul>
+<li>«Read Data timeout»</li>
+</ul>
+<p>When the client receives a 200 (connection established) response from the server, it begins to download (read) the data that the server sends.
+If the server does not transmit information within the time period specified in the read data timeout (read data timeout period), the client drops the connection.</p>
+<p>Now let&rsquo;s define the stream formats.</p>
+<p>The most common ones are TS and HLS.</p>
+<ul>
+<li>«TS»</li>
+</ul>
+<p>Essentially, this is the same as if you were downloading any file in a browser.
+The client makes a request and, if it receives a 200 response, simply receives the data sequentially.
+The data is transmitted in a single stream, and if traffic issues arise, this causes problems with the video playback as well.
+That is, for IPTV over the internet, this is not the best solution. It is more suitable for a local network.</p>
+<ul>
+<li>«HLS»</li>
+</ul>
+<p>This is the same «TS» (simplified, of course), but cut into chunks (segments).
+Due to the fact that these segments are already recorded files (unlike TS, which is transmitted in real-time) and there are several of them, the client has the ability to download multiple segments simultaneously.
+This, in turn, helps to cope with traffic problems and, accordingly, is better suited for IPTV over the internet.</p>
+<p>Now, directly about the «TVLINK» parameters.</p>
+<ul>
+<li>«General HTTP timeout Connect/Data»</li>
+</ul>
+<p>If you have a TS stream, these timeouts will be applied. «HLS segment» timeouts will not be used for such streams.
+If you have an HLS stream, the «General HTTP» timeouts will work when you receive playlists with a list of segments or stream quality options
+(the provider may offer several stream quality options for different connection speeds). We call playlists text files that contain links to other playlists
+(for example, if it is a list of stream qualities) or links to video segments.</p>
+<ul>
+<li>«HLS segment timeout Connect/Data»</li>
+</ul>
+<p>These timeouts are applied directly to segments (video files). Although the name of this parameter includes «HLS», these timeouts also work with other segmented stream formats, for example, «DASH».</p>
+<p>In a simple case (without a stream quality list) for HLS streams, it will look like this:</p>
+<ul>
+<li>getting the segment list – «General HTTP timeout»</li>
+<li>downloading segment 1 – «HLS segment timeout»</li>
+<li>downloading segment 2 – «HLS segment timeout»</li>
+<li>downloading segment 3 – «HLS segment timeout»</li>
+<li>getting a new segment list – «General HTTP timeout»</li>
+<li>downloading segment 4 – «HLS segment timeout»</li>
+<li>downloading segment 5 – «HLS segment timeout»</li>
+<li>downloading segment 6 – «HLS segment timeout»</li>
+<li>getting a new segment list – «General HTTP timeout»</li>
+</ul>
+<p>and so on…</p>
+<ul>
+<li>«HLS segment queue threshold»</li>
+</ul>
+<p>This parameter (timeout) also applies to HLS streams. The HLS segment list (playlist) contains a variable indicating the duration of the video in the segment.
+This variable is used by «TVLINK» to determine after what time to request a new segment file. The server constantly updates this list immediately after a new segment recording is finished.
+«HLS segment queue threshold» - this is the number by which the segment duration variable will be multiplied.
+If the segment list on the server is not updated within the time obtained by this multiplication, the client will drop the connection.
+For example, the list specifies that the segment duration is 6 seconds. If the «HLS segment queue threshold» is set to three, the client will drop the connection after 18 seconds if a new segment does not appear on the server.</p>
+<ul>
+<li>«Threads job timeout»</li>
+</ul>
+<p>This is the timeout of the internal «Streamlink» loop that reads data from the input and writes it to the output stream.
+If no data passes through the loop within the specified time, it stops working, which results in the closure of any connection.</p>
+<ul>
+<li>«Stream retry count»</li>
+</ul>
+<p>This is the number of connection retries when the «General HTTP» and «HLS segment» timeouts are triggered.</p>
+<h2 id="ffmpeg-transcode-stream">
+  FFmpeg transcode stream
+  <a class="anchor" href="#ffmpeg-transcode-stream">#</a>
+</h2>
+<p>If «FFmpeg» is installed on your system, you have the option to enable the «FFmpeg transcode stream» module.</p>
+<p align="center">
+  <a href="/tvlink/settings/07.png"><img src="/tvlink/settings/07.png" width="480"/></a>
+</p>
+<p>Options are FFmpeg command-line parameters. Field descriptions:</p>
+<ul>
+<li>«Before input» – parameters for hardware transcoding</li>
+<li>«Video encoder» – video encoder parameters</li>
+<li>«Audio encoder» – audio encoder parameters</li>
+</ul>
+<p>To understand how these parameters will be inserted into the «FFmpeg» command line, here is an example (simplified scheme):</p>
+<pre><code>/usr/bin/ffmpeg -err_detect ignore_err -stream_loop -1 [Before input] -i http://channel.stream -c:v [Video encoder] -c:a [Audio encoder] -ignore_unknown -map 0:v -map 0:a -f mpegts
+</code></pre>
+<p>By default, the «Video encoder» and «Audio encoder» fields contain the “copy” parameter. That is, if these fields are left empty, the value “copy” will be set (skip the stream without transcoding).</p>
+<p>Before setting values, make sure that «FFmpeg» on your system supports the respective parameters. For example, execute the command:</p>
+<pre><code>ffmpeg -hide_banner -encoders
+</code></pre>
+<p>to view the available audio and video encoders.</p>
+<p>If the processor in your system (for example, Intel Pentium N5000) supports hardware stream encoding, you can apply the following settings, for example.</p>
+<p>«Before input»:</p>
+<pre><code>-hwaccel vaapi -hwaccel_output_format vaapi -hwaccel_device /dev/dri/renderD128
+</code></pre>
+<p>«Video encoder»:</p>
+<pre><code>h264_vaapi -r 50
+</code></pre>
+<p>«Audio encoder»:</p>
+<pre><code>aac -b:a 96k
+</code></pre>
+<p>After applying the settings («Apply Settings»), on the «About» page a link to «M3U FFmpeg Playlist» will appear (format: http://ip-address:port/ffmpeglist).</p>
+<p align="center">
+  <a href="/tvlink/settings/09.png"><img src="/tvlink/settings/09.png" width="480"/></a>
+</p>
+<p>Enabling «FFmpeg transcode stream» does not affect the main broadcasting module. They work in parallel.
+You can simultaneously connect some clients to the regular playlist (playlist) and others to the «FFmpeg» playlist (ffmpeglist).</p>
+<blockquote class="book-hint info">
+<p>You can always get the playlist via the link «http://ip-address:port/ffmpeglist», even if «FFmpeg transcode stream» is disabled and «FFmpeg» is not installed on the system. Therefore, be careful.</p>
+</blockquote>
+<p>If you enable «Debug Streams» and run «TVLINK» from the command line, information from «FFmpeg» (encoding parameters, errors, etc.) will be displayed when the stream stops.</p>
+<h2 id="epg-update">
+  EPG Update
+  <a class="anchor" href="#epg-update">#</a>
+</h2>
+<p align="center">
+  <a href="/tvlink/settings/08.png"><img src="/tvlink/settings/08.png" width="480"/></a>
+</p>
+<p>These settings are responsible for the periodic update of the «EPG».</p>
+<ul>
+<li>
+<p>«Auto update EPG» – enable/disable automatic periodic EPG update.</p>
+</li>
+<li>
+<p>«Update period EPG» – select the update period from the list in hours, or once a day (at night).</p>
+</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#server-configuration">Server Configuration</a></li>
+        <li><a href="#authentication-token-for-streams-and-playlists">Authentication Token for Streams and Playlists</a></li>
+        <li><a href="#periodic-settings-reload">Periodic Settings Reload</a></li>
+        <li><a href="#empty-channel-link">«Empty channel link»</a></li>
+        <li><a href="#exclude-these-lines-from-channel-names-when-mapping">«Exclude these lines from channel names when mapping»</a></li>
+        <li><a href="#m3u-playlist-settings">«M3U playlist settings»</a></li>
+        <li><a href="#stream-settings">Stream Settings</a></li>
+        <li><a href="#stream-settings-for-individual-sources">Stream settings for individual sources</a></li>
+        <li><a href="#explanation-of-stream-configuration">Explanation of stream configuration</a></li>
+        <li><a href="#ffmpeg-transcode-stream">FFmpeg transcode stream</a></li>
+        <li><a href="#epg-update">EPG Update</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
