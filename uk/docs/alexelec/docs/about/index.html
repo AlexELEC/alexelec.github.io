@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="uk" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Завантаження образів та оновлення систем
+  #
+
+
+LibreELEC
+CoreELEC
+
+
+  Програмний код
+  #
+
+
+LibreELEC
+CoreELEC
+
+
+  Відмінності від оригінальних версій
+  #
+
+
+SSH (логін/пароль) за замовчуванням: root/mcpc
+З налаштувань «LibreELEC/CoreELEC» видалено функцію автоматичного оновлення системи.
+В систему інтегровано файловий менеджер «Midnight Commander» та утиліту «htop».
+Додано сервіс «hid-remote» для налаштування HID-пультів дистанційного керування.
+Додано пакети (залежності) для роботи «TVLINK IPTV server».
+«TVLINK IPTV server» можна завантажити, активувати або відключити в налаштуваннях системи.
+«PVR TVLINK Client» інтегровано в систему.
+
+Для «Kodi»:">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://alexelec.github.io/uk/docs/alexelec/docs/about/">
+  <meta property="og:site_name" content="AlexELEC">
+  <meta property="og:title" content="Огляд">
+  <meta property="og:description" content="Завантаження образів та оновлення систем # LibreELEC CoreELEC Програмний код # LibreELEC CoreELEC Відмінності від оригінальних версій # SSH (логін/пароль) за замовчуванням: root/mcpc З налаштувань «LibreELEC/CoreELEC» видалено функцію автоматичного оновлення системи. В систему інтегровано файловий менеджер «Midnight Commander» та утиліту «htop». Додано сервіс «hid-remote» для налаштування HID-пультів дистанційного керування. Додано пакети (залежності) для роботи «TVLINK IPTV server». «TVLINK IPTV server» можна завантажити, активувати або відключити в налаштуваннях системи. «PVR TVLINK Client» інтегровано в систему. Для «Kodi»:">
+  <meta property="og:locale" content="uk">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Огляд | AlexELEC</title>
+<link rel="icon" href="/icon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://alexelec.github.io/uk/docs/alexelec/docs/about/">
+  <link rel="alternate" hreflang="en" href="https://alexelec.github.io/docs/alexelec/docs/about/" title="About">
+<link rel="stylesheet" href="/book.min.e9f68c3fff3d8236a489d16a9caf6de5e4d1a29c20eb4b5524e42cd30be4d319.css" integrity="sha256-6faMP/89gjakidFqnK9t5eTRopwg60tVJOQs0wvk0xk=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/uk.search.min.3f6429a4da91eb14e8cb30986007059215b6bda26d7e40c5ceeb14044fe9e68c.js" integrity="sha256-P2QppNqR6xToyzCYYAcFkhW2vaJtfkDFzusUBE/p5ow=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/uk/"><img src="/icon.png" alt="Logo" class="book-icon" /><span>AlexELEC</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Пошук" aria-label="Пошук" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+  
+
+
+
+
+  
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex justify-between">
+      <a role="button" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        Українська
+      </a>
+    </label>
+
+    <ul>
+      
+      <li>
+        <a href="/docs/alexelec/docs/about/">
+          English
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f1ab66c78da02bdc35305e50e3dd78a0" class="toggle"  />
+    <label for="section-f1ab66c78da02bdc35305e50e3dd78a0" class="flex justify-between">
+      <a role="button" class="">TVLINK</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/overview/" class="">Огляд</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/install/" class="">Встановлення програми</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/quick-start/" class="">Швидкий старт</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/sources/" class="">Налаштування джерел каналів</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/epg/" class="">Розклад телевізійних передач (EPG)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/profiles/" class="">Профілі користувачів</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/channels/" class="">Канали</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/gpoups/" class="">Групи каналів</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/settings/" class="">Налаштування сервера та потоків</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/status/" class="">Статус роботи та оновлення програми</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/pvr-tvlink-client/" class="">PVR TVLINK клієнт</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/tvlink-conrol/" class="">TVLINK Simple Control</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-fbbbac03216f9c91a2b822eff4da6305" class="toggle" checked />
+    <label for="section-fbbbac03216f9c91a2b822eff4da6305" class="flex justify-between">
+      <a role="button" class="">LibreELEC/CoreELEC (ae-fork)</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/alexelec/docs/about/" class="active">Огляд</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Огляд</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#завантаження-образів-та-оновлення-систем">Завантаження образів та оновлення систем</a></li>
+        <li><a href="#програмний-код">Програмний код</a></li>
+        <li><a href="#відмінності-від-оригінальних-версій">Відмінності від оригінальних версій</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h2 id="завантаження-образів-та-оновлення-систем">
+  Завантаження образів та оновлення систем
+  <a class="anchor" href="#%d0%b7%d0%b0%d0%b2%d0%b0%d0%bd%d1%82%d0%b0%d0%b6%d0%b5%d0%bd%d0%bd%d1%8f-%d0%be%d0%b1%d1%80%d0%b0%d0%b7%d1%96%d0%b2-%d1%82%d0%b0-%d0%be%d0%bd%d0%be%d0%b2%d0%bb%d0%b5%d0%bd%d0%bd%d1%8f-%d1%81%d0%b8%d1%81%d1%82%d0%b5%d0%bc">#</a>
+</h2>
+<ul>
+<li><a target='_blank' href="https://github.com/AlexELEC/LibreELEC-21/releases">LibreELEC</a></li>
+<li><a target='_blank' href="https://github.com/AlexELEC/CoreELEC-21/releases">CoreELEC</a></li>
+</ul>
+<h2 id="програмний-код">
+  Програмний код
+  <a class="anchor" href="#%d0%bf%d1%80%d0%be%d0%b3%d1%80%d0%b0%d0%bc%d0%bd%d0%b8%d0%b9-%d0%ba%d0%be%d0%b4">#</a>
+</h2>
+<ul>
+<li><a target='_blank' href="https://github.com/AlexELEC/LibreELEC-21">LibreELEC</a></li>
+<li><a target='_blank' href="https://github.com/AlexELEC/CoreELEC-21">CoreELEC</a></li>
+</ul>
+<h2 id="відмінності-від-оригінальних-версій">
+  Відмінності від оригінальних версій
+  <a class="anchor" href="#%d0%b2%d1%96%d0%b4%d0%bc%d1%96%d0%bd%d0%bd%d0%be%d1%81%d1%82%d1%96-%d0%b2%d1%96%d0%b4-%d0%be%d1%80%d0%b8%d0%b3%d1%96%d0%bd%d0%b0%d0%bb%d1%8c%d0%bd%d0%b8%d1%85-%d0%b2%d0%b5%d1%80%d1%81%d1%96%d0%b9">#</a>
+</h2>
+<ul>
+<li>SSH (логін/пароль) за замовчуванням: <em>root/mcpc</em></li>
+<li>З налаштувань «LibreELEC/CoreELEC» видалено функцію автоматичного оновлення системи.</li>
+<li>В систему інтегровано файловий менеджер «Midnight Commander» та утиліту «htop».</li>
+<li>Додано сервіс «hid-remote» для налаштування HID-пультів дистанційного керування.</li>
+<li>Додано пакети (залежності) для роботи «TVLINK IPTV server».</li>
+<li>«TVLINK IPTV server» можна завантажити, активувати або відключити в налаштуваннях системи.</li>
+<li>«PVR TVLINK Client» інтегровано в систему.</li>
+</ul>
+<p><strong>Для «Kodi»:</strong></p>
+<ul>
+<li>Додано PVR-API для «PVR TVLINK Client».</li>
+<li>Оптимізовано швидкість перемикання каналів.</li>
+<li>Додано можливість автоматичної зміни параметрів аудіо- та відеопотоків, що необхідно для «TVLINK», коли він змінює потік для того самого каналу.</li>
+<li>Додано репозиторій <a target='_blank' href="https://github.com/AlexELEC/repo-21/tree/master/Omega/common">«AlexELEC Common Add-ons»</a>,
+з якого можна встановити доповнення: «TVLINK Simple Control», «Keyboard Layout» та інші.</li>
+</ul>
+<p><strong>LibreELEC</strong></p>
+<p>В цю систему (в CoreELEC ця можливість є за замовчуванням) додано можливість встановлювати пакети з репозиторію <a target='_blank' href="https://wiki.coreelec.org/coreelec:entware">«Entware»</a>.</p>
+<p><strong>CoreELEC</strong></p>
+<p>Файл конфігурації пульта дистанційного керування (<em>remote.conf</em>) може знаходитися в каталозі «/storage/.config/amremote» або «/storage/.config».
+Останній має пріоритет.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#завантаження-образів-та-оновлення-систем">Завантаження образів та оновлення систем</a></li>
+        <li><a href="#програмний-код">Програмний код</a></li>
+        <li><a href="#відмінності-від-оригінальних-версій">Відмінності від оригінальних версій</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

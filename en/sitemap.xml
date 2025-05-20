@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://alexelec.github.io/docs/alexelec/docs/about/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="uk"
+                href="https://alexelec.github.io/uk/docs/alexelec/docs/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://alexelec.github.io/docs/alexelec/docs/about/"
+                />
+  </url><url>
     <loc>https://alexelec.github.io/docs/tvlink/docs/overview/</loc>
     <xhtml:link
                 rel="alternate"
@@ -36,6 +48,18 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://alexelec.github.io/docs/tvlink/docs/install/"
+                />
+  </url><url>
+    <loc>https://alexelec.github.io/docs/alexelec/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="uk"
+                href="https://alexelec.github.io/uk/docs/alexelec/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://alexelec.github.io/docs/alexelec/"
                 />
   </url><url>
     <loc>https://alexelec.github.io/docs/tvlink/docs/quick-start/</loc>

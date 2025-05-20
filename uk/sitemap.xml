@@ -14,6 +14,18 @@
                 href="https://alexelec.github.io/uk/docs/tvlink/"
                 />
   </url><url>
+    <loc>https://alexelec.github.io/uk/docs/alexelec/docs/about/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://alexelec.github.io/docs/alexelec/docs/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="uk"
+                href="https://alexelec.github.io/uk/docs/alexelec/docs/about/"
+                />
+  </url><url>
     <loc>https://alexelec.github.io/uk/docs/tvlink/docs/overview/</loc>
     <xhtml:link
                 rel="alternate"
@@ -24,6 +36,18 @@
                 rel="alternate"
                 hreflang="uk"
                 href="https://alexelec.github.io/uk/docs/tvlink/docs/overview/"
+                />
+  </url><url>
+    <loc>https://alexelec.github.io/uk/docs/alexelec/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://alexelec.github.io/docs/alexelec/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="uk"
+                href="https://alexelec.github.io/uk/docs/alexelec/"
                 />
   </url><url>
     <loc>https://alexelec.github.io/uk/docs/tvlink/docs/install/</loc>
