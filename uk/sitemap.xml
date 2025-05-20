@@ -134,6 +134,30 @@
                 href="https://alexelec.github.io/uk/docs/tvlink/docs/status/"
                 />
   </url><url>
+    <loc>https://alexelec.github.io/uk/docs/tvlink/docs/pvr-tvlink-client/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://alexelec.github.io/docs/tvlink/docs/pvr-tvlink-client/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="uk"
+                href="https://alexelec.github.io/uk/docs/tvlink/docs/pvr-tvlink-client/"
+                />
+  </url><url>
+    <loc>https://alexelec.github.io/uk/docs/tvlink/docs/tvlink-conrol/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://alexelec.github.io/docs/tvlink/docs/tvlink-conrol/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="uk"
+                href="https://alexelec.github.io/uk/docs/tvlink/docs/tvlink-conrol/"
+                />
+  </url><url>
     <loc>https://alexelec.github.io/uk/categories/</loc>
     <xhtml:link
                 rel="alternate"

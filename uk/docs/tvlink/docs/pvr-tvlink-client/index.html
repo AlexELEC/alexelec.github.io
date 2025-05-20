@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="uk" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  PVR TVLINK клієнт для Kodi
+  #
+
+Як клієнт (IPTV-програвач) для «TVLINK» найкраще підходить «PVR TVLINK Client» для «Kodi».
+Лише цей клієнт надасть вам усі можливості сервера «TVLINK».
+Серед них, наприклад, непомітне для користувача перемикання потоків (у разі збоїв трансляції) одного й того самого каналу з різними форматами аудіо та відео.
+Клієнт підтримує Timeshift (паузу/перемотування), IPTV-архіви та EPG.
+
+  
+
+Код клієнта базується на «PVR IPTV Simple»,
+але розроблений так, щоб відповідати всім вимогам «TVLINK».
+Наприклад, клієнт ніколи не розриватиме з&rsquo;єднання з сервером «TVLINK» самостійно.
+Це відбудеться лише тоді, коли користувач перемкне канал або зупинить трансляцію каналу.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://alexelec.github.io/uk/docs/tvlink/docs/pvr-tvlink-client/">
+  <meta property="og:site_name" content="AlexELEC">
+  <meta property="og:title" content="PVR TVLINK клієнт">
+  <meta property="og:description" content="PVR TVLINK клієнт для Kodi # Як клієнт (IPTV-програвач) для «TVLINK» найкраще підходить «PVR TVLINK Client» для «Kodi». Лише цей клієнт надасть вам усі можливості сервера «TVLINK». Серед них, наприклад, непомітне для користувача перемикання потоків (у разі збоїв трансляції) одного й того самого каналу з різними форматами аудіо та відео. Клієнт підтримує Timeshift (паузу/перемотування), IPTV-архіви та EPG.
+Код клієнта базується на «PVR IPTV Simple», але розроблений так, щоб відповідати всім вимогам «TVLINK». Наприклад, клієнт ніколи не розриватиме з’єднання з сервером «TVLINK» самостійно. Це відбудеться лише тоді, коли користувач перемкне канал або зупинить трансляцію каналу.">
+  <meta property="og:locale" content="uk">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>PVR TVLINK клієнт | AlexELEC</title>
+<link rel="icon" href="/icon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://alexelec.github.io/uk/docs/tvlink/docs/pvr-tvlink-client/">
+  <link rel="alternate" hreflang="en" href="https://alexelec.github.io/docs/tvlink/docs/pvr-tvlink-client/" title="PVR TVLINK Client">
+<link rel="stylesheet" href="/book.min.e9f68c3fff3d8236a489d16a9caf6de5e4d1a29c20eb4b5524e42cd30be4d319.css" integrity="sha256-6faMP/89gjakidFqnK9t5eTRopwg60tVJOQs0wvk0xk=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/uk.search.min.233ce4b4756bf7844026479288ea8327590d167c32cc7e4d6e0fab543cbab194.js" integrity="sha256-IzzktHVr94RAJkeSiOqDJ1kNFnwyzH5Nbg&#43;rVDy6sZQ=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/uk/"><img src="/icon.png" alt="Logo" class="book-icon" /><span>AlexELEC</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Пошук" aria-label="Пошук" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+  
+
+
+
+
+  
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex justify-between">
+      <a role="button" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        Українська
+      </a>
+    </label>
+
+    <ul>
+      
+      <li>
+        <a href="/docs/tvlink/docs/pvr-tvlink-client/">
+          English
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f1ab66c78da02bdc35305e50e3dd78a0" class="toggle" checked />
+    <label for="section-f1ab66c78da02bdc35305e50e3dd78a0" class="flex justify-between">
+      <a role="button" class="">TVLINK</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/overview/" class="">Огляд</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/install/" class="">Встановлення програми</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/quick-start/" class="">Швидкий старт</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/sources/" class="">Налаштування джерел каналів</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/epg/" class="">Розклад телевізійних передач (EPG)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/profiles/" class="">Профілі користувачів</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/channels/" class="">Канали</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/gpoups/" class="">Групи каналів</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/settings/" class="">Налаштування сервера та потоків</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/status/" class="">Статус роботи та оновлення програми</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/pvr-tvlink-client/" class="active">PVR TVLINK клієнт</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/uk/docs/tvlink/docs/tvlink-conrol/" class="">TVLINK Simple Control</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>PVR TVLINK клієнт</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#pvr-tvlink-клієнт-для-kodi">PVR TVLINK клієнт для Kodi</a></li>
+        <li><a href="#налаштування">Налаштування</a>
+          <ul>
+            <li><a href="#general">«General»</a></li>
+            <li><a href="#streams">«Streams»</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h2 id="pvr-tvlink-клієнт-для-kodi">
+  PVR TVLINK клієнт для Kodi
+  <a class="anchor" href="#pvr-tvlink-%d0%ba%d0%bb%d1%96%d1%94%d0%bd%d1%82-%d0%b4%d0%bb%d1%8f-kodi">#</a>
+</h2>
+<p>Як клієнт (IPTV-програвач) для «TVLINK» найкраще підходить «PVR TVLINK Client» для «Kodi».
+Лише цей клієнт надасть вам усі можливості сервера «TVLINK».
+Серед них, наприклад, непомітне для користувача перемикання потоків (у разі збоїв трансляції) одного й того самого каналу з різними форматами аудіо та відео.
+Клієнт підтримує Timeshift (паузу/перемотування), IPTV-архіви та EPG.</p>
+<p align="center">
+  <a href="/tvlink/pvr-client/01.png"><img src="/tvlink/pvr-client/01.png" width="480"/></a>
+</p>
+<p><a target='_blank' href="https://github.com/AlexELEC/pvr.tvlink">Код клієнта</a> базується на <a target='_blank' href="https://github.com/kodi-pvr/pvr.iptvsimple">«PVR IPTV Simple»</a>,
+але розроблений так, щоб відповідати всім вимогам «TVLINK».
+Наприклад, клієнт ніколи не розриватиме з&rsquo;єднання з сервером «TVLINK» самостійно.
+Це відбудеться лише тоді, коли користувач перемкне канал або зупинить трансляцію каналу.</p>
+<blockquote class="book-hint warning">
+<p>Для роботи «PVR TVLINK Client» потрібна модифікована версія «Kodi»; він не працюватиме з оригінальною версією «Kodi».</p>
+</blockquote>
+<h2 id="налаштування">
+  Налаштування
+  <a class="anchor" href="#%d0%bd%d0%b0%d0%bb%d0%b0%d1%88%d1%82%d1%83%d0%b2%d0%b0%d0%bd%d0%bd%d1%8f">#</a>
+</h2>
+<h3 id="general">
+  «General»
+  <a class="anchor" href="#general">#</a>
+</h3>
+<p align="center">
+  <a href="/tvlink/pvr-client/02.png"><img src="/tvlink/pvr-client/02.png" width="480"/></a>
+</p>
+<ul>
+<li>
+<p>«TVLINK IP-address» – IP-адреса сервера «TVLINK».</p>
+</li>
+<li>
+<p>«TVLINK port» – порт сервера «TVLINK».</p>
+</li>
+<li>
+<p>«TVLINK profile» – профіль користувача на сервері «TVLINK». Якщо не вказано, використовується основний профіль (main).</p>
+</li>
+<li>
+<p>«Auth. Token» – токен авторизації, якщо потрібен.</p>
+</li>
+<li>
+<p>«FFmpeg playlist» – увімкніть, якщо ви хочете отримувати трансляції, які оброблятимуться ffmpeg-модулем «TVLINK».</p>
+</li>
+</ul>
+<h3 id="streams">
+  «Streams»
+  <a class="anchor" href="#streams">#</a>
+</h3>
+<p align="center">
+  <a href="/tvlink/pvr-client/03.png"><img src="/tvlink/pvr-client/03.png" width="480"/></a>
+</p>
+<ul>
+<li>
+<p>«TVLINK connection timeout» – тайм-аут з’єднання клієнта з сервером «TVLINK» для отримання списку каналів. Ця опція не впливає на трансляції.</p>
+</li>
+<li>
+<p>«Buffering streams» – якщо активовано, клієнт буде додатково буферизувати потоки (засобами Kodi).</p>
+</li>
+<li>
+<p>«FFmpegDirect for Timeshift» – вмикає функцію Timeshift через доповнення «Inputstream FFmpeg Direct».</p>
+</li>
+<li>
+<p>«FFmpegDirect for Catchup» – вмикає функцію Catchup через доповнення «Inputstream FFmpeg Direct».</p>
+</li>
+</ul>
+<p>Дві останні опції («FFmpegDirect for &hellip;») будуть працювати тільки якщо ви встановите доповнення <a target='_blank' href="https://kodi.wiki/view/Add-on:Inputstream_FFmpeg_Direct">«Inputstream FFmpeg Direct»</a>.
+В іншому випадку кліент їх буде ігнорувати.</p>
+<p>«Timeshift» працює тільки коли ввімкненна опція «FFmpegDirect for Timeshift». Для роботи IPTV-архівів (Catchup) – «FFmpegDirect for Catchup» не обовязкова.</p>
+<blockquote class="book-hint info">
+<p>Доповнення «Inputstream FFmpeg Direct» не корректно (на данний час) працює на деяких архітектурах, наприклад Intel.
+Якщо ви активуете «FFmpegDirect for Timeshift» – у вас перестане працювати автоматична зміна потоків в каналі.
+Доповнення «Inputstream FFmpeg Direct», через яке будуть проходити потоки, не вміє автоматично змінювати параметри потоку.</p>
+</blockquote>
+<hr>
+<p>Всі інші налаштування такі самі як і в «PVR IPTV Simple» клієнта.</p>
+<p align="center">
+  <a href="/tvlink/pvr-client/04.png"><img src="/tvlink/pvr-client/04.png" width="480"/></a>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#pvr-tvlink-клієнт-для-kodi">PVR TVLINK клієнт для Kodi</a></li>
+        <li><a href="#налаштування">Налаштування</a>
+          <ul>
+            <li><a href="#general">«General»</a></li>
+            <li><a href="#streams">«Streams»</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

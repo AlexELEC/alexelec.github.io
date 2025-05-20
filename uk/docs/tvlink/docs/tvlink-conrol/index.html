@@ -4,44 +4,58 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
-  Швидкий старт
+  Доповнення «TVLINK Simple Control» для Kodi
   #
 
-
-Мається на увазі, що всі налаштування встановлені за замовчуванням.
-
-Після встановлення та запуску програми введіть у вашому браузері адресу: «http://ip-address:2020».
-Де «ip-address» — це адреса комп’ютера, на якому встановлено «TVLINK».
-Активуйте «Playlists sources» і натисніть кнопку «Add playlist».
+Доповнення можна встановити з репозиторію «AlexELEC Common Add-ons»,
+яке є в системах «LibreELEC/CoreELEC (ae-fork)».
 
   
 
-У формі «Add new playlist» вкажіть назву плейліста (Playlist name) та URL-адресу або шлях до файлу
-(Playlist path) цього плейліста.
+Дозволяє контролювати потоки каналу (вмикати/вимикати) та показує (виділяє жовтим кольором) посилання на потік, який транслюється в цей момент.
 
-назва плейлиста повинна бути латинськими літерами, без спеціальних символів і не повинна починатися з цифри
-шлях до файлу потрібно починати з «file://», наприклад: file:///Data/Media/playlist.m3u
+  
 
-Після підтвердження (Save changes) активуйте перемикач «Add channels» цього джерела каналів і натисніть
-іконку «Update».">
+Також надає можливість:
+
+послідовно перемикати потоки каналу;
+оновлювати джерела каналів «TVLINK»;
+показувати інформацію про підключених до «TVLINK» клієнтів;
+показувати інформацію про використання оперативної пам’яті та сокетів.
+
+
+  
+
+
+  Налаштування
+  #
+
+
+  
+
+
+«IP-address TVLINK» – IP-адреса сервера «TVLINK»
+«Port TVLINK» – порт сервера «TVLINK»
+
+
+Якщо «IP-address TVLINK» не вказано, «TVLINK Simple Control» використовує адресу «127.0.0.1».">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://alexelec.github.io/uk/docs/tvlink/docs/quick-start/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://alexelec.github.io/uk/docs/tvlink/docs/tvlink-conrol/">
   <meta property="og:site_name" content="AlexELEC">
-  <meta property="og:title" content="Швидкий старт">
-  <meta property="og:description" content="Швидкий старт # Мається на увазі, що всі налаштування встановлені за замовчуванням.
-Після встановлення та запуску програми введіть у вашому браузері адресу: «http://ip-address:2020». Де «ip-address» — це адреса комп’ютера, на якому встановлено «TVLINK».
-Активуйте «Playlists sources» і натисніть кнопку «Add playlist».
-У формі «Add new playlist» вкажіть назву плейліста (Playlist name) та URL-адресу або шлях до файлу (Playlist path) цього плейліста.
-назва плейлиста повинна бути латинськими літерами, без спеціальних символів і не повинна починатися з цифри шлях до файлу потрібно починати з «file://», наприклад: file:///Data/Media/playlist.m3u Після підтвердження (Save changes) активуйте перемикач «Add channels» цього джерела каналів і натисніть іконку «Update».">
+  <meta property="og:title" content="TVLINK Simple Control">
+  <meta property="og:description" content="Доповнення «TVLINK Simple Control» для Kodi # Доповнення можна встановити з репозиторію «AlexELEC Common Add-ons», яке є в системах «LibreELEC/CoreELEC (ae-fork)».
+Дозволяє контролювати потоки каналу (вмикати/вимикати) та показує (виділяє жовтим кольором) посилання на потік, який транслюється в цей момент.
+Також надає можливість:
+послідовно перемикати потоки каналу; оновлювати джерела каналів «TVLINK»; показувати інформацію про підключених до «TVLINK» клієнтів; показувати інформацію про використання оперативної пам’яті та сокетів. Налаштування # «IP-address TVLINK» – IP-адреса сервера «TVLINK» «Port TVLINK» – порт сервера «TVLINK» Якщо «IP-address TVLINK» не вказано, «TVLINK Simple Control» використовує адресу «127.0.0.1».">
   <meta property="og:locale" content="uk">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>Швидкий старт | AlexELEC</title>
+<title>TVLINK Simple Control | AlexELEC</title>
 <link rel="icon" href="/icon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="https://alexelec.github.io/uk/docs/tvlink/docs/quick-start/">
-  <link rel="alternate" hreflang="en" href="https://alexelec.github.io/docs/tvlink/docs/quick-start/" title="Quick Start">
+<link rel="canonical" href="https://alexelec.github.io/uk/docs/tvlink/docs/tvlink-conrol/">
+  <link rel="alternate" hreflang="en" href="https://alexelec.github.io/docs/tvlink/docs/tvlink-conrol/" title="TVLINK Simple Control">
 <link rel="stylesheet" href="/book.min.e9f68c3fff3d8236a489d16a9caf6de5e4d1a29c20eb4b5524e42cd30be4d319.css" integrity="sha256-6faMP/89gjakidFqnK9t5eTRopwg60tVJOQs0wvk0xk=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/uk.search.min.233ce4b4756bf7844026479288ea8327590d167c32cc7e4d6e0fab543cbab194.js" integrity="sha256-IzzktHVr94RAJkeSiOqDJ1kNFnwyzH5Nbg&#43;rVDy6sZQ=" crossorigin="anonymous"></script>
@@ -97,7 +111,7 @@ https://github.com/alex-shpak/hugo-book
     <ul>
       
       <li>
-        <a href="/docs/tvlink/docs/quick-start/">
+        <a href="/docs/tvlink/docs/tvlink-conrol/">
           English
         </a>
       </li>
@@ -171,7 +185,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/uk/docs/tvlink/docs/quick-start/" class="active">Швидкий старт</a>
+    <a href="/uk/docs/tvlink/docs/quick-start/" class="">Швидкий старт</a>
   
 
         </li>
@@ -288,7 +302,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/uk/docs/tvlink/docs/tvlink-conrol/" class="">TVLINK Simple Control</a>
+    <a href="/uk/docs/tvlink/docs/tvlink-conrol/" class="active">TVLINK Simple Control</a>
   
 
         </li>
@@ -334,7 +348,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <h3>Швидкий старт</h3>
+  <h3>TVLINK Simple Control</h3>
 
   <label for="toc-control">
     
@@ -352,7 +366,8 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li>
       <ul>
-        <li><a href="#швидкий-старт">Швидкий старт</a></li>
+        <li><a href="#доповнення-tvlink-simple-control-для-kodi">Доповнення «TVLINK Simple Control» для Kodi</a></li>
+        <li><a href="#налаштування">Налаштування</a></li>
       </ul>
     </li>
   </ul>
@@ -367,42 +382,52 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h2 id="швидкий-старт">
-  Швидкий старт
-  <a class="anchor" href="#%d1%88%d0%b2%d0%b8%d0%b4%d0%ba%d0%b8%d0%b9-%d1%81%d1%82%d0%b0%d1%80%d1%82">#</a>
+  <article class="markdown book-article"><h2 id="доповнення-tvlink-simple-control-для-kodi">
+  Доповнення «TVLINK Simple Control» для Kodi
+  <a class="anchor" href="#%d0%b4%d0%be%d0%bf%d0%be%d0%b2%d0%bd%d0%b5%d0%bd%d0%bd%d1%8f-tvlink-simple-control-%d0%b4%d0%bb%d1%8f-kodi">#</a>
 </h2>
-<blockquote class="book-hint info">
-<p>Мається на увазі, що всі налаштування встановлені за замовчуванням.</p>
-</blockquote>
-<p>Після встановлення та запуску програми введіть у вашому браузері адресу: «http://ip-address:2020».
-Де «ip-address» — це адреса комп’ютера, на якому встановлено «TVLINK».</p>
-<p>Активуйте «Playlists sources» і натисніть кнопку «Add playlist».</p>
+<p>Доповнення можна встановити з репозиторію <a target='_blank' href="https://github.com/AlexELEC/repo-21/tree/master/Omega/common">«AlexELEC Common Add-ons»</a>,
+яке є в системах «LibreELEC/CoreELEC (ae-fork)».</p>
 <p align="center">
-  <a href="/tvlink/quick-start/01.png"><img src="/tvlink/quick-start/01.png" width="480"/></a>
+  <a href="/tvlink/tvlink-control/01.png"><img src="/tvlink/tvlink-control/01.png" width="480"/></a>
 </p>
-<p>У формі «Add new playlist» вкажіть назву плейліста (Playlist name) та URL-адресу або шлях до файлу
-(Playlist path) цього плейліста.</p>
+<p>Дозволяє контролювати потоки каналу (вмикати/вимикати) та показує (виділяє жовтим кольором) посилання на потік, який транслюється в цей момент.</p>
+<p align="center">
+  <a href="/tvlink/tvlink-control/02.png"><img src="/tvlink/tvlink-control/02.png" width="480"/></a>
+</p>
+<p>Також надає можливість:</p>
 <ul>
-<li>назва плейлиста повинна бути латинськими літерами, без спеціальних символів і не повинна починатися з цифри</li>
-<li>шлях до файлу потрібно починати з «file://», наприклад: file:///Data/Media/playlist.m3u</li>
+<li>послідовно перемикати потоки каналу;</li>
+<li>оновлювати джерела каналів «TVLINK»;</li>
+<li>показувати інформацію про підключених до «TVLINK» клієнтів;</li>
+<li>показувати інформацію про використання оперативної пам’яті та сокетів.</li>
 </ul>
-<p>Після підтвердження (Save changes) активуйте перемикач «Add channels» цього джерела каналів і натисніть
-іконку «Update».</p>
 <p align="center">
-  <a href="/tvlink/quick-start/02.png"><img src="/tvlink/quick-start/02.png" width="480"/></a>
+  <a href="/tvlink/tvlink-control/03.png"><img src="/tvlink/tvlink-control/03.png" width="480"/></a>
 </p>
-<p>В результаті цих дій усі канали з вашого плейлиста будуть додані до «TVLINK», а саме на сторінку «Channels»
-(так званий «mapping» каналів). Цього вже буде достатньо, щоб почати перегляд каналів.</p>
+<h2 id="налаштування">
+  Налаштування
+  <a class="anchor" href="#%d0%bd%d0%b0%d0%bb%d0%b0%d1%88%d1%82%d1%83%d0%b2%d0%b0%d0%bd%d0%bd%d1%8f">#</a>
+</h2>
 <p align="center">
-  <a href="/tvlink/quick-start/03.png"><img src="/tvlink/quick-start/03.png" width="480"/></a>
+  <a href="/tvlink/tvlink-control/04.png"><img src="/tvlink/tvlink-control/04.png" width="480"/></a>
 </p>
-<p>На сторінці «About» ви можете завантажити плейлист (M3U Playlist) і відкрити його в будь-якому IPTV-плеєрі,
-наприклад <a target='_blank' href="https://www.videolan.org/vlc/">VLC</a>.
-Або на сторінці «Channels», у колонці «ID», ви можете натиснути синій трикутник (Play) і переглядати
-канал безпосередньо у веб-інтерфейсі.</p>
-<p align="center">
-  <a href="/tvlink/quick-start/04.png"><img src="/tvlink/quick-start/04.png" width="480"/></a>
-</p>
+<ul>
+<li>«IP-address TVLINK» – IP-адреса сервера «TVLINK»</li>
+<li>«Port TVLINK» – порт сервера «TVLINK»</li>
+</ul>
+<blockquote class="book-hint info">
+<p>Якщо «IP-address TVLINK» не вказано, «TVLINK Simple Control» використовує адресу «127.0.0.1».</p>
+</blockquote>
+<p>У модифікованих (ae-fork) ELEC-системах доповнення викликається довгим натисканням кнопки «і» (info) на клавіатурі.
+Для пультів дистанційного керування в цих системах зроблені такі налаштування файлу «keyboard.xml» у Kodi.</p>
+<pre><code>&lt;FullscreenLiveTV&gt;
+    &lt;keyboard&gt;
+        …
+        &lt;i mod=&quot;longpress&quot;&gt;RunAddon(script.tvlink.conrol)&lt;/i&gt;
+    &lt;/keyboard&gt;
+&lt;/FullscreenLiveTV&gt;
+</code></pre>
 </article>
  
       
@@ -446,7 +471,8 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li>
       <ul>
-        <li><a href="#швидкий-старт">Швидкий старт</a></li>
+        <li><a href="#доповнення-tvlink-simple-control-для-kodi">Доповнення «TVLINK Simple Control» для Kodi</a></li>
+        <li><a href="#налаштування">Налаштування</a></li>
       </ul>
     </li>
   </ul>
