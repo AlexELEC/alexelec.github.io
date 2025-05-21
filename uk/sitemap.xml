@@ -62,6 +62,18 @@
                 href="https://alexelec.github.io/uk/docs/tvlink/docs/install/"
                 />
   </url><url>
+    <loc>https://alexelec.github.io/uk/docs/alexelec/docs/hid-remote/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://alexelec.github.io/docs/alexelec/docs/hid-remote/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="uk"
+                href="https://alexelec.github.io/uk/docs/alexelec/docs/hid-remote/"
+                />
+  </url><url>
     <loc>https://alexelec.github.io/uk/docs/tvlink/docs/quick-start/</loc>
     <xhtml:link
                 rel="alternate"

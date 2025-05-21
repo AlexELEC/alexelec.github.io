@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  HID Remote Control Configuration in «LibreELEC/CoreELEC» (ae-fork) Systems
+  #
+
+
+A &ldquo;Human Interface Device&rdquo; (HID) remote control refers to a remote control that functions as a standard keyboard or mouse input device.
+It allows users to interact with a computer or other device by emulating standard input actions like keyboard key presses or mouse clicks.
+
+HID remote controls have some advantages over IR remotes. Firstly, you do not need to point the remote at the signal receiver.
+Secondly, HID remotes (as they emulate a keyboard) support the «long press» function. This means that one button can be programmed for two different actions.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://alexelec.github.io/docs/alexelec/docs/hid-remote/">
+  <meta property="og:site_name" content="AlexELEC">
+  <meta property="og:title" content="HID Remote Control Configuration">
+  <meta property="og:description" content="HID Remote Control Configuration in «LibreELEC/CoreELEC» (ae-fork) Systems # A “Human Interface Device” (HID) remote control refers to a remote control that functions as a standard keyboard or mouse input device. It allows users to interact with a computer or other device by emulating standard input actions like keyboard key presses or mouse clicks.
+HID remote controls have some advantages over IR remotes. Firstly, you do not need to point the remote at the signal receiver. Secondly, HID remotes (as they emulate a keyboard) support the «long press» function. This means that one button can be programmed for two different actions.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>HID Remote Control Configuration | AlexELEC</title>
+<link rel="icon" href="/icon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://alexelec.github.io/docs/alexelec/docs/hid-remote/">
+  <link rel="alternate" hreflang="uk" href="https://alexelec.github.io/uk/docs/alexelec/docs/hid-remote/" title="Налаштування HID-пульта дистанційного керування">
+<link rel="stylesheet" href="/book.min.e9f68c3fff3d8236a489d16a9caf6de5e4d1a29c20eb4b5524e42cd30be4d319.css" integrity="sha256-6faMP/89gjakidFqnK9t5eTRopwg60tVJOQs0wvk0xk=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.e490d07b568c868f404c410fd1d1da6e69459a8edd3998b23fb98e017a51ada8.js" integrity="sha256-5JDQe1aMho9ATEEP0dHabmlFmo7dOZiyP7mOAXpRrag=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/icon.png" alt="Logo" class="book-icon" /><span>AlexELEC</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+  
+
+
+
+
+  
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex justify-between">
+      <a role="button" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        English
+      </a>
+    </label>
+
+    <ul>
+      
+      <li>
+        <a href="/uk/docs/alexelec/docs/hid-remote/">
+          Українська
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d07a34546bb4e0ac882f6f54f9c10f00" class="toggle"  />
+    <label for="section-d07a34546bb4e0ac882f6f54f9c10f00" class="flex justify-between">
+      <a role="button" class="">TVLINK</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/overview/" class="">Overview</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/install/" class="">Installation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/quick-start/" class="">Quick Start</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/sources/" class="">Channel Sources Configuration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/epg/" class="">Electronic Program Guide</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/profiles/" class="">User Profiles</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/channels/" class="">Channels</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/gpoups/" class="">Channel Groups</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/settings/" class="">Server and Stream Configuration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/status/" class="">Work Status and Program Updates</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/pvr-tvlink-client/" class="">PVR TVLINK Client</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tvlink/docs/tvlink-conrol/" class="">TVLINK Simple Control</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7a24726ec9a3d6ba1db0afdc061c75d7" class="toggle" checked />
+    <label for="section-7a24726ec9a3d6ba1db0afdc061c75d7" class="flex justify-between">
+      <a role="button" class="">LibreELEC/CoreELEC (ae-fork)</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/alexelec/docs/about/" class="">About</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/alexelec/docs/hid-remote/" class="active">HID Remote Control Configuration</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>HID Remote Control Configuration</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#hid-remote-control-configuration-in-libreeleccoreelec-ae-fork-systems">HID Remote Control Configuration in «LibreELEC/CoreELEC» (ae-fork) Systems</a></li>
+        <li><a href="#hid-remote-service">«HID-Remote» Service</a></li>
+        <li><a href="#manual-configuration-for-the-hid-remote-service">Manual Configuration for the «HID-Remote» Service</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h2 id="hid-remote-control-configuration-in-libreeleccoreelec-ae-fork-systems">
+  HID Remote Control Configuration in «LibreELEC/CoreELEC» (ae-fork) Systems
+  <a class="anchor" href="#hid-remote-control-configuration-in-libreeleccoreelec-ae-fork-systems">#</a>
+</h2>
+<blockquote class="book-hint info">
+<p>A &ldquo;Human Interface Device&rdquo; (HID) remote control refers to a remote control that functions as a standard keyboard or mouse input device.
+It allows users to interact with a computer or other device by emulating standard input actions like keyboard key presses or mouse clicks.</p>
+</blockquote>
+<p>HID remote controls have some advantages over IR remotes. Firstly, you do not need to point the remote at the signal receiver.
+Secondly, HID remotes (as they emulate a keyboard) support the «long press» function. This means that one button can be programmed for two different actions.</p>
+<p>This instruction concerns «G20S PRO» (USB 2.4G) and «G20S PRO BT» (USB 2.4G + Bluetooth) remote controls, which do not differ in appearance but have different button codes.
+We will only use the «USB 2.4G» interface.</p>
+<p>The «HID-Remote» service uses the <a target='_blank' href="https://github.com/AlexELEC/hid_mapper/blob/master/README">«hid_mapper»</a> utility.</p>
+<p align="center">
+  <a href="/alexelec/hid-remote/01.png"><img src="/alexelec/hid-remote/01.png" width="480"/></a>
+</p>
+<blockquote class="book-hint warning">
+<p>Attention! After the system is turned off, the remote goes to sleep mode.
+This saves battery power, but upon the next power-on, you need to press any button several times for the remote to wake up.</p>
+<p>If you press the keyboard/mouse switch button, this will change the button codes that the remote control sends.
+Accordingly, some buttons may stop working.</p>
+</blockquote>
+<h2 id="hid-remote-service">
+  «HID-Remote» Service
+  <a class="anchor" href="#hid-remote-service">#</a>
+</h2>
+<p>All settings are located in the «/storage/.config/hid_remote/» directory. Hereafter, all file paths will be relative to this directory.</p>
+<p>For «G20S PRO/G20S PRO BT» remotes (and for some others), a configuration already exists in the system.
+You only need to replace the contents of the «remote.map» file with the contents of the «sample/Gi20sPRO.map» or «sample/Gi20sPRO-BT.map»
+file (for G20S PRO BT) and specify the values for the «MANUFACTURER» and «PRODUCT» variables in the «device.conf» file.
+The corresponding values for these variables are also located in the mentioned «map» files. After that, you will only need to enable the «HID-Remote» service.</p>
+<p align="center">
+  <a href="/alexelec/hid-remote/02.png"><img src="/alexelec/hid-remote/02.png" width="480"/></a>
+</p>
+<blockquote class="book-hint info">
+<p>When the «HID-Remote» service is activated, the «Eventlircd» service will be disabled. This is done to prevent the double triggering effect of the remote control buttons.</p>
+</blockquote>
+<h2 id="manual-configuration-for-the-hid-remote-service">
+  Manual Configuration for the «HID-Remote» Service
+  <a class="anchor" href="#manual-configuration-for-the-hid-remote-service">#</a>
+</h2>
+<p>If you have a remote of another model, you do not need to configure all of its buttons.
+Usually, only two or three buttons may not work because they send the press code of several keys at once.
+This may also be necessary if you want to remap the action of a specific button.</p>
+<p>Stop the «Kodi» and «Eventlircd» services by executing the following commands in the terminal:</p>
+<pre><code>systemctl stop kodi
+systemctl stop eventlircd
+</code></pre>
+<p>In the «device.conf» file, you need to set the values for the «MANUFACTURER» and «PRODUCT» variables for your HID device.
+To do this, execute the command (there is a hint in the device.conf file):</p>
+<pre><code>hid-remote --list-devices --lookup-id
+</code></pre>
+<p>If you do not have other input devices connected (besides the remote), you will see something like this:</p>
+<p align="center">
+  <a href="/alexelec/hid-remote/03.png"><img src="/alexelec/hid-remote/03.png" width="480"/></a>
+</p>
+<p>Here, two devices with the same «Manufacturer/Product name» values are shown — this is because the remote is identified as both a keyboard and a mouse.</p>
+<p>Enter the obtained values into the «device.conf» file.</p>
+<pre><code>MANUFACTURER=&quot;1915&quot;
+PRODUCT=&quot;1025&quot;
+</code></pre>
+<p>Now, let&rsquo;s configure the «remote.map» file by mapping the remote button codes to the desired keyboard keys.</p>
+<p>The format of the «remote.map» file is:</p>
+<pre><code>Remote_Button_Code:Keyboard_Key_Name
+</code></pre>
+<p>For example:</p>
+<pre><code>024100:KEY_ENTER
+</code></pre>
+<p>Let&rsquo;s determine the code of the required remote button. To do this, execute the following command:</p>
+<pre><code>hid-remote --lookup-id --learn --manufacturer &lt;MANUFACTURER&gt; --product &lt;PRODUCT&gt;
+</code></pre>
+<p>Here, you need to substitute the values of the «MANUFACTURER» and «PRODUCT» variables that we obtained earlier.
+Press the desired button on the remote and get its code.</p>
+<p>The example below shows the code for the «OK» button.</p>
+<p align="center">
+  <a href="/alexelec/hid-remote/04.png"><img src="/alexelec/hid-remote/04.png" width="480"/></a>
+</p>
+<pre><code>02 41 00 - button press code
+02 00 00 - button release code (it will be the same for almost all buttons)
+</code></pre>
+<p>We need the first code. Write it to the «remote.map» file without spaces.</p>
+<p>In the «sample/keys.sample» file, you will find all the necessary keyboard key names.</p>
+<p>After editing the «device.conf» and «remote.map» files, activate the «HID-Remote» service in the system settings.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#hid-remote-control-configuration-in-libreeleccoreelec-ae-fork-systems">HID Remote Control Configuration in «LibreELEC/CoreELEC» (ae-fork) Systems</a></li>
+        <li><a href="#hid-remote-service">«HID-Remote» Service</a></li>
+        <li><a href="#manual-configuration-for-the-hid-remote-service">Manual Configuration for the «HID-Remote» Service</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
