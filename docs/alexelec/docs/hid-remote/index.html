@@ -30,7 +30,7 @@ HID remote controls have some advantages over IR remotes. Firstly, you do not ne
   <link rel="alternate" hreflang="uk" href="https://alexelec.github.io/uk/docs/alexelec/docs/hid-remote/" title="Налаштування HID-пульта дистанційного керування">
 <link rel="stylesheet" href="/book.min.e9f68c3fff3d8236a489d16a9caf6de5e4d1a29c20eb4b5524e42cd30be4d319.css" integrity="sha256-6faMP/89gjakidFqnK9t5eTRopwg60tVJOQs0wvk0xk=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.e490d07b568c868f404c410fd1d1da6e69459a8edd3998b23fb98e017a51ada8.js" integrity="sha256-5JDQe1aMho9ATEEP0dHabmlFmo7dOZiyP7mOAXpRrag=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.a8c2421421105147b2e66bd34b47dc67e1963c8e14e146e1338e92931a4c0ecb.js" integrity="sha256-qMJCFCEQUUey5mvTS0fcZ&#43;GWPI4U4UbhM46SkxpMDss=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 <!--
@@ -388,6 +388,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#hid-remote-control-configuration-in-libreeleccoreelec-ae-fork-systems">HID Remote Control Configuration in «LibreELEC/CoreELEC» (ae-fork) Systems</a></li>
         <li><a href="#hid-remote-service">«HID-Remote» Service</a></li>
         <li><a href="#manual-configuration-for-the-hid-remote-service">Manual Configuration for the «HID-Remote» Service</a></li>
+        <li><a href="#the-power-button">The «Power» Button</a></li>
       </ul>
     </li>
   </ul>
@@ -485,6 +486,25 @@ Press the desired button on the remote and get its code.</p>
 <p>We need the first code. Write it to the «remote.map» file without spaces.</p>
 <p>In the «sample/keys.sample» file, you will find all the necessary keyboard key names.</p>
 <p>After editing the «device.conf» and «remote.map» files, activate the «HID-Remote» service in the system settings.</p>
+<h2 id="the-power-button">
+  The «Power» Button
+  <a class="anchor" href="#the-power-button">#</a>
+</h2>
+<p>Usually, the «Power» button on the remote control functions the same way as the «Power» button on the computer case: it immediately turns off the computer.
+If this behavior does not suit you, and you wish for this button to bring up the «Shoutdown» menu (for example, for setting a timer), follow these steps:</p>
+<ol>
+<li>
+<p>Copy the file «/etc/systemd/logind.conf» to the directory «/storage/.config/logind.conf.d».</p>
+</li>
+<li>
+<p>Edit the following line in the copied file:</p>
+</li>
+</ol>
+<blockquote class="book-hint ">
+<pre><code>HandlePowerKey=ignore
+</code></pre>
+</blockquote>
+<p>To make the changes take effect, you need to reboot the system.</p>
 </article>
  
       
@@ -531,6 +551,7 @@ Press the desired button on the remote and get its code.</p>
         <li><a href="#hid-remote-control-configuration-in-libreeleccoreelec-ae-fork-systems">HID Remote Control Configuration in «LibreELEC/CoreELEC» (ae-fork) Systems</a></li>
         <li><a href="#hid-remote-service">«HID-Remote» Service</a></li>
         <li><a href="#manual-configuration-for-the-hid-remote-service">Manual Configuration for the «HID-Remote» Service</a></li>
+        <li><a href="#the-power-button">The «Power» Button</a></li>
       </ul>
     </li>
   </ul>
