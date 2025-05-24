@@ -26,6 +26,18 @@
                 href="https://alexelec.github.io/uk/docs/alexelec/docs/about/"
                 />
   </url><url>
+    <loc>https://alexelec.github.io/uk/docs/android/docs/about/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://alexelec.github.io/docs/android/docs/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="uk"
+                href="https://alexelec.github.io/uk/docs/android/docs/about/"
+                />
+  </url><url>
     <loc>https://alexelec.github.io/uk/docs/tvlink/docs/overview/</loc>
     <xhtml:link
                 rel="alternate"
@@ -84,6 +96,18 @@
                 rel="alternate"
                 hreflang="uk"
                 href="https://alexelec.github.io/uk/docs/alexelec/docs/entware/"
+                />
+  </url><url>
+    <loc>https://alexelec.github.io/uk/docs/android/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://alexelec.github.io/docs/android/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="uk"
+                href="https://alexelec.github.io/uk/docs/android/"
                 />
   </url><url>
     <loc>https://alexelec.github.io/uk/docs/tvlink/docs/quick-start/</loc>
