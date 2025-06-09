@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on AlexELEC</title>
-    <link>https://alexelec.github.io/uk/categories/</link>
+    <link>https://alexelec.run.place/uk/categories/</link>
     <description>Recent content in Categories on AlexELEC</description>
     <generator>Hugo</generator>
     <language>uk</language>
-    <atom:link href="https://alexelec.github.io/uk/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://alexelec.run.place/uk/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
