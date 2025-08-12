@@ -42,7 +42,7 @@
   <link rel="alternate" hreflang="en" href="https://alexelec.run.place/docs/tvlink/docs/settings/" title="Server and Stream Configuration">
 <link rel="stylesheet" href="/book.min.e9f68c3fff3d8236a489d16a9caf6de5e4d1a29c20eb4b5524e42cd30be4d319.css" integrity="sha256-6faMP/89gjakidFqnK9t5eTRopwg60tVJOQs0wvk0xk=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/uk.search.min.2f34738eaee622444887f0ece72f510da5a2532e1f520cd0461a12fed25325c1.js" integrity="sha256-LzRzjq7mIkRIh/Ds5y9RDaWiUy4fUgzQRhoS/tJTJcE=" crossorigin="anonymous"></script>
+  <script defer src="/uk.search.min.2e897049a10b1ab12a9f46dd8e647a559b28aee1e5fb37e8a9cc69c27af37e23.js" integrity="sha256-LolwSaELGrEqn0bdjmR6VZsoruHl&#43;zfoqcxpwnrzfiM=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 
@@ -496,6 +496,8 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#exclude-these-lines-from-channel-names-when-mapping">«Exclude these lines from channel names when mapping»</a></li>
         <li><a href="#m3u-playlist-settings">«M3U playlist settings»</a></li>
         <li><a href="#налаштування-потоків">Налаштування потоків</a></li>
+        <li><a href="#пояснення-щодо-опцій-vod-limit-segments-on-startup-та-vod-segments-queue-step">Пояснення щодо опцій «VOD Limit segments on startup» та «VOD segments queue Step»</a></li>
+        <li><a href="#режим-smart-для-оновлення-hls-плейлиста">Режим «smart» для оновлення HLS плейлиста</a></li>
         <li><a href="#налаштування-потоків-для-окремих-джерел">Налаштування потоків для окремих джерел</a></li>
         <li><a href="#пояснення-щодо-налаштування-роботи-потоків">Пояснення щодо налаштування роботи потоків</a></li>
         <li><a href="#ffmpeg-transcode-stream">FFmpeg transcode stream</a></li>
@@ -539,8 +541,9 @@ https://github.com/alex-shpak/hugo-book
 <p>«Auto playlist IP» – якщо цю опцію ввімкнено, «TVLINK» використовуватиме ту IP-адресу в плейлисті, з якої надходить запит від клієнта.</p>
 </li>
 <li>
-<p>«Check internet IP» – IP-адреса, за якою «TVLINK» перевіряє підключення до інтернету. За замовчуванням використовується адреса «8.8.8.8».
-Якщо вам потрібно змінити цю адресу перед запуском програми, створіть файл «check-internet.ip» у каталозі tvlink і впишіть туди потрібну адресу.</p>
+<p>«Check internet (host:port)» – це адреса (хост і порт), за якою «TVLINK» перевіряє підключення до інтернету.
+Хост може бути як доменним іменем, так і IP-адресою, наприклад «8.8.8.8:53». За замовчуванням використовується «google.com:443».
+Якщо вам потрібно змінити цю опцію перед запуском програми, створіть файл «check-internet.ip» у каталозі tvlink та впишіть туди потрібну адресу.</p>
 </li>
 <li>
 <p>«Check internet max time» – максимальний час, протягом якого «TVLINK» перевіряє підключення до інтернету. Програма не запуститься, доки не матиме доступу до інтернету.</p>
@@ -655,10 +658,8 @@ my.own.server.com
 <p align="center">
   <a href="/tvlink/settings/05.png"><img src="/tvlink/settings/05.png" width="480"/></a>
 </p>
-<ul>
-<li>«Main User-Agent» – задає User-Agent за замовчуванням. У деяких IPTV-провайдерів може бути блокування за User-Agent.
-Вони надають потік лише якщо запит надходить від визначеної програми. Ви можете вказати «TVLINK», щоб він видавав себе за іншу програму.</li>
-</ul>
+<p>«Main User-Agent» – задає User-Agent за замовчуванням. У деяких IPTV-провайдерів може бути блокування за User-Agent.
+Вони надають потік лише якщо запит надходить від визначеної програми. Ви можете вказати «TVLINK», щоб він видавав себе за іншу програму.</p>
 <p>Наступні налаштування здебільшого стосуються модуля «Streamlink» і відповідають за роботу з потоками.</p>
 <ul>
 <li>
@@ -710,9 +711,14 @@ my.own.server.com
 </li>
 <li>
 <p>«HLS playlist reload time» – контролює час, через який виконується запит для оновлення списку сегментів.
-Частково відповідає параметру <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-hls-playlist-reload-time">«hls-playlist-reload-time»</a> у «Streamlink».
-Параметр «segment» має таке ж значення, як і в «Streamlink». Значення «duration» відповідає «default» у «Streamlink». Значення «average» – це середній час двох сегментів.
-Значення «default» – це або одне зі значень, яким відповідають «duration» / «segment», або, якщо їх немає, встановлено час – 6 секунд.</p>
+Частково відповідає параметру <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-hls-playlist-reload-time">«hls-playlist-reload-time»</a> у «Streamlink».</p>
+<ul>
+<li>«segment» - має те саме значення, що й у «Streamlink». Для сегмента використовується час, указаний тегом «#EXTINF».</li>
+<li>«targetduration» - відповідає «default» у «Streamlink». Для всього списку сегментів використовується час, указаний тегом «#EXT-X-TARGETDURATION».</li>
+<li>«smart» — це режим, у якому програма самостійно вирішує, коли запитувати оновлення, щоб отримувати сегменти без зайвого очікування та не робити надто частих запитів.
+Це заощаджує ресурси та прискорює потік. Детальний опис цього режиму наведено 
+  <a href="/uk/docs/tvlink/docs/settings/#%d1%80%d0%b5%d0%b6%d0%b8%d0%bc-smart-%d0%b4%d0%bb%d1%8f-%d0%be%d0%bd%d0%be%d0%b2%d0%bb%d0%b5%d0%bd%d0%bd%d1%8f-hls-%d0%bf%d0%bb%d0%b5%d0%b9%d0%bb%d0%b8%d1%81%d1%82%d0%b0">нижче</a>.</li>
+</ul>
 </li>
 <li>
 <p>«HLS Stream Data» – якщо активовано, негайно передає дані із сегмента до вихідного буфера під час завантаження. Канали відкриваються швидко, без попередньої буферизації перед стартом.
@@ -724,13 +730,172 @@ my.own.server.com
 Відповідає параметру <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-hls-live-restart">«hls-live-restart»</a> у «Streamlink».</p>
 </li>
 <li>
-<p>«Debug Streams» – додає журнал роботи модуля «Streamlink» до журналу роботи «TVLINK». Файл журналу роботи знаходиться в каталозі «tvlink/log».</p>
+<p>«VOD Limit segments on startup» – цей параметр визначає кількість сегментів, які будуть завантажені та додані до черги на початку потоку.
+Його можна розглядати як буфер, подібний до параметра «HLS live edge» для потокового відео у режимі реального часу (Live).</p>
 </li>
 <li>
-<p>«Sources Proxy» та «Streams Proxy» – дозволяють встановити проксі для джерел та потоків. Формат: «http://login:password@your.proxy:port».
-Значення «login/password» необов’язкові. Підтримуються протоколи: http, https, socks5.</p>
+<p>«VOD segments queue Step» – цей параметр вказує, скільки сегментів одночасно додавати в чергу для завантаження після того, як спрацював параметр «VOD Limit segments on startup».</p>
+</li>
+<li>
+<p>«Debug Streams» – додає журнал роботи модуля «Streamlink» до журналу роботи «TVLINK». Файл журналу роботи знаходиться в каталозі «tvlink/log».</p>
 </li>
 </ul>
+<p>«Sources Proxy» та «Streams Proxy» – дозволяють встановити проксі для джерел та потоків. Формат: «http://login:password@your.proxy:port».
+Значення «login/password» необов’язкові. Підтримуються протоколи: http, https, socks5.</p>
+<h2 id="пояснення-щодо-опцій-vod-limit-segments-on-startup-та-vod-segments-queue-step">
+  Пояснення щодо опцій «VOD Limit segments on startup» та «VOD segments queue Step»
+  <a class="anchor" href="#%d0%bf%d0%be%d1%8f%d1%81%d0%bd%d0%b5%d0%bd%d0%bd%d1%8f-%d1%89%d0%be%d0%b4%d0%be-%d0%be%d0%bf%d1%86%d1%96%d0%b9-vod-limit-segments-on-startup-%d1%82%d0%b0-vod-segments-queue-step">#</a>
+</h2>
+<p>TVLINK може працювати з Catchup HLS-потоками майже так само, як і зі звичайними Live HLS-потоками.</p>
+<p>Як ви знаєте, основне завдання TVLINK — це робота з Live HLS-потоками. Для цього програма має якомога швидше завантажувати сегменти потоку в кілька черг.
+Такий підхід не підходить для Catchup HLS-потоків (IPTV-архівів), які, по суті, є не Live, а VOD (Video on Demand) потоками. Причина в тому, що сегменти завантажуються занадто швидко.</p>
+<p>Пояснімо на прикладі. Ви ввімкнули потік, що підтримує IPTV Catchup, і перемотали відео на 1 хвилину назад.
+Ваш плеєр (наприклад, Kodi) надсилає запит серверу TVLINK приблизно такого вигляду:</p>
+<pre><code>http://server/channel?utc={current_time - 60}&amp;lutc={current_time}
+</code></pre>
+<p>Тут:</p>
+<ul>
+<li>{current_time} — поточний час</li>
+<li>{current_time - 60} — відповідно, поточний час мінус 60 секунд</li>
+</ul>
+<p>TVLINK обробляє запит і пересилає його вашому IPTV-провайдеру. У відповідь сервер провайдера повертає плейлист, який містить усе відео за цю хвилину.
+Наприклад, це 10 сегментів по 6 секунд. TVLINK завантажує їх за кілька секунд і бачить кінець відео (EOF).
+Це призводить до перезапуску потоку з новими параметрами utc/lutc, але знову на одну хвилину. У цей час Kodi постійно отримуватиме обривки відео і «заїкатися». І так по колу.</p>
+<p>Щоб запобігти цьому, TVLINK імітує роботу Live-потоків для Catchup VOD-потоків.</p>
+<p>Логіка, яка працювала раніше для VOD:</p>
+<ul>
+<li>Запит плейлиста.</li>
+<li>Завантаження всіх сегментів, які є в плейлисті, якомога швидше.</li>
+<li>Скидання та новий запит плейлиста.</li>
+</ul>
+<p>Логіка, яка працює зараз для VOD:</p>
+<ul>
+<li>Запит плейлиста.</li>
+<li>Завантаження кількості сегментів, зазначених у VOD Limit segments on startup.</li>
+<li>Таймаут на тривалість сегмента.</li>
+<li>Запит плейлиста.</li>
+<li>Завантаження кількості сегментів, зазначених у VOD segments queue Step.</li>
+<li>Таймаут на тривалість сегмента.</li>
+<li>Запит плейлиста.</li>
+<li>Завантаження кількості сегментів, зазначених у VOD segments queue Step.</li>
+<li>&hellip;</li>
+</ul>
+<p>З&rsquo;єднання не скидається, оскільки плейлист постійно оновлюється: надходять запити нового плейлиста з новими сегментами (аналогічно Live-потокам).</p>
+<h2 id="режим-smart-для-оновлення-hls-плейлиста">
+  Режим «smart» для оновлення HLS плейлиста
+  <a class="anchor" href="#%d1%80%d0%b5%d0%b6%d0%b8%d0%bc-smart-%d0%b4%d0%bb%d1%8f-%d0%be%d0%bd%d0%be%d0%b2%d0%bb%d0%b5%d0%bd%d0%bd%d1%8f-hls-%d0%bf%d0%bb%d0%b5%d0%b9%d0%bb%d0%b8%d1%81%d1%82%d0%b0">#</a>
+</h2>
+<p>Smart-режим автоматично визначає оптимальний час для оновлення плейлиста. Його мета - отримати новий сегмент якомога раніше, уникаючи при цьому зайвих запитів до сервера.
+Зазвичай вам не потрібно нічого налаштовувати, оскільки параметри за замовчуванням уже є оптимальними. Однак, якщо ви хочете змінити налаштування, нижче наведено докладний опис.</p>
+<p><strong>Як це працює</strong></p>
+<p>Кожен сегмент має певну тривалість (наприклад, 5 секунд). Smart-режим працює так:</p>
+<ul>
+<li>Чекає майже до кінця поточного сегмента, а потім робить «ранній» запит.</li>
+<li>Якщо новий сегмент ще не з&rsquo;явився, він робить коротку «перевірку» через певний час (не частіше, ніж задано).</li>
+<li>Додає невеликий «джиттер» (випадкове зміщення часу), щоб уникнути одночасних запитів до сервера.</li>
+</ul>
+<p>Такий підхід забезпечує мінімальну кількість запитів і швидку доставку нових сегментів.</p>
+<p><strong>Можливі сценарії</strong></p>
+<ul>
+<li>Новий сегмент з&rsquo;явився: наступний запит виконується «трохи раніше за кінець» поточного сегмента.</li>
+<li>Нового сегмента ще немає: програма чекає короткий фіксований інтервал і повторює запит.</li>
+<li>Плейлист порожній або без тривалості: режим тимчасово переходить на запасний алгоритм і скидає свій внутрішній стан. Це дозволяє коректно відновити роботу, коли плейлист знову стане доступним.</li>
+</ul>
+<p><strong>Параметри</strong></p>
+<p>Поточні значення за замовчуванням (tvlink/libs/streamlink/stream/hls/hls.py):</p>
+<pre><code>class HLSStreamWorker(SegmentedStreamWorker[HLSSegment, Response]):
+    ...
+    # Smart reload playlist settings
+    self.reload_early_offset_s: float = 0.10
+    self.reload_publish_slack_s: float = 0.25
+    self.reload_idle_min: float = 0.80
+    self.reload_jitter_ms: int = 30
+    ...
+</code></pre>
+<p><strong>Значення параметрів:</strong></p>
+<ul>
+<li>
+<p>reload_early_offset_s (секунди)</p>
+<ul>
+<li>Визначає, наскільки раніше «кінця сегмента» потрібно зробити запит.</li>
+<li>0.10 означає, що плейлист запитується приблизно за 100 мс до кінця сегмента.</li>
+<li>Можна вказати від’ємне значення, щоб запитувати «трохи після кінця» (наприклад, -0.05). Це зменшить кількість «подвійних» запитів, але може спричинити невелику затримку.</li>
+</ul>
+</li>
+<li>
+<p>reload_publish_slack_s (секунди)</p>
+<ul>
+<li>Це запас часу для «перевірки», коли сегмент ще недоступний.</li>
+<li>Працює разом із мінімальним інтервалом.</li>
+</ul>
+</li>
+<li>
+<p>reload_idle_min (секунди)</p>
+<ul>
+<li>Мінімальний інтервал між «перевірками», щоб уникнути надмірного навантаження на сервер.</li>
+<li>Збільшення цього значення призведе до меншої кількості запитів, але може додати невелику затримку.</li>
+</ul>
+</li>
+<li>
+<p>reload_jitter_ms (мілісекунди)</p>
+<ul>
+<li>Випадкове зміщення часу очікування, яке запобігає синхронним запитам до сервера.</li>
+<li>Типове значення: 20–50 мс.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Внутрішні гарантії:</strong></p>
+<ul>
+<li>Мінімальний технічний інтервал очікування — 0.25 секунди.</li>
+<li>Занадто велике позитивне зміщення автоматично обмежується, щоб не перетворити очікування на майже нульове.</li>
+</ul>
+<p><strong>Коли і що змінювати:</strong></p>
+<ul>
+<li>Якщо ви хочете зменшити кількість «подвійних» запитів:
+<ul>
+<li>Трохи збільште reload_early_offset_s (наприклад, до 0.15–0.20) або зробіть його від’ємним (наприклад, -0.05…-0.10).</li>
+</ul>
+</li>
+<li>Якщо сервер скаржиться на часті запити:
+<ul>
+<li>Збільште reload_idle_min (наприклад, до 1.0–1.5).</li>
+</ul>
+</li>
+<li>Якщо вам потрібен максимально «свіжий» потік (мінімум затримки):
+<ul>
+<li>Залиште reload_early_offset_s у межах 0.05–0.10 і не збільшуйте reload_idle_min.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Приклад логів і як їх читати:</strong></p>
+<ul>
+<li>Next reload [smart] in 4.746s: base=5.000s changed=True streak=0
+<ul>
+<li>base — тривалість останнього сегмента (сек).</li>
+<li>changed — плейлист оновився (з&rsquo;явився новий сегмент).</li>
+<li>streak — скільки разів поспіль плейлист НЕ оновлювався (0 — щойно оновився).</li>
+<li>in 4.746s — через скільки секунд планується наступний запит.</li>
+</ul>
+</li>
+<li>Reloading playlist [smart]: base=5.000s changed=True streak=0 planned=4.871s | waited=4.746s elapsed=0.125s
+<ul>
+<li>planned — скільки секунд було заплановано для поточного циклу очікування.</li>
+<li>waited — скільки часу фактично чекали.</li>
+<li>elapsed — накладні витрати між циклами (час обробки тощо).</li>
+</ul>
+</li>
+</ul>
+<p>Зазвичай ви побачите 1–2 запити на кожен 5-секундний сегмент — це нормальна та бажана поведінка.</p>
+<p><strong>Коротко про відмовостійкість</strong></p>
+<ul>
+<li>Якщо плейлист тимчасово пошкоджений (немає сегментів або тривалості), smart-режим перейде на запасний алгоритм і скине свій внутрішній стан.
+Це гарантує, що після відновлення він почне працювати «з чистого аркуша».</li>
+<li>Перший цикл після запуску потоку вважається оновленим (changed=True), щоб уникнути зайвої початкової паузи.</li>
+</ul>
+<blockquote class="book-hint warning">
+<p>Якщо ви не впевнені, які саме параметри змінювати, <strong>залиште налаштування за замовчуванням</strong>.
+Вони забезпечують оптимальний баланс між швидкістю та кількістю запитів.</p>
+</blockquote>
 <h2 id="налаштування-потоків-для-окремих-джерел">
   Налаштування потоків для окремих джерел
   <a class="anchor" href="#%d0%bd%d0%b0%d0%bb%d0%b0%d1%88%d1%82%d1%83%d0%b2%d0%b0%d0%bd%d0%bd%d1%8f-%d0%bf%d0%be%d1%82%d0%be%d0%ba%d1%96%d0%b2-%d0%b4%d0%bb%d1%8f-%d0%be%d0%ba%d1%80%d0%b5%d0%bc%d0%b8%d1%85-%d0%b4%d0%b6%d0%b5%d1%80%d0%b5%d0%bb">#</a>
@@ -954,6 +1119,8 @@ my.own.server.com
         <li><a href="#exclude-these-lines-from-channel-names-when-mapping">«Exclude these lines from channel names when mapping»</a></li>
         <li><a href="#m3u-playlist-settings">«M3U playlist settings»</a></li>
         <li><a href="#налаштування-потоків">Налаштування потоків</a></li>
+        <li><a href="#пояснення-щодо-опцій-vod-limit-segments-on-startup-та-vod-segments-queue-step">Пояснення щодо опцій «VOD Limit segments on startup» та «VOD segments queue Step»</a></li>
+        <li><a href="#режим-smart-для-оновлення-hls-плейлиста">Режим «smart» для оновлення HLS плейлиста</a></li>
         <li><a href="#налаштування-потоків-для-окремих-джерел">Налаштування потоків для окремих джерел</a></li>
         <li><a href="#пояснення-щодо-налаштування-роботи-потоків">Пояснення щодо налаштування роботи потоків</a></li>
         <li><a href="#ffmpeg-transcode-stream">FFmpeg transcode stream</a></li>
