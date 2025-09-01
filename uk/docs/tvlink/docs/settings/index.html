@@ -42,7 +42,7 @@
   <link rel="alternate" hreflang="en" href="https://alexelec.run.place/docs/tvlink/docs/settings/" title="Server and Stream Configuration">
 <link rel="stylesheet" href="/book.min.e9f68c3fff3d8236a489d16a9caf6de5e4d1a29c20eb4b5524e42cd30be4d319.css" integrity="sha256-6faMP/89gjakidFqnK9t5eTRopwg60tVJOQs0wvk0xk=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/uk.search.min.58c13979070a1db4c264c14d112a30a298bcf2846ab44f57be2ca692cd6e7ffa.js" integrity="sha256-WME5eQcKHbTCZMFNESowopi88oRqtE9Xviymks1uf/o=" crossorigin="anonymous"></script>
+  <script defer src="/uk.search.min.418bae17376e83d713841d3782d14c52872d294b8c641f072e804cd0c43fc912.js" integrity="sha256-QYuuFzdug9cThB03gtFMUoctKUuMZB8HLoBM0MQ/yRI=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 
@@ -497,7 +497,6 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#m3u-playlist-settings">«M3U playlist settings»</a></li>
         <li><a href="#налаштування-потоків">Налаштування потоків</a></li>
         <li><a href="#пояснення-щодо-опцій-vod-limit-segments-on-startup-та-vod-segments-queue-step">Пояснення щодо опцій «VOD Limit segments on startup» та «VOD segments queue Step»</a></li>
-        <li><a href="#режим-smart-для-оновлення-hls-плейлиста">Режим «smart» для оновлення HLS плейлиста</a></li>
         <li><a href="#налаштування-потоків-для-окремих-джерел">Налаштування потоків для окремих джерел</a></li>
         <li><a href="#пояснення-щодо-налаштування-роботи-потоків">Пояснення щодо налаштування роботи потоків</a></li>
         <li><a href="#ffmpeg-transcode-stream">FFmpeg transcode stream</a></li>
@@ -716,8 +715,8 @@ my.own.server.com
 <li>«segment» - має те саме значення, що й у «Streamlink». Для сегмента використовується час, указаний тегом «#EXTINF».</li>
 <li>«targetduration» - відповідає «default» у «Streamlink». Для всього списку сегментів використовується час, указаний тегом «#EXT-X-TARGETDURATION».</li>
 <li>«smart» — це режим, у якому програма самостійно вирішує, коли запитувати оновлення, щоб отримувати сегменти без зайвого очікування та не робити надто частих запитів.
-Це заощаджує ресурси та прискорює потік. Детальний опис цього режиму наведено 
-  <a href="/uk/docs/tvlink/docs/settings/#%d1%80%d0%b5%d0%b6%d0%b8%d0%bc-smart-%d0%b4%d0%bb%d1%8f-%d0%be%d0%bd%d0%be%d0%b2%d0%bb%d0%b5%d0%bd%d0%bd%d1%8f-hls-%d0%bf%d0%bb%d0%b5%d0%b9%d0%bb%d0%b8%d1%81%d1%82%d0%b0">нижче</a>.</li>
+Це заощаджує ресурси та прискорює потік.
+Детальний опис цього режиму наведено <a target='_blank' href="https://github.com/AlexELEC/TVLINK-Releases/blob/main/docs/README_SMART_MODE_ua.md">тут</a>.</li>
 </ul>
 </li>
 <li>
@@ -781,121 +780,6 @@ my.own.server.com
 <li>&hellip;</li>
 </ul>
 <p>З&rsquo;єднання не скидається, оскільки плейлист постійно оновлюється: надходять запити нового плейлиста з новими сегментами (аналогічно Live-потокам).</p>
-<h2 id="режим-smart-для-оновлення-hls-плейлиста">
-  Режим «smart» для оновлення HLS плейлиста
-  <a class="anchor" href="#%d1%80%d0%b5%d0%b6%d0%b8%d0%bc-smart-%d0%b4%d0%bb%d1%8f-%d0%be%d0%bd%d0%be%d0%b2%d0%bb%d0%b5%d0%bd%d0%bd%d1%8f-hls-%d0%bf%d0%bb%d0%b5%d0%b9%d0%bb%d0%b8%d1%81%d1%82%d0%b0">#</a>
-</h2>
-<p>Smart-режим автоматично визначає оптимальний час для оновлення плейлиста. Його мета - отримати новий сегмент якомога раніше, уникаючи при цьому зайвих запитів до сервера.
-Зазвичай вам не потрібно нічого налаштовувати, оскільки параметри за замовчуванням уже є оптимальними. Однак, якщо ви хочете змінити налаштування, нижче наведено докладний опис.</p>
-<p><strong>Як це працює</strong></p>
-<p>Кожен сегмент має певну тривалість (наприклад, 5 секунд). Smart-режим працює так:</p>
-<ul>
-<li>Чекає майже до кінця поточного сегмента, а потім робить «ранній» запит.</li>
-<li>Якщо новий сегмент ще не з&rsquo;явився, він робить коротку «перевірку» через певний час (не частіше, ніж задано).</li>
-<li>Додає невеликий «джиттер» (випадкове зміщення часу), щоб уникнути одночасних запитів до сервера.</li>
-</ul>
-<p>Такий підхід забезпечує мінімальну кількість запитів і швидку доставку нових сегментів.</p>
-<p><strong>Можливі сценарії</strong></p>
-<ul>
-<li>Новий сегмент з&rsquo;явився: наступний запит виконується «трохи раніше за кінець» поточного сегмента.</li>
-<li>Нового сегмента ще немає: програма чекає короткий фіксований інтервал і повторює запит.</li>
-<li>Плейлист порожній або без тривалості: режим тимчасово переходить на запасний алгоритм і скидає свій внутрішній стан. Це дозволяє коректно відновити роботу, коли плейлист знову стане доступним.</li>
-</ul>
-<p><strong>Параметри</strong></p>
-<p>Поточні значення за замовчуванням (tvlink/libs/streamlink/stream/hls/hls.py):</p>
-<pre><code>class HLSStreamWorker(SegmentedStreamWorker[HLSSegment, Response]):
-    ...
-    # Smart reload playlist settings
-    self.reload_early_offset_s: float = 0.10
-    self.reload_publish_slack_s: float = 0.25
-    self.reload_idle_min: float = 0.80
-    self.reload_jitter_ms: int = 30
-    ...
-</code></pre>
-<p><strong>Значення параметрів:</strong></p>
-<ul>
-<li>
-<p>reload_early_offset_s (секунди)</p>
-<ul>
-<li>Визначає, наскільки раніше «кінця сегмента» потрібно зробити запит.</li>
-<li>0.10 означає, що плейлист запитується приблизно за 100 мс до кінця сегмента.</li>
-<li>Можна вказати від’ємне значення, щоб запитувати «трохи після кінця» (наприклад, -0.05). Це зменшить кількість «подвійних» запитів, але може спричинити невелику затримку.</li>
-</ul>
-</li>
-<li>
-<p>reload_publish_slack_s (секунди)</p>
-<ul>
-<li>Це запас часу для «перевірки», коли сегмент ще недоступний.</li>
-<li>Працює разом із мінімальним інтервалом.</li>
-</ul>
-</li>
-<li>
-<p>reload_idle_min (секунди)</p>
-<ul>
-<li>Мінімальний інтервал між «перевірками», щоб уникнути надмірного навантаження на сервер.</li>
-<li>Збільшення цього значення призведе до меншої кількості запитів, але може додати невелику затримку.</li>
-</ul>
-</li>
-<li>
-<p>reload_jitter_ms (мілісекунди)</p>
-<ul>
-<li>Випадкове зміщення часу очікування, яке запобігає синхронним запитам до сервера.</li>
-<li>Типове значення: 20–50 мс.</li>
-</ul>
-</li>
-</ul>
-<p><strong>Внутрішні гарантії:</strong></p>
-<ul>
-<li>Мінімальний технічний інтервал очікування — 0.25 секунди.</li>
-<li>Занадто велике позитивне зміщення автоматично обмежується, щоб не перетворити очікування на майже нульове.</li>
-</ul>
-<p><strong>Коли і що змінювати:</strong></p>
-<ul>
-<li>Якщо ви хочете зменшити кількість «подвійних» запитів:
-<ul>
-<li>Трохи збільште reload_early_offset_s (наприклад, до 0.15–0.20) або зробіть його від’ємним (наприклад, -0.05…-0.10).</li>
-</ul>
-</li>
-<li>Якщо сервер скаржиться на часті запити:
-<ul>
-<li>Збільште reload_idle_min (наприклад, до 1.0–1.5).</li>
-</ul>
-</li>
-<li>Якщо вам потрібен максимально «свіжий» потік (мінімум затримки):
-<ul>
-<li>Залиште reload_early_offset_s у межах 0.05–0.10 і не збільшуйте reload_idle_min.</li>
-</ul>
-</li>
-</ul>
-<p><strong>Приклад логів і як їх читати:</strong></p>
-<ul>
-<li>Next reload [smart] in 4.746s: base=5.000s changed=True streak=0
-<ul>
-<li>base — тривалість останнього сегмента (сек).</li>
-<li>changed — плейлист оновився (з&rsquo;явився новий сегмент).</li>
-<li>streak — скільки разів поспіль плейлист НЕ оновлювався (0 — щойно оновився).</li>
-<li>in 4.746s — через скільки секунд планується наступний запит.</li>
-</ul>
-</li>
-<li>Reloading playlist [smart]: base=5.000s changed=True streak=0 planned=4.871s | waited=4.746s elapsed=0.125s
-<ul>
-<li>planned — скільки секунд було заплановано для поточного циклу очікування.</li>
-<li>waited — скільки часу фактично чекали.</li>
-<li>elapsed — накладні витрати між циклами (час обробки тощо).</li>
-</ul>
-</li>
-</ul>
-<p>Зазвичай ви побачите 1–2 запити на кожен 5-секундний сегмент — це нормальна та бажана поведінка.</p>
-<p><strong>Коротко про відмовостійкість</strong></p>
-<ul>
-<li>Якщо плейлист тимчасово пошкоджений (немає сегментів або тривалості), smart-режим перейде на запасний алгоритм і скине свій внутрішній стан.
-Це гарантує, що після відновлення він почне працювати «з чистого аркуша».</li>
-<li>Перший цикл після запуску потоку вважається оновленим (changed=True), щоб уникнути зайвої початкової паузи.</li>
-</ul>
-<blockquote class="book-hint warning">
-<p>Якщо ви не впевнені, які саме параметри змінювати, <strong>залиште налаштування за замовчуванням</strong>.
-Вони забезпечують оптимальний баланс між швидкістю та кількістю запитів.</p>
-</blockquote>
 <h2 id="налаштування-потоків-для-окремих-джерел">
   Налаштування потоків для окремих джерел
   <a class="anchor" href="#%d0%bd%d0%b0%d0%bb%d0%b0%d1%88%d1%82%d1%83%d0%b2%d0%b0%d0%bd%d0%bd%d1%8f-%d0%bf%d0%be%d1%82%d0%be%d0%ba%d1%96%d0%b2-%d0%b4%d0%bb%d1%8f-%d0%be%d0%ba%d1%80%d0%b5%d0%bc%d0%b8%d1%85-%d0%b4%d0%b6%d0%b5%d1%80%d0%b5%d0%bb">#</a>
@@ -1120,7 +1004,6 @@ my.own.server.com
         <li><a href="#m3u-playlist-settings">«M3U playlist settings»</a></li>
         <li><a href="#налаштування-потоків">Налаштування потоків</a></li>
         <li><a href="#пояснення-щодо-опцій-vod-limit-segments-on-startup-та-vod-segments-queue-step">Пояснення щодо опцій «VOD Limit segments on startup» та «VOD segments queue Step»</a></li>
-        <li><a href="#режим-smart-для-оновлення-hls-плейлиста">Режим «smart» для оновлення HLS плейлиста</a></li>
         <li><a href="#налаштування-потоків-для-окремих-джерел">Налаштування потоків для окремих джерел</a></li>
         <li><a href="#пояснення-щодо-налаштування-роботи-потоків">Пояснення щодо налаштування роботи потоків</a></li>
         <li><a href="#ffmpeg-transcode-stream">FFmpeg transcode stream</a></li>
