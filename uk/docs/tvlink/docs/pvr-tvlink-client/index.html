@@ -35,7 +35,7 @@
   <link rel="alternate" hreflang="en" href="https://alexelec.run.place/docs/tvlink/docs/pvr-tvlink-client/" title="PVR TVLINK Client">
 <link rel="stylesheet" href="/book.min.e9f68c3fff3d8236a489d16a9caf6de5e4d1a29c20eb4b5524e42cd30be4d319.css" integrity="sha256-6faMP/89gjakidFqnK9t5eTRopwg60tVJOQs0wvk0xk=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/uk.search.min.418bae17376e83d713841d3782d14c52872d294b8c641f072e804cd0c43fc912.js" integrity="sha256-QYuuFzdug9cThB03gtFMUoctKUuMZB8HLoBM0MQ/yRI=" crossorigin="anonymous"></script>
+  <script defer src="/uk.search.min.26580f1e34b507b62ba97dded431f07cd7414fd77c935e1dbd78627262ab952f.js" integrity="sha256-JlgPHjS1B7YrqX3e1DHwfNdBT9d8k14dvXhicmKrlS8=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 
@@ -534,21 +534,10 @@ https://github.com/alex-shpak/hugo-book
   <a href="/tvlink/pvr-client/02.png"><img src="/tvlink/pvr-client/02.png" width="480"/></a>
 </p>
 <ul>
-<li>
-<p>«TVLINK IP-address» – IP-адреса сервера «TVLINK».</p>
-</li>
-<li>
-<p>«TVLINK port» – порт сервера «TVLINK».</p>
-</li>
-<li>
-<p>«TVLINK profile» – профіль користувача на сервері «TVLINK». Якщо не вказано, використовується основний профіль (main).</p>
-</li>
-<li>
-<p>«Auth. Token» – токен авторизації, якщо потрібен.</p>
-</li>
-<li>
-<p>«FFmpeg playlist» – увімкніть, якщо ви хочете отримувати трансляції, які оброблятимуться ffmpeg-модулем «TVLINK».</p>
-</li>
+<li>«TVLINK IP-address» – IP-адреса сервера «TVLINK».</li>
+<li>«TVLINK port» – порт сервера «TVLINK».</li>
+<li>«TVLINK profile» – профіль користувача на сервері «TVLINK». Якщо не вказано, використовується основний профіль (main).</li>
+<li>«Auth. Token» – токен авторизації, якщо потрібен.</li>
 </ul>
 <h3 id="streams">
   «Streams»
@@ -565,15 +554,12 @@ https://github.com/alex-shpak/hugo-book
 <p>«Buffering streams» – якщо активовано, клієнт буде додатково буферизувати потоки (засобами Kodi).</p>
 </li>
 <li>
-<p>«FFmpegDirect for Timeshift» – вмикає функцію Timeshift через доповнення «Inputstream FFmpeg Direct».</p>
-</li>
-<li>
-<p>«FFmpegDirect for Catchup» – вмикає функцію Catchup через доповнення «Inputstream FFmpeg Direct».</p>
+<p>«Use Inputstream FFmpeg Direct» – увімкнення цього параметра активує функції Timeshift та Catchup за допомогою доповнення «Inputstream FFmpeg Direct».</p>
 </li>
 </ul>
 <blockquote class="book-hint info">
-<p>Дві останні опції («FFmpegDirect for &hellip;») працюватимуть лише за умови, що ви активуєте доповнення «Inputstream FFmpeg Direct».
-В іншому випадку клієнт їх ігноруватиме.</p>
+<p>Ця остання опція («Use Inputstream FFmpeg Direct») працюватиме лише за умови, що ви активуєте доповнення «Inputstream FFmpeg Direct».
+В іншому випадку клієнт ігноруватиме ці функції.</p>
 <p>Доповнення «Inputstream FFmpeg Direct» спеціально змінено для роботи з «TVLINK» і вбудовано в систему.
 Якщо ви оновите його на оригінальну версію, воно втратить свою функціональність щодо «TVLINK».</p>
 </blockquote>
@@ -589,25 +575,14 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>
 <p>«TimeShift» — це перемотування безпосередньо під час перегляду телеканалу. Наприклад, ви запустили канал, де фільм уже йде 30 хвилин.
-Ви натискаєте кнопку «вліво» до потрібного моменту та дивитесь фільм спочатку.</p>
+Ви натискаєте кнопку «вниз» до потрібного моменту та дивитесь фільм спочатку.</p>
 </li>
 <li>
 <p>«Catchup» — це запуск телепередачі (яка вже минула) з «EPG».</p>
 </li>
 </ul>
-<p>На практиці, «TimeShift» та «Catchup» також відрізняються тим, у якому режимі працюватиме плеєр «Kodi».</p>
-<ul>
-<li>
-<p>«TimeShift» — плеєр працює в режимі ТБ. Це означає, що плеєр не змінює свою функціональність ТБ (ви запустили канал і перемотали назад).
-Ви можете, наприклад, викликати список каналів кнопкою «вліво» та EPG кнопкою «вправо». Кнопки «вгору/вниз» працюватимуть як перемотування.</p>
-</li>
-<li>
-<p>«Catchup» — плеєр працює в режимі VOD (відео на запит). Це означає, що плеєр поводиться так, ніби ви запустили звичайне відео (ви натискаєте кнопку «Play programme» в EPG).
-Кнопки «вліво/вправо/вгору/вниз» працюють як перемотування. Вони відрізняються лише інтервалом перемотування.</p>
-</li>
-</ul>
 <blockquote class="book-hint info">
-<p>«TimeShift» працює тільки тоді, коли увімкнена опція «FFmpegDirect for Timeshift». Для роботи IPTV-архівів (Catchup) опція «FFmpegDirect for Catchup» не є обов&rsquo;язковою.</p>
+<p>«TimeShift» працює тільки тоді, коли увімкнена опція «Use Inputstream FFmpeg Direct». Для роботи IPTV-архівів (Catchup) опція «Use Inputstream FFmpeg Direct» не є обов&rsquo;язковою.</p>
 </blockquote>
 </article>
  

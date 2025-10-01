@@ -38,7 +38,7 @@ For most settings on this page, you need to reread the «TVLINK» configuration 
   <link rel="alternate" hreflang="uk" href="https://alexelec.run.place/uk/docs/tvlink/docs/settings/" title="Налаштування сервера та потоків">
 <link rel="stylesheet" href="/book.min.e9f68c3fff3d8236a489d16a9caf6de5e4d1a29c20eb4b5524e42cd30be4d319.css" integrity="sha256-6faMP/89gjakidFqnK9t5eTRopwg60tVJOQs0wvk0xk=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.348ce3a9af8bd4f724142d65137399568d3ff3fefb1029d4580e6b1dd377d1a9.js" integrity="sha256-NIzjqa&#43;L1PckFC1lE3OZVo0/8/77ECnUWA5rHdN30ak=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.cc217077a8dd8ff3bc5ce2503516659ead079dfdad236c2449821b86c8bb59a1.js" integrity="sha256-zCFwd6jdj/O8XOJQNRZlnq0Hnf2tI2wkSYIbhsi7WaE=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 
@@ -492,11 +492,8 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#exclude-these-lines-from-channel-names-when-mapping">«Exclude these lines from channel names when mapping»</a></li>
         <li><a href="#m3u-playlist-settings">«M3U playlist settings»</a></li>
         <li><a href="#stream-settings">Stream Settings</a></li>
-        <li><a href="#explanation-of-vod-limit-segments-on-startup-and-vod-segments-queue-step-options">Explanation of «VOD Limit segments on startup» and «VOD segments queue Step» options</a></li>
-        <li><a href="#smart-mode-for-hls-playlist-reloading">«Smart» Mode for HLS Playlist Reloading</a></li>
         <li><a href="#stream-settings-for-individual-sources">Stream settings for individual sources</a></li>
         <li><a href="#explanation-of-stream-configuration">Explanation of stream configuration</a></li>
-        <li><a href="#ffmpeg-transcode-stream">FFmpeg transcode stream</a></li>
         <li><a href="#epg-update">EPG Update</a></li>
       </ul>
     </li>
@@ -613,7 +610,7 @@ Therefore, this function can be useful when the server operates 24/7.</p>
 <p>Reloads occur only under the following conditions:</p>
 <ol>
 <li>the number of open network connections (sockets) exceeds 10;</li>
-<li>the program uses more than 60 MB of RAM for systems with less than 1.5 GB of RAM, and more than 120 MB for systems with more than 1.5 GB of RAM;</li>
+<li>the program uses more than 100 MB of RAM for systems with less than 1.5 GB of RAM, and more than 200 MB for systems with more than 1.5 GB of RAM;</li>
 </ol>
 <p>To avoid problems with stream broadcasting, these functions will only trigger if «TVLINK» is not currently broadcasting (no clients are connected).
 The module reload will occur immediately after the last client disconnects.</p>
@@ -672,6 +669,11 @@ The smaller the fragment size, the faster the stream opens.</p>
 Partially corresponds to the <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-stream-timeout">«stream-timeout»</a> parameter in «Streamlink».</p>
 </li>
 <li>
+<p>«Stream retry count» – this option sets the <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-stream-segment-attempts">«stream-segment-attempts»</a>
+and <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-hls-playlist-reload-attempts">«hls-playlist-reload-attempts»</a> parameters for «Streamlink».
+That is, the number of download attempts for segments and the segment list.</p>
+</li>
+<li>
 <p>«General HTTP timeout Connect/Data» – the general timeout (in seconds) used for all HTTP requests, except those covered by other parameters.
 For understanding: in HLS streams, this will be the timeout for obtaining the segment list.
 The time (timeout) for connection and the time for receiving data are set separately, respectively.
@@ -687,12 +689,8 @@ except that it allows setting different values for connection and data reading.<
 <li>
 <p>«HLS segment queue threshold» – the multiplication factor of the target duration of the HLS playlist,
 after which the stream will be stopped prematurely if no new segments are added to the queue after the playlist update.
-Corresponds to the <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-hls-segment-queue-threshold">«hls-segment-queue-threshold»</a> parameter in «Streamlink».</p>
-</li>
-<li>
-<p>«Stream retry count» – this option sets the <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-stream-segment-attempts">«stream-segment-attempts»</a>
-and <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-hls-playlist-reload-attempts">«hls-playlist-reload-attempts»</a> parameters for «Streamlink».
-That is, the number of download attempts for segments and the segment list.</p>
+Corresponds to the <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-hls-segment-queue-threshold">«hls-segment-queue-threshold»</a> parameter in «Streamlink».
+<a target='_blank' href="https://github.com/AlexELEC/TVLINK-Releases/blob/main/docs/GAP_THRESHOLD_EN.md">A different logic for stopping streams</a> applies to the «Live Smart/Local VOD» modes.</p>
 </li>
 <li>
 <p>«Segment threads» – the number of parallel segment downloads.
@@ -701,8 +699,7 @@ Corresponds to the <a target='_blank' href="https://streamlink.github.io/cli.htm
 </li>
 <li>
 <p>«Segments Queue» – the size of the segment queue. In «Streamlink», it is fixed at 20 segments.
-But this is too much for Live streams. The smaller the queue, the sooner streams will close, and there will also be less RAM consumption and fewer open sockets.
-It is better to set it to «as threads», which corresponds to the number of «Segment threads» but not less than 6 segments.</p>
+But this is too much for Live streams. The smaller the queue, the sooner streams will close, and there will also be less RAM consumption and fewer open sockets.</p>
 </li>
 <li>
 <p>«HLS live edge» – specifies how many HLS segments need to be downloaded when the stream starts.
@@ -716,7 +713,8 @@ Partially corresponds to the <a target='_blank' href="https://streamlink.github.
 <li>«targetduration» corresponds to «default» in «Streamlink». The time specified by the «#EXT-X-TARGETDURATION» tag is used for the entire list of segments.</li>
 <li>«smart» is a mode where the program independently decides when to request an update to get segments without unnecessary waiting and to avoid making requests too frequently.
 This saves resources and speeds up the stream.
-A detailed description of this mode is provided <a target='_blank' href="https://github.com/AlexELEC/TVLINK-Releases/blob/main/docs/README_SMART_MODE_en.md">here</a>.</li>
+General description of this mode is provided <a target='_blank' href="https://github.com/AlexELEC/TVLINK-Releases/blob/main/docs/README_SMART_EN.md">here</a>.
+A detailed description of this mode is provided <a target='_blank' href="https://github.com/AlexELEC/TVLINK-Releases/blob/main/docs/SMART-BUFFER-MODE-EN.md">here</a>.</li>
 </ul>
 </li>
 <li>
@@ -729,11 +727,31 @@ Corresponds to the <a target='_blank' href="https://streamlink.github.io/cli.htm
 Corresponds to the <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-hls-live-restart">«hls-live-restart»</a> parameter in «Streamlink».</p>
 </li>
 <li>
-<p>«VOD Limit segments on startup» – this parameter defines how many segments will be loaded and queued when a stream starts.
-It can be considered a buffer, similar to the «HLS live edge» parameter for live streams.</p>
+<p>«HLS Live buffer multiplier» – this parameter defines the multiplication factor for the target buffer of streaming video in real-time (Live) mode.
+It works only when the value of the «HLS playlist reload time» parameter is set to «smart».
+More details <a target='_blank' href="https://github.com/AlexELEC/TVLINK-Releases/blob/main/docs/SMART-BUFFER-MODE-EN.md">here</a>.</p>
 </li>
 <li>
-<p>«VOD segments queue Step» – this parameter specifies how many segments to add to the download queue at once after the «VOD Limit segments on startup» parameter has taken effect.</p>
+<p>«HLS VOD buffer multiplier» – this parameter defines the multiplication factor for the target buffer of VOD streams (e.g., IPTV archives).
+More details <a target='_blank' href="https://github.com/AlexELEC/TVLINK-Releases/blob/main/docs/SMART-BUFFER-MODE-EN.md">here</a>.</p>
+</li>
+<li>
+<p>«VOD Limit segments on startup» – this parameter defines the number of segments that will be downloaded and added to the queue at the start of the VOD stream.
+It can be considered a buffer, similar to the «HLS live edge» parameter for streaming video in real-time (Live) mode.
+More details <a target='_blank' href="https://github.com/AlexELEC/TVLINK-Releases/blob/main/docs/README_SMART_EN.md">here</a>.</p>
+</li>
+<li>
+<p>«VOD Limit segments in progress» – this parameter defines the number of segments that will be added to the queue during the playlist reload process.
+More details <a target='_blank' href="https://github.com/AlexELEC/TVLINK-Releases/blob/main/docs/README_SMART_EN.md">here</a>.</p>
+</li>
+<li>
+<p>«VOD segments queue Step» – this is the number of segments per step after a burst. It ensures fast startup and uniform loading
+More details <a target='_blank' href="https://github.com/AlexELEC/TVLINK-Releases/blob/main/docs/README_SMART_EN.md">here</a>.</p>
+</li>
+<li>
+<p>«Close segment connection» – this parameter adds the &ldquo;Connection: close&rdquo; header to HTTP requests for segments, keys, and playlists.
+This is useful when experiencing issues with the keep-alive mechanism (e.g., hangs/freezing).
+More details <a target='_blank' href="https://github.com/AlexELEC/TVLINK-Releases/blob/main/docs/README_SMART_EN.md">here</a>.</p>
 </li>
 <li>
 <p>«Debug Streams» – adds the «Streamlink» module&rsquo;s log to the «TVLINK» log. The log file is located in the «tvlink/log» directory.</p>
@@ -741,157 +759,12 @@ It can be considered a buffer, similar to the «HLS live edge» parameter for li
 </ul>
 <p>«Sources Proxy» and «Streams Proxy» – allow you to set a proxy for sources and streams. Format: «http://login:password@your.proxy:port».
 The «login/password» values are optional. Supported protocols: http, https, socks5.</p>
-<h2 id="explanation-of-vod-limit-segments-on-startup-and-vod-segments-queue-step-options">
-  Explanation of «VOD Limit segments on startup» and «VOD segments queue Step» options
-  <a class="anchor" href="#explanation-of-vod-limit-segments-on-startup-and-vod-segments-queue-step-options">#</a>
-</h2>
-<p>TVLINK can work with Catchup HLS streams almost in the same way as with regular Live HLS streams.</p>
-<p>As you know, the main task of TVLINK is to handle Live HLS streams. To do this, the program must download HLS stream segments as quickly as possible in multiple queues.
-This approach is not suitable for Catchup HLS streams (IPTV archives), which are essentially not Live, but VOD (Video on Demand) streams. The reason is that the HLS segments are downloaded too quickly.</p>
-<p>Let&rsquo;s explain with an example. You&rsquo;ve enabled a stream that supports IPTV Catchup and rewound the video by 1 minute.
-Your player (e.g., Kodi) sends a request to the TVLINK server that looks something like this:</p>
-<pre><code>http://server/channel?utc={current_time - 60}&amp;lutc={current_time}
-</code></pre>
-<p>Here:</p>
+<p>Detailed information on some aspects of the program&rsquo;s operation:</p>
 <ul>
-<li>{current_time} – current time</li>
-<li>{current_time - 60} – current time minus 60 seconds</li>
+<li><a target='_blank' href="https://github.com/AlexELEC/TVLINK-Releases/blob/main/docs/README_SMART_EN.md">README_SMART</a></li>
+<li><a target='_blank' href="https://github.com/AlexELEC/TVLINK-Releases/blob/main/docs/SMART-BUFFER-MODE-EN.md">SMART-BUFFER-MODE</a></li>
+<li><a target='_blank' href="https://github.com/AlexELEC/TVLINK-Releases/blob/main/docs/GAP_THRESHOLD_EN.md">GAP_THRESHOLD</a></li>
 </ul>
-<p>TVLINK processes the request and forwards it to your IPTV provider. In response, the provider&rsquo;s server returns a playlist that contains all the video for that minute.
-For example, 10 segments of 6 seconds each. TVLINK will download all these segments in a couple of seconds and encounter the end of the video (EOF),
-which will cause the stream to restart with new utc/lutc parameters, but again for one minute. During this time, Kodi will constantly receive fragmented video and &ldquo;stutter.&rdquo; This cycle repeats indefinitely.</p>
-<p>To prevent this from happening, it was necessary to simulate the behavior of Live streams for Catchup VOD streams.</p>
-<p>The logic that previously worked for VOD:</p>
-<ul>
-<li>Request the playlist.</li>
-<li>Download all segments in the playlist as quickly as possible.</li>
-<li>Reset and request a new playlist.</li>
-</ul>
-<p>The logic that now works for VOD:</p>
-<ul>
-<li>Request the playlist.</li>
-<li>Download the number of segments specified by VOD Limit segments on startup.</li>
-<li>Timeout for the segment duration.</li>
-<li>Request the playlist.</li>
-<li>Download the number of segments specified by VOD segments queue Step.</li>
-<li>Timeout for the segment duration.</li>
-<li>Request the playlist.</li>
-<li>Download the number of segments specified by VOD segments queue Step.</li>
-<li>&hellip;</li>
-</ul>
-<p>The connection doesn&rsquo;t reset because the playlist is constantly being updated: new playlist requests with new segments are sent out (similar to Live streams).</p>
-<h2 id="smart-mode-for-hls-playlist-reloading">
-  «Smart» Mode for HLS Playlist Reloading
-  <a class="anchor" href="#smart-mode-for-hls-playlist-reloading">#</a>
-</h2>
-<p>Smart mode automatically determines the optimal time to request a playlist update. Its goal is to get a new segment as early as possible without making unnecessary requests to the server.
-You typically don&rsquo;t need to configure anything, as the default values are already optimized. However, if you want to customize the settings, a detailed explanation is provided below.</p>
-<p><strong>How It Works</strong></p>
-<p>Each segment has a specific duration (e.g., 5 seconds). Smart mode operates as follows:</p>
-<ul>
-<li>It waits almost until the end of the current segment and makes an &ldquo;early&rdquo; request.</li>
-<li>If a new segment hasn&rsquo;t appeared yet, it performs a short &ldquo;recheck&rdquo; a little later (no more frequently than specified).</li>
-<li>It adds a small amount of &ldquo;jitter&rdquo; (a random time variation) to avoid bombarding the server with requests at the exact same moment.</li>
-</ul>
-<p>This approach ensures a minimum number of requests and fast delivery of new segments.</p>
-<p><strong>Possible Scenarios</strong></p>
-<ul>
-<li>A new segment has appeared: the next request is made &ldquo;slightly before the end&rdquo; of the current segment.</li>
-<li>No new segment yet: the program waits for a short, fixed interval and rechecks.</li>
-<li>Playlist is empty or has no duration: the mode temporarily switches to a fallback algorithm and resets its internal state.
-This ensures a correct restart when the playlist becomes available again.</li>
-</ul>
-<p><strong>Parameters</strong></p>
-<p>Current default values (tvlink/libs/streamlink/stream/hls/hls.py):</p>
-<pre><code>class HLSStreamWorker(SegmentedStreamWorker[HLSSegment, Response]):
-    ...
-    # Smart reload playlist settings
-    self.reload_early_offset_s: float = 0.10
-    self.reload_publish_slack_s: float = 0.25
-    self.reload_idle_min: float = 0.80
-    self.reload_jitter_ms: int = 30
-    ...
-</code></pre>
-<p><strong>Parameter Meanings:</strong></p>
-<ul>
-<li>reload_early_offset_s (seconds)
-<ul>
-<li>Determines how much earlier than the &ldquo;end of the segment&rdquo; the request should be made.</li>
-<li>0.10 means the playlist is requested approximately 100 ms before the segment ends.</li>
-<li>You can specify a negative number to request &ldquo;slightly after the end&rdquo; (e.g., -0.05). This almost eliminates &ldquo;double&rdquo; requests but can slightly increase latency.</li>
-</ul>
-</li>
-<li>reload_publish_slack_s (seconds)
-<ul>
-<li>This is a time buffer for the &ldquo;recheck&rdquo; when a new segment isn&rsquo;t yet available.</li>
-<li>It works in conjunction with the minimum interval.</li>
-</ul>
-</li>
-<li>reload_idle_min (seconds)
-<ul>
-<li>The minimum interval between &ldquo;rechecks&rdquo; to avoid spamming the server.</li>
-<li>Increasing this value will reduce the number of requests but might introduce a small additional delay.</li>
-</ul>
-</li>
-<li>reload_jitter_ms (milliseconds)
-<ul>
-<li>A random &ldquo;noise&rdquo; added to the waiting interval to prevent requests from being sent on a strict timer.</li>
-<li>Typically 20–50 ms.</li>
-</ul>
-</li>
-</ul>
-<p><strong>Internal Guarantees:</strong></p>
-<ul>
-<li>The minimum technical waiting time is 0.25 seconds.</li>
-<li>An excessively large positive offset is automatically limited to prevent the waiting time from becoming almost zero.</li>
-</ul>
-<p><strong>When to Adjust Settings:</strong></p>
-<ul>
-<li>If you want to reduce the number of &ldquo;double&rdquo; requests:
-<ul>
-<li>Slightly increase reload_early_offset_s (e.g., to 0.15–0.20) or make it negative (e.g., -0.05…-0.10).</li>
-</ul>
-</li>
-<li>If the server is complaining about frequent requests:
-<ul>
-<li>Increase reload_idle_min (e.g., to 1.0–1.5).</li>
-</ul>
-</li>
-<li>If you want the most &ldquo;live&rdquo; stream (minimum latency):
-<ul>
-<li>Keep reload_early_offset_s around 0.05–0.10 and do not increase reload_idle_min.</li>
-</ul>
-</li>
-</ul>
-<p><strong>Example Logs and How to Read Them:</strong></p>
-<ul>
-<li>Next reload [smart] in 4.746s: base=5.000s changed=True streak=0
-<ul>
-<li>base — duration of the last segment (in seconds).</li>
-<li>changed — the playlist has been updated (a new segment appeared).</li>
-<li>streak — how many times in a row the playlist has NOT changed (0 means it just updated).</li>
-<li>in 4.746s — the number of seconds until the next planned request.</li>
-</ul>
-</li>
-<li>Reloading playlist [smart]: base=5.000s changed=True streak=0 planned=4.871s | waited=4.746s elapsed=0.125s
-<ul>
-<li>planned — the number of seconds the current waiting cycle was planned for.</li>
-<li>waited — how long the program actually waited.</li>
-<li>elapsed — overhead between cycles (processing time, etc.).</li>
-</ul>
-</li>
-</ul>
-<p>You&rsquo;ll typically see 1–2 requests for every 5-second segment, which is normal and desirable behavior.</p>
-<p><strong>Briefly on Fault Tolerance</strong></p>
-<ul>
-<li>If the playlist is temporarily &ldquo;broken&rdquo; (no segments or duration), smart mode will switch to a fallback calculation and reset its internal state.
-This ensures that when the playlist returns, it will start working &ldquo;from a clean slate.&rdquo;</li>
-<li>The first cycle after a stream starts is treated as &ldquo;changed&rdquo; to avoid an unnecessary initial pause.</li>
-</ul>
-<blockquote class="book-hint warning">
-<p>If you&rsquo;re unsure what to change, <strong>leave the default settings</strong>.
-They provide an excellent balance between speed and the number of requests.</p>
-</blockquote>
 <h2 id="stream-settings-for-individual-sources">
   Stream settings for individual sources
   <a class="anchor" href="#stream-settings-for-individual-sources">#</a>
@@ -919,6 +792,9 @@ They provide an excellent balance between speed and the number of requests.</p>
 </li>
 <li>
 <p>User-Agent – allows you to set the “User-Agent” option for each source (streams within this source) individually. This overrides the «Main User-Agent» option.</p>
+</li>
+<li>
+<p>Allow IPs - allows this source to be used only from the specified IP addresses (separated by a space). An empty field means that it is allowed for everyone.</p>
 </li>
 <li>
 <p>«Disable load icons» — disables fetching channel icons from the source. Some sources may have invalid icon addresses specified.
@@ -987,9 +863,8 @@ If you have an HLS stream, the «General HTTP» timeouts will work when you rece
 <li>downloading segment 3 – «HLS segment timeout»</li>
 <li>getting a new segment list – «General HTTP timeout»</li>
 <li>downloading segment 4 – «HLS segment timeout»</li>
-<li>downloading segment 5 – «HLS segment timeout»</li>
-<li>downloading segment 6 – «HLS segment timeout»</li>
 <li>getting a new segment list – «General HTTP timeout»</li>
+<li>downloading segment 5 – «HLS segment timeout»</li>
 </ul>
 <p>and so on…</p>
 <ul>
@@ -1009,48 +884,6 @@ If no data passes through the loop within the specified time, it stops working, 
 <li>«Stream retry count»</li>
 </ul>
 <p>This is the number of connection retries when the «General HTTP» and «HLS segment» timeouts are triggered.</p>
-<h2 id="ffmpeg-transcode-stream">
-  FFmpeg transcode stream
-  <a class="anchor" href="#ffmpeg-transcode-stream">#</a>
-</h2>
-<p>If «FFmpeg» is installed on your system, you have the option to enable the «FFmpeg transcode stream» module.</p>
-<p align="center">
-  <a href="/tvlink/settings/07.png"><img src="/tvlink/settings/07.png" width="480"/></a>
-</p>
-<p>Options are FFmpeg command-line parameters. Field descriptions:</p>
-<ul>
-<li>«Before input» – parameters for hardware transcoding</li>
-<li>«Video encoder» – video encoder parameters</li>
-<li>«Audio encoder» – audio encoder parameters</li>
-</ul>
-<p>To understand how these parameters will be inserted into the «FFmpeg» command line, here is an example (simplified scheme):</p>
-<pre><code>/usr/bin/ffmpeg -err_detect ignore_err -stream_loop -1 [Before input] -i http://channel.stream -c:v [Video encoder] -c:a [Audio encoder] -ignore_unknown -map 0:v -map 0:a -f mpegts
-</code></pre>
-<p>By default, the «Video encoder» and «Audio encoder» fields contain the “copy” parameter. That is, if these fields are left empty, the value “copy” will be set (skip the stream without transcoding).</p>
-<p>Before setting values, make sure that «FFmpeg» on your system supports the respective parameters. For example, execute the command:</p>
-<pre><code>ffmpeg -hide_banner -encoders
-</code></pre>
-<p>to view the available audio and video encoders.</p>
-<p>If the processor in your system (for example, Intel Pentium N5000) supports hardware stream encoding, you can apply the following settings, for example.</p>
-<p>«Before input»:</p>
-<pre><code>-hwaccel vaapi -hwaccel_output_format vaapi -hwaccel_device /dev/dri/renderD128
-</code></pre>
-<p>«Video encoder»:</p>
-<pre><code>h264_vaapi -r 50
-</code></pre>
-<p>«Audio encoder»:</p>
-<pre><code>aac -b:a 96k
-</code></pre>
-<p>After applying the settings («Apply Settings»), on the «About» page a link to «M3U FFmpeg Playlist» will appear (format: http://ip-address:port/ffmpeglist).</p>
-<p align="center">
-  <a href="/tvlink/settings/09.png"><img src="/tvlink/settings/09.png" width="480"/></a>
-</p>
-<p>Enabling «FFmpeg transcode stream» does not affect the main broadcasting module. They work in parallel.
-You can simultaneously connect some clients to the regular playlist (playlist) and others to the «FFmpeg» playlist (ffmpeglist).</p>
-<blockquote class="book-hint info">
-<p>You can always get the playlist via the link «http://ip-address:port/ffmpeglist», even if «FFmpeg transcode stream» is disabled and «FFmpeg» is not installed on the system. Therefore, be careful.</p>
-</blockquote>
-<p>If you enable «Debug Streams» and run «TVLINK» from the command line, information from «FFmpeg» (encoding parameters, errors, etc.) will be displayed when the stream stops.</p>
 <h2 id="epg-update">
   EPG Update
   <a class="anchor" href="#epg-update">#</a>
@@ -1117,11 +950,8 @@ You can simultaneously connect some clients to the regular playlist (playlist) a
         <li><a href="#exclude-these-lines-from-channel-names-when-mapping">«Exclude these lines from channel names when mapping»</a></li>
         <li><a href="#m3u-playlist-settings">«M3U playlist settings»</a></li>
         <li><a href="#stream-settings">Stream Settings</a></li>
-        <li><a href="#explanation-of-vod-limit-segments-on-startup-and-vod-segments-queue-step-options">Explanation of «VOD Limit segments on startup» and «VOD segments queue Step» options</a></li>
-        <li><a href="#smart-mode-for-hls-playlist-reloading">«Smart» Mode for HLS Playlist Reloading</a></li>
         <li><a href="#stream-settings-for-individual-sources">Stream settings for individual sources</a></li>
         <li><a href="#explanation-of-stream-configuration">Explanation of stream configuration</a></li>
-        <li><a href="#ffmpeg-transcode-stream">FFmpeg transcode stream</a></li>
         <li><a href="#epg-update">EPG Update</a></li>
       </ul>
     </li>

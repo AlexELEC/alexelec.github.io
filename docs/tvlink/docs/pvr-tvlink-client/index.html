@@ -27,7 +27,7 @@ The client supports Timeshift (pause/rewind), IPTV archives, and EPG.">
   <link rel="alternate" hreflang="uk" href="https://alexelec.run.place/uk/docs/tvlink/docs/pvr-tvlink-client/" title="PVR TVLINK клієнт">
 <link rel="stylesheet" href="/book.min.e9f68c3fff3d8236a489d16a9caf6de5e4d1a29c20eb4b5524e42cd30be4d319.css" integrity="sha256-6faMP/89gjakidFqnK9t5eTRopwg60tVJOQs0wvk0xk=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.348ce3a9af8bd4f724142d65137399568d3ff3fefb1029d4580e6b1dd377d1a9.js" integrity="sha256-NIzjqa&#43;L1PckFC1lE3OZVo0/8/77ECnUWA5rHdN30ak=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.cc217077a8dd8ff3bc5ce2503516659ead079dfdad236c2449821b86c8bb59a1.js" integrity="sha256-zCFwd6jdj/O8XOJQNRZlnq0Hnf2tI2wkSYIbhsi7WaE=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 
@@ -526,21 +526,10 @@ This will only happen when the user switches the channel or stops the channel br
   <a href="/tvlink/pvr-client/02.png"><img src="/tvlink/pvr-client/02.png" width="480"/></a>
 </p>
 <ul>
-<li>
-<p>«TVLINK IP-address» – the IP address of the «TVLINK» server.</p>
-</li>
-<li>
-<p>«TVLINK port» – the port of the «TVLINK» server.</p>
-</li>
-<li>
-<p>«TVLINK profile» – the user profile on the «TVLINK» server. If not specified, the main profile (main) is used.</p>
-</li>
-<li>
-<p>«Auth. Token» – the authorization token, if required.</p>
-</li>
-<li>
-<p>«FFmpeg playlist» – enable if you want to receive broadcasts that will be processed by the ffmpeg module of «TVLINK».</p>
-</li>
+<li>«TVLINK IP-address» – the IP address of the «TVLINK» server.</li>
+<li>«TVLINK port» – the port of the «TVLINK» server.</li>
+<li>«TVLINK profile» – the user profile on the «TVLINK» server. If not specified, the main profile (main) is used.</li>
+<li>«Auth. Token» – the authorization token, if required.</li>
 </ul>
 <h3 id="streams">
   «Streams»
@@ -557,14 +546,12 @@ This will only happen when the user switches the channel or stops the channel br
 <p>«Buffering streams» – if activated, the client will additionally buffer streams (using Kodi&rsquo;s capabilities).</p>
 </li>
 <li>
-<p>«FFmpegDirect for Timeshift» – enables the Timeshift function via the «Inputstream FFmpeg Direct» addon.</p>
-</li>
-<li>
-<p>«FFmpegDirect for Catchup» – enables the Catchup function via the «Inputstream FFmpeg Direct» addon.</p>
+<p>«Use Inputstream FFmpeg Direct» – enabling this parameter activates the Timeshift and Catchup functionalities using the «Inputstream FFmpeg Direct» add-on.</p>
 </li>
 </ul>
 <blockquote class="book-hint info">
-<p>The last two options (&ldquo;FFmpegDirect for &hellip;&rdquo;) will only work if you activate the &ldquo;Inputstream FFmpeg Direct&rdquo; add-on. Otherwise, the client will ignore them.</p>
+<p>This last option («Use Inputstream FFmpeg Direct») will only work provided that you activate the «Inputstream FFmpeg Direct» add-on.
+Otherwise, the client will ignore these features.</p>
 <p>The &ldquo;Inputstream FFmpeg Direct&rdquo; add-on has been specifically modified to work with &ldquo;TVLINK&rdquo; and is embedded in the system.
 If you update it to the original version, it will lose its functionality regarding &ldquo;TVLINK&rdquo;.</p>
 </blockquote>
@@ -580,25 +567,14 @@ If you update it to the original version, it will lose its functionality regardi
 <ul>
 <li>
 <p>«TimeShift» is rewinding directly while you are watching a TV channel. For example, you started a channel where a movie has already been playing for 30 minutes.
-You press the &ldquo;left&rdquo; button to the desired moment and watch the movie from the beginning.</p>
+You press the &ldquo;down&rdquo; button to the desired moment and watch the movie from the beginning.</p>
 </li>
 <li>
 <p>«Catchup» is when you launch a TV program (that has already aired) from the &ldquo;EPG&rdquo;.</p>
 </li>
 </ul>
-<p>In practice, «TimeShift» and «Catchup» also differ in the mode in which the &ldquo;Kodi&rdquo; player will operate.</p>
-<ul>
-<li>
-<p>«TimeShift» — the player operates in TV mode. This means that the player does not change its TV functionality (you started a channel and rewound).
-For example, you can call up the channel list with the &ldquo;left&rdquo; button and the EPG with the &ldquo;right&rdquo; button. The &ldquo;up/down&rdquo; buttons will function as rewind/fast-forward.</p>
-</li>
-<li>
-<p>«Catchup» — the player operates in VOD (Video On Demand) mode. This means that the player behaves as if you launched a regular video (you press the &ldquo;Play programme&rdquo; button in the EPG).
-The &ldquo;left/right/up/down&rdquo; buttons work as rewind/fast-forward. They differ only in the rewinding interval.</p>
-</li>
-</ul>
 <blockquote class="book-hint info">
-<p>«TimeShift» only works when the &ldquo;FFmpegDirect for Timeshift&rdquo; option is enabled. For IPTV archives (Catchup) to work, the &ldquo;FFmpegDirect for Catchup&rdquo; option is not mandatory.</p>
+<p>«TimeShift» only works when the &ldquo;Use Inputstream FFmpeg Direct&rdquo; option is enabled. For IPTV archives (Catchup) to work, the &ldquo;Use Inputstream FFmpeg Direct&rdquo; option is not mandatory.</p>
 </blockquote>
 </article>
  

@@ -42,7 +42,7 @@
   <link rel="alternate" hreflang="en" href="https://alexelec.run.place/docs/tvlink/docs/settings/" title="Server and Stream Configuration">
 <link rel="stylesheet" href="/book.min.e9f68c3fff3d8236a489d16a9caf6de5e4d1a29c20eb4b5524e42cd30be4d319.css" integrity="sha256-6faMP/89gjakidFqnK9t5eTRopwg60tVJOQs0wvk0xk=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/uk.search.min.418bae17376e83d713841d3782d14c52872d294b8c641f072e804cd0c43fc912.js" integrity="sha256-QYuuFzdug9cThB03gtFMUoctKUuMZB8HLoBM0MQ/yRI=" crossorigin="anonymous"></script>
+  <script defer src="/uk.search.min.26580f1e34b507b62ba97dded431f07cd7414fd77c935e1dbd78627262ab952f.js" integrity="sha256-JlgPHjS1B7YrqX3e1DHwfNdBT9d8k14dvXhicmKrlS8=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 
@@ -496,10 +496,8 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#exclude-these-lines-from-channel-names-when-mapping">«Exclude these lines from channel names when mapping»</a></li>
         <li><a href="#m3u-playlist-settings">«M3U playlist settings»</a></li>
         <li><a href="#налаштування-потоків">Налаштування потоків</a></li>
-        <li><a href="#пояснення-щодо-опцій-vod-limit-segments-on-startup-та-vod-segments-queue-step">Пояснення щодо опцій «VOD Limit segments on startup» та «VOD segments queue Step»</a></li>
         <li><a href="#налаштування-потоків-для-окремих-джерел">Налаштування потоків для окремих джерел</a></li>
         <li><a href="#пояснення-щодо-налаштування-роботи-потоків">Пояснення щодо налаштування роботи потоків</a></li>
-        <li><a href="#ffmpeg-transcode-stream">FFmpeg transcode stream</a></li>
         <li><a href="#оновлення-epg">Оновлення EPG</a></li>
       </ul>
     </li>
@@ -615,7 +613,7 @@ my.own.server.com
 <p>Перезавантаження відбуваються лише за наступних умов:</p>
 <ol>
 <li>кількість відкритих мережевих з’єднань (сокетів) перевищує 10;</li>
-<li>програма використовує більше ніж 60 МБ оперативної пам’яті для систем, де обсяг ОЗП менший за 1,5 ГБ, та більше ніж 120 МБ для систем, де обсяг ОЗП перевищує 1,5 ГБ;</li>
+<li>програма використовує більше ніж 100 МБ оперативної пам’яті для систем, де обсяг ОЗП менший за 1,5 ГБ, та більше ніж 200 МБ для систем, де обсяг ОЗП перевищує 1,5 ГБ;</li>
 </ol>
 <p>Щоб уникнути проблем із трансляцією потоків, ці функції спрацьовують лише тоді, коли «TVLINK» не веде мовлення (немає підключених клієнтів).
 Перезавантаження модулів відбудеться одразу після відключення останнього клієнта.</p>
@@ -674,6 +672,11 @@ my.own.server.com
 Частково відповідає параметру <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-stream-timeout">«stream-timeout»</a> у «Streamlink».</p>
 </li>
 <li>
+<p>«Stream retry count» – ця опція встановлює параметри <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-stream-segment-attempts">«stream-segment-attempts»</a>
+та <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-hls-playlist-reload-attempts">«hls-playlist-reload-attempts»</a> для «Streamlink».
+Тобто кількість спроб завантаження для сегментів та списку сегментів.</p>
+</li>
+<li>
 <p>«General HTTP timeout Connect/Data» – загальний тайм-аут (у секундах), який використовується для всіх HTTP-запитів, окрім тих, що охоплюються іншими параметрами.
 Для розуміння: в HLS-потоках це буде тайм-аут для отримання списку сегментів. Окремо встановлюється час (тайм-аут) для підключення та час на отримання даних відповідно.
 Відповідає параметру <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-http-timeout">«http-timeout»</a> у «Streamlink»,
@@ -688,12 +691,8 @@ my.own.server.com
 <li>
 <p>«HLS segment queue threshold» – коефіцієнт множення цільової тривалості списку відтворення HLS, після якого потік буде зупинено достроково,
 якщо після оновлення списку відтворення до черги не буде додано нових сегментів.
-Відповідає параметру <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-hls-segment-queue-threshold">«hls-segment-queue-threshold»</a> у «Streamlink».</p>
-</li>
-<li>
-<p>«Stream retry count» – ця опція встановлює параметри <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-stream-segment-attempts">«stream-segment-attempts»</a>
-та <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-hls-playlist-reload-attempts">«hls-playlist-reload-attempts»</a> для «Streamlink».
-Тобто кількість спроб завантаження для сегментів та списку сегментів.</p>
+Відповідає параметру <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-hls-segment-queue-threshold">«hls-segment-queue-threshold»</a> у «Streamlink».
+Для режимів «Live Smart/Local VOD» діє <a target='_blank' href="https://github.com/AlexELEC/TVLINK-Releases/blob/main/docs/GAP_THRESHOLD_UA.md">інша логіка зупинки потоків</a>.</p>
 </li>
 <li>
 <p>«Segment threads» – кількість паралельних завантажень сегментів. Це розмір пулу потоків, який використовується для завантаження сегментів.
@@ -701,8 +700,7 @@ my.own.server.com
 </li>
 <li>
 <p>«Segments Queue» – розмір черги сегментів. У «Streamlink» вона є сталою – 20 сегментів. Але це забагато для Live-потоків.
-Чим менша черга, тим скоріше закриватимуться потоки, а також буде менше споживання оперативної пам’яті та кількості відкритих сокетів.
-Краще встановити «as threads», тобто відповідає кількості «Segment threads», але не менше ніж 6 сегментів.</p>
+Чим менша черга, тим скоріше закриватимуться потоки, а також буде менше споживання оперативної пам’яті та кількості відкритих сокетів.</p>
 </li>
 <li>
 <p>«HLS live edge» – задає, скільки HLS-сегментів потрібно завантажити під час старту потоку.
@@ -716,7 +714,8 @@ my.own.server.com
 <li>«targetduration» - відповідає «default» у «Streamlink». Для всього списку сегментів використовується час, указаний тегом «#EXT-X-TARGETDURATION».</li>
 <li>«smart» — це режим, у якому програма самостійно вирішує, коли запитувати оновлення, щоб отримувати сегменти без зайвого очікування та не робити надто частих запитів.
 Це заощаджує ресурси та прискорює потік.
-Детальний опис цього режиму наведено <a target='_blank' href="https://github.com/AlexELEC/TVLINK-Releases/blob/main/docs/README_SMART_MODE_ua.md">тут</a>.</li>
+Загальний опис цього режиму наведено <a target='_blank' href="https://github.com/AlexELEC/TVLINK-Releases/blob/main/docs/README_SMART_UA.md">тут</a>.
+Детальний опис цього режиму наведено <a target='_blank' href="https://github.com/AlexELEC/TVLINK-Releases/blob/main/docs/SMART-BUFFER-MODE-UA.md">тут</a>.</li>
 </ul>
 </li>
 <li>
@@ -729,11 +728,31 @@ my.own.server.com
 Відповідає параметру <a target='_blank' href="https://streamlink.github.io/cli.html#cmdoption-hls-live-restart">«hls-live-restart»</a> у «Streamlink».</p>
 </li>
 <li>
-<p>«VOD Limit segments on startup» – цей параметр визначає кількість сегментів, які будуть завантажені та додані до черги на початку потоку.
-Його можна розглядати як буфер, подібний до параметра «HLS live edge» для потокового відео у режимі реального часу (Live).</p>
+<p>«HLS Live buffer multiplier» – цей параметр визначає коефіцієнт множення для цільового буфера потокового відео у режимі реального часу (Live).
+Працює тільки тоді, коли для параметра «HLS playlist reload time» встановлено значення «smart».
+Детальніше <a target='_blank' href="https://github.com/AlexELEC/TVLINK-Releases/blob/main/docs/SMART-BUFFER-MODE-UA.md">тут</a>.</p>
 </li>
 <li>
-<p>«VOD segments queue Step» – цей параметр вказує, скільки сегментів одночасно додавати в чергу для завантаження після того, як спрацював параметр «VOD Limit segments on startup».</p>
+<p>«HLS VOD buffer multiplier» – цей параметр визначає коефіцієнт множення для цільового буфера VOD-потоків (наприклад, IPTV-архівів).
+Детальніше <a target='_blank' href="https://github.com/AlexELEC/TVLINK-Releases/blob/main/docs/SMART-BUFFER-MODE-UA.md">тут</a>.</p>
+</li>
+<li>
+<p>«VOD Limit segments on startup» – цей параметр визначає кількість сегментів, які будуть завантажені та додані до черги на початку VOD-потоку.
+Його можна розглядати як буфер, подібний до параметра «HLS live edge» для потокового відео у режимі реального часу (Live).
+Детальніше <a target='_blank' href="https://github.com/AlexELEC/TVLINK-Releases/blob/main/docs/README_SMART_UA.md">тут</a>.</p>
+</li>
+<li>
+<p>«VOD Limit segments in progress» – цей параметр визначає кількість сегментів, які будуть додані до черги у процесі перезавантаження списку відтворення.
+Детальніше <a target='_blank' href="https://github.com/AlexELEC/TVLINK-Releases/blob/main/docs/README_SMART_UA.md">тут</a>.</p>
+</li>
+<li>
+<p>«VOD segments queue Step» – кількість сегментів за один крок після ривка (burst). Забезпечує швидкий старт та рівномірне завантаження.
+Детальніше <a target='_blank' href="https://github.com/AlexELEC/TVLINK-Releases/blob/main/docs/README_SMART_UA.md">тут</a>.</p>
+</li>
+<li>
+<p>«Close segment connection» – цей параметр додає заголовок &ldquo;Connection: close&rdquo; до HTTP-запитів для сегментів, ключів і списків відтворення (плейлистів).
+Це корисно при виникненні проблем із механізмом keep-alive (наприклад, зависання).
+Детальніше <a target='_blank' href="https://github.com/AlexELEC/TVLINK-Releases/blob/main/docs/README_SMART_UA.md">тут</a>.</p>
 </li>
 <li>
 <p>«Debug Streams» – додає журнал роботи модуля «Streamlink» до журналу роботи «TVLINK». Файл журналу роботи знаходиться в каталозі «tvlink/log».</p>
@@ -741,45 +760,12 @@ my.own.server.com
 </ul>
 <p>«Sources Proxy» та «Streams Proxy» – дозволяють встановити проксі для джерел та потоків. Формат: «http://login:password@your.proxy:port».
 Значення «login/password» необов’язкові. Підтримуються протоколи: http, https, socks5.</p>
-<h2 id="пояснення-щодо-опцій-vod-limit-segments-on-startup-та-vod-segments-queue-step">
-  Пояснення щодо опцій «VOD Limit segments on startup» та «VOD segments queue Step»
-  <a class="anchor" href="#%d0%bf%d0%be%d1%8f%d1%81%d0%bd%d0%b5%d0%bd%d0%bd%d1%8f-%d1%89%d0%be%d0%b4%d0%be-%d0%be%d0%bf%d1%86%d1%96%d0%b9-vod-limit-segments-on-startup-%d1%82%d0%b0-vod-segments-queue-step">#</a>
-</h2>
-<p>TVLINK може працювати з Catchup HLS-потоками майже так само, як і зі звичайними Live HLS-потоками.</p>
-<p>Як ви знаєте, основне завдання TVLINK — це робота з Live HLS-потоками. Для цього програма має якомога швидше завантажувати сегменти потоку в кілька черг.
-Такий підхід не підходить для Catchup HLS-потоків (IPTV-архівів), які, по суті, є не Live, а VOD (Video on Demand) потоками. Причина в тому, що сегменти завантажуються занадто швидко.</p>
-<p>Пояснімо на прикладі. Ви ввімкнули потік, що підтримує IPTV Catchup, і перемотали відео на 1 хвилину назад.
-Ваш плеєр (наприклад, Kodi) надсилає запит серверу TVLINK приблизно такого вигляду:</p>
-<pre><code>http://server/channel?utc={current_time - 60}&amp;lutc={current_time}
-</code></pre>
-<p>Тут:</p>
+<p>Детальна інформація по деяких аспектах роботи програми:</p>
 <ul>
-<li>{current_time} — поточний час</li>
-<li>{current_time - 60} — відповідно, поточний час мінус 60 секунд</li>
+<li><a target='_blank' href="https://github.com/AlexELEC/TVLINK-Releases/blob/main/docs/README_SMART_UA.md">README_SMART</a></li>
+<li><a target='_blank' href="https://github.com/AlexELEC/TVLINK-Releases/blob/main/docs/SMART-BUFFER-MODE-UA.md">SMART-BUFFER-MODE</a></li>
+<li><a target='_blank' href="https://github.com/AlexELEC/TVLINK-Releases/blob/main/docs/GAP_THRESHOLD_UA.md">GAP_THRESHOLD</a></li>
 </ul>
-<p>TVLINK обробляє запит і пересилає його вашому IPTV-провайдеру. У відповідь сервер провайдера повертає плейлист, який містить усе відео за цю хвилину.
-Наприклад, це 10 сегментів по 6 секунд. TVLINK завантажує їх за кілька секунд і бачить кінець відео (EOF).
-Це призводить до перезапуску потоку з новими параметрами utc/lutc, але знову на одну хвилину. У цей час Kodi постійно отримуватиме обривки відео і «заїкатися». І так по колу.</p>
-<p>Щоб запобігти цьому, TVLINK імітує роботу Live-потоків для Catchup VOD-потоків.</p>
-<p>Логіка, яка працювала раніше для VOD:</p>
-<ul>
-<li>Запит плейлиста.</li>
-<li>Завантаження всіх сегментів, які є в плейлисті, якомога швидше.</li>
-<li>Скидання та новий запит плейлиста.</li>
-</ul>
-<p>Логіка, яка працює зараз для VOD:</p>
-<ul>
-<li>Запит плейлиста.</li>
-<li>Завантаження кількості сегментів, зазначених у VOD Limit segments on startup.</li>
-<li>Таймаут на тривалість сегмента.</li>
-<li>Запит плейлиста.</li>
-<li>Завантаження кількості сегментів, зазначених у VOD segments queue Step.</li>
-<li>Таймаут на тривалість сегмента.</li>
-<li>Запит плейлиста.</li>
-<li>Завантаження кількості сегментів, зазначених у VOD segments queue Step.</li>
-<li>&hellip;</li>
-</ul>
-<p>З&rsquo;єднання не скидається, оскільки плейлист постійно оновлюється: надходять запити нового плейлиста з новими сегментами (аналогічно Live-потокам).</p>
 <h2 id="налаштування-потоків-для-окремих-джерел">
   Налаштування потоків для окремих джерел
   <a class="anchor" href="#%d0%bd%d0%b0%d0%bb%d0%b0%d1%88%d1%82%d1%83%d0%b2%d0%b0%d0%bd%d0%bd%d1%8f-%d0%bf%d0%be%d1%82%d0%be%d0%ba%d1%96%d0%b2-%d0%b4%d0%bb%d1%8f-%d0%be%d0%ba%d1%80%d0%b5%d0%bc%d0%b8%d1%85-%d0%b4%d0%b6%d0%b5%d1%80%d0%b5%d0%bb">#</a>
@@ -807,6 +793,9 @@ my.own.server.com
 </li>
 <li>
 <p>User-Agent – дає можливість встановити опцію «User-Agent» для кожного джерела (потоків у цьому джерелі) окремо. Підміняє собою опцію «Main User-Agent».</p>
+</li>
+<li>
+<p>Allow IPs - дозволяє використовувати це джерело тільки із зазначених IP-адрес (розділених пробілом). Пусте поле означає, що дозволено всім.</p>
 </li>
 <li>
 <p>«Disable load icons» — вимикає отримання іконок каналів із джерела. На деяких джерелах можуть бути вказані недійсні адреси іконок.
@@ -874,9 +863,8 @@ my.own.server.com
 <li>завантаження сегмента 3 – «HLS segment timeout»</li>
 <li>отримання нового списку сегментів – «General HTTP timeout»</li>
 <li>завантаження сегмента 4 – «HLS segment timeout»</li>
-<li>завантаження сегмента 5 – «HLS segment timeout»</li>
-<li>завантаження сегмента 6 – «HLS segment timeout»</li>
 <li>отримання нового списку сегментів – «General HTTP timeout»</li>
+<li>завантаження сегмента 5 – «HLS segment timeout»</li>
 </ul>
 <p>і так далі…</p>
 <ul>
@@ -895,48 +883,6 @@ my.own.server.com
 <li>«Stream retry count»</li>
 </ul>
 <p>Це кількість повторних спроб з’єднання у разі спрацьовування тайм-аутів «General HTTP» та «HLS segment».</p>
-<h2 id="ffmpeg-transcode-stream">
-  FFmpeg transcode stream
-  <a class="anchor" href="#ffmpeg-transcode-stream">#</a>
-</h2>
-<p>Якщо у вашій системі встановлено «FFmpeg», ви маєте можливість увімкнути модуль «FFmpeg transcode stream».</p>
-<p align="center">
-  <a href="/tvlink/settings/07.png"><img src="/tvlink/settings/07.png" width="480"/></a>
-</p>
-<p>Опції – це параметри командного рядка FFmpeg. Призначення полів:</p>
-<ul>
-<li>«Before input» – параметри для апаратного транскодування</li>
-<li>«Video encoder» – параметри відеокодера</li>
-<li>«Audio encoder» – параметри аудіокодера</li>
-</ul>
-<p>Щоб було зрозуміло, як саме ці параметри будуть вставлені в командний рядок «FFmpeg», ось приклад (спрощена схема):</p>
-<pre><code>/usr/bin/ffmpeg -err_detect ignore_err -stream_loop -1 [Before input] -i http://channel.stream -c:v [Video encoder] -c:a [Audio encoder] -ignore_unknown -map 0:v -map 0:a -f mpegts
-</code></pre>
-<p>За замовчуванням поля «Video encoder» та «Audio encoder» містять параметр “copy”. Тобто якщо ці поля залишаються порожніми, буде встановлено значення “copy” (пропускати потік без перекодування).</p>
-<p>Перед тим як встановлювати значення, переконайтеся, що «FFmpeg» у вашій системі підтримує відповідні параметри. Наприклад, виконайте команду:</p>
-<pre><code>ffmpeg -hide_banner -encoders
-</code></pre>
-<p>щоб переглянути доступні аудіо- та відеокодери.</p>
-<p>Якщо процесор у вашій системі (наприклад, Intel Pentium N5000) підтримує апаратне кодування потоків, можна застосувати, наприклад, такі налаштування.</p>
-<p>«Before input»:</p>
-<pre><code>-hwaccel vaapi -hwaccel_output_format vaapi -hwaccel_device /dev/dri/renderD128
-</code></pre>
-<p>«Video encoder»:</p>
-<pre><code>h264_vaapi -r 50
-</code></pre>
-<p>«Audio encoder»:</p>
-<pre><code>aac -b:a 96k
-</code></pre>
-<p>Після застосування налаштувань («Apply Settings»), на сторінці «About» з’явиться посилання на «M3U FFmpeg Playlist» (формат: http://ip-address:port/ffmpeglist).</p>
-<p align="center">
-  <a href="/tvlink/settings/09.png"><img src="/tvlink/settings/09.png" width="480"/></a>
-</p>
-<p>Увімкнення «FFmpeg transcode stream» не впливає на основний модуль трансляції. Вони працюють паралельно. Ви можете одночасно підключати одних клієнтів до звичайного плейлиста (playlist),
-а інших – до плейлиста «FFmpeg» (ffmpeglist).</p>
-<blockquote class="book-hint info">
-<p>За посиланням «http://ip-address:port/ffmpeglist» ви завжди можете отримати плейлист, навіть якщо «FFmpeg transcode stream» вимкнено і в системі немає «FFmpeg». Тому будьте уважні.</p>
-</blockquote>
-<p>Якщо увімкнути «Debug Streams» та запустити «TVLINK» з командного рядка, при зупинці потоку буде виведено інформацію від «FFmpeg» (параметри кодування, помилки тощо).</p>
 <h2 id="оновлення-epg">
   Оновлення EPG
   <a class="anchor" href="#%d0%be%d0%bd%d0%be%d0%b2%d0%bb%d0%b5%d0%bd%d0%bd%d1%8f-epg">#</a>
@@ -1003,10 +949,8 @@ my.own.server.com
         <li><a href="#exclude-these-lines-from-channel-names-when-mapping">«Exclude these lines from channel names when mapping»</a></li>
         <li><a href="#m3u-playlist-settings">«M3U playlist settings»</a></li>
         <li><a href="#налаштування-потоків">Налаштування потоків</a></li>
-        <li><a href="#пояснення-щодо-опцій-vod-limit-segments-on-startup-та-vod-segments-queue-step">Пояснення щодо опцій «VOD Limit segments on startup» та «VOD segments queue Step»</a></li>
         <li><a href="#налаштування-потоків-для-окремих-джерел">Налаштування потоків для окремих джерел</a></li>
         <li><a href="#пояснення-щодо-налаштування-роботи-потоків">Пояснення щодо налаштування роботи потоків</a></li>
-        <li><a href="#ffmpeg-transcode-stream">FFmpeg transcode stream</a></li>
         <li><a href="#оновлення-epg">Оновлення EPG</a></li>
       </ul>
     </li>
