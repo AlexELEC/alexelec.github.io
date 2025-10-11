@@ -38,7 +38,7 @@ For most settings on this page, you need to reread the «TVLINK» configuration 
   <link rel="alternate" hreflang="uk" href="https://alexelec.run.place/uk/docs/tvlink/docs/settings/" title="Налаштування сервера та потоків">
 <link rel="stylesheet" href="/book.min.e9f68c3fff3d8236a489d16a9caf6de5e4d1a29c20eb4b5524e42cd30be4d319.css" integrity="sha256-6faMP/89gjakidFqnK9t5eTRopwg60tVJOQs0wvk0xk=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.cc217077a8dd8ff3bc5ce2503516659ead079dfdad236c2449821b86c8bb59a1.js" integrity="sha256-zCFwd6jdj/O8XOJQNRZlnq0Hnf2tI2wkSYIbhsi7WaE=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.dc00fe0c8b96ab54de017386513d25992175b0789a1ace0ea705214937446910.js" integrity="sha256-3AD&#43;DIuWq1TeAXOGUT0lmSF1sHiaGs4OpwUhSTdEaRA=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 
@@ -542,6 +542,16 @@ If you need to change this option before starting the program, create a file nam
 <p>«Check internet max time» – the maximum time during which «TVLINK» checks the internet connection. The program will not start until it has internet access.</p>
 </li>
 <li>
+<p>«Streamlink session pool» - this is the size of the fixed pool of pre-initialized Streamlink sessions.
+A fixed-size pool ensures that the same buffers are reused. Memory for the «Stream Ring buffer» and queues will be allocated once per pool session and will subsequently be only reused.
+Result: RAM usage will rise up to <em>N * (Ring Buffer size) + (overhead)</em> and will stop growing.
+Recommendations:</p>
+<ul>
+<li>Set the value equal to the maximum number of concurrent streams plus the number of users.</li>
+<li>For one or two clients, leave the value at «4» (by default).</li>
+</ul>
+</li>
+<li>
 <p>«Refresh sources at startup» – refresh sources when the program starts.</p>
 </li>
 <li>
@@ -556,6 +566,10 @@ Static playlists are not created for tokens (Authentication Token).</p>
 <li>
 <p>«Remove broken channels» – «TVLINK» will automatically delete all channels that are found to be non-functional.
 Be cautious with this option: if the internet connection is lost, «TVLINK» will start deleting every channel you try to turn on.</p>
+</li>
+<li>
+<p>«Use FFmpeg muxer» – this setting enables/disables the use of Streamlink&rsquo;s internal FFmpeg muxer.
+If the setting is enabled (by default) and «FFmpeg» is installed on the system, all audio tracks available in the HLS playlist will be added to the output stream.</p>
 </li>
 <li>
 <p>«Authentication webUI» – simple authentication (login/password) for the web interface.
