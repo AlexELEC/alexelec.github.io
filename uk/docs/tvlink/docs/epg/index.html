@@ -10,18 +10,13 @@
 
 Налаштування EPG необхідно проводити після того, як ви додали канали в «TVLINK» (channel mapping).
 
-Ви можете використовувати джерела EPG, які вже присутні в програмі (EPG Static sources),
-або створити свої (EPG Custom sources). Активуйте потрібний перемикач.
-
-  
-
-Для створення власного джерела натисніть кнопку «Add EPG» і заповніть форму «Add new EPG».
+Для створення джерела EPG натисніть кнопку «Add EPG» і заповніть форму «Add new EPG».
 
   
 
 
-«EPG name» — будь-яка назва на ваш вибір. Вона має бути латинськими літерами, без спеціальних символів (пробілів, тире та інше) та не може починатися з цифри.
-«EPG url» — адреса XMLTV-файлу. Може бути заархівованим (.tar.gz) або не заархівованим (.xmltv).
+«EPG name» — це довільна назва на ваш вибір. Вона повинна бути латинськими літерами, без спеціальних символів (пробілів, тире тощо) і не може починатися з цифри.
+«EPG url» — адреса XMLTV-файлу. Файл може бути заархівованим (у форматі .gz або .tar.gz) або неархівованим (.xmltv). Якщо це локальний файл, адреса повинна починатися з префікса «file://».
 
 Натисніть «Save changes», щоб зберегти налаштування.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
@@ -30,9 +25,8 @@
   <meta property="og:site_name" content="AlexELEC">
   <meta property="og:title" content="Розклад телевізійних передач (EPG)">
   <meta property="og:description" content="Розклад передач (EPG) # Налаштування EPG необхідно проводити після того, як ви додали канали в «TVLINK» (channel mapping).
-Ви можете використовувати джерела EPG, які вже присутні в програмі (EPG Static sources), або створити свої (EPG Custom sources). Активуйте потрібний перемикач.
-Для створення власного джерела натисніть кнопку «Add EPG» і заповніть форму «Add new EPG».
-«EPG name» — будь-яка назва на ваш вибір. Вона має бути латинськими літерами, без спеціальних символів (пробілів, тире та інше) та не може починатися з цифри. «EPG url» — адреса XMLTV-файлу. Може бути заархівованим (.tar.gz) або не заархівованим (.xmltv). Натисніть «Save changes», щоб зберегти налаштування.">
+Для створення джерела EPG натисніть кнопку «Add EPG» і заповніть форму «Add new EPG».
+«EPG name» — це довільна назва на ваш вибір. Вона повинна бути латинськими літерами, без спеціальних символів (пробілів, тире тощо) і не може починатися з цифри. «EPG url» — адреса XMLTV-файлу. Файл може бути заархівованим (у форматі .gz або .tar.gz) або неархівованим (.xmltv). Якщо це локальний файл, адреса повинна починатися з префікса «file://». Натисніть «Save changes», щоб зберегти налаштування.">
   <meta property="og:locale" content="uk">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -43,7 +37,7 @@
   <link rel="alternate" hreflang="en" href="https://alexelec.run.place/docs/tvlink/docs/epg/" title="Electronic Program Guide">
 <link rel="stylesheet" href="/book.min.e9f68c3fff3d8236a489d16a9caf6de5e4d1a29c20eb4b5524e42cd30be4d319.css" integrity="sha256-6faMP/89gjakidFqnK9t5eTRopwg60tVJOQs0wvk0xk=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/uk.search.min.69e66515d78d4c93240d124b2fa6993b457bde24c50a1c3756b677209a50200e.js" integrity="sha256-aeZlFdeNTJMkDRJLL6aZO0V73iTFChw3VrZ3IJpQIA4=" crossorigin="anonymous"></script>
+  <script defer src="/uk.search.min.8e5d41fdd3f6b24e3b0de5eefc125007f9452d8c9272942cc3734e4b530e95dc.js" integrity="sha256-jl1B/dP2sk47DeXu/BJQB/lFLYyScpQsw3NOS1MOldw=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 
@@ -492,7 +486,7 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#розклад-передач-epg">Розклад передач (EPG)</a>
           <ul>
-            <li><a href="#опції">Опції</a></li>
+            <li><a href="#стовпці-таблиці">Стовпці таблиці</a></li>
             <li><a href="#кнопки">Кнопки</a></li>
           </ul>
         </li>
@@ -517,26 +511,21 @@ https://github.com/alex-shpak/hugo-book
 <blockquote class="book-hint info">
 <p>Налаштування EPG необхідно проводити після того, як ви додали канали в «TVLINK» (channel mapping).</p>
 </blockquote>
-<p>Ви можете використовувати джерела EPG, які вже присутні в програмі (EPG Static sources),
-або створити свої (EPG Custom sources). Активуйте потрібний перемикач.</p>
+<p>Для створення джерела EPG натисніть кнопку «Add EPG» і заповніть форму «Add new EPG».</p>
 <p align="center">
   <a href="/tvlink/epg/01.png"><img src="/tvlink/epg/01.png" width="480"/></a>
 </p>
-<p>Для створення власного джерела натисніть кнопку «Add EPG» і заповніть форму «Add new EPG».</p>
-<p align="center">
-  <a href="/tvlink/epg/02.png"><img src="/tvlink/epg/02.png" width="480"/></a>
-</p>
 <ul>
-<li>«EPG name» — будь-яка назва на ваш вибір. Вона має бути латинськими літерами, без спеціальних символів (пробілів, тире та інше) та не може починатися з цифри.</li>
-<li>«EPG url» — адреса XMLTV-файлу. Може бути заархівованим (.tar.gz) або не заархівованим (.xmltv).</li>
+<li>«EPG name» — це довільна назва на ваш вибір. Вона повинна бути латинськими літерами, без спеціальних символів (пробілів, тире тощо) і не може починатися з цифри.</li>
+<li>«EPG url» — адреса XMLTV-файлу. Файл може бути заархівованим (у форматі .gz або .tar.gz) або неархівованим (.xmltv). Якщо це локальний файл, адреса повинна починатися з префікса «file://».</li>
 </ul>
 <p>Натисніть «Save changes», щоб зберегти налаштування.</p>
 <p align="center">
-  <a href="/tvlink/epg/03.png"><img src="/tvlink/epg/03.png" width="480"/></a>
+  <a href="/tvlink/epg/02.png"><img src="/tvlink/epg/02.png" width="480"/></a>
 </p>
-<h3 id="опції">
-  Опції
-  <a class="anchor" href="#%d0%be%d0%bf%d1%86%d1%96%d1%97">#</a>
+<h3 id="стовпці-таблиці">
+  Стовпці таблиці
+  <a class="anchor" href="#%d1%81%d1%82%d0%be%d0%b2%d0%bf%d1%86%d1%96-%d1%82%d0%b0%d0%b1%d0%bb%d0%b8%d1%86%d1%96">#</a>
 </h3>
 <ul>
 <li>«Name» — ім’я джерела та посилання (коли джерело активне й оновлене) на редагування (співставлення) каналів цього джерела.</li>
@@ -547,12 +536,20 @@ https://github.com/alex-shpak/hugo-book
 Це потрібно, щоб ви могли вручну зіставити ті канали, які «TVLINK» не зміг зіставити автоматично, або змінити автоматичне зіставлення, якщо це потрібно.</li>
 <li>«Channels» — загальна кількість назв каналів у джерелі. Це лише інформація, оскільки не всі канали, вказані в джерелі, можуть містити програму.</li>
 </ul>
+<p>Синя іконка у стовпці «Name» відображає вікно налаштувань.</p>
+<p align="center">
+  <a href="/tvlink/epg/03.png"><img src="/tvlink/epg/03.png" width="480"/></a>
+</p>
+<p>Тут ви можете за необхідності змінити «EPG url», а також модифікувати назви каналів («Modify channel names») використовуючи <a target='_blank' href="https://docs.python.org/3/howto/regex.html">регулярні вирази</a>.</p>
+<p>У полі «change from (regular expression)» введіть те, що хочете змінити, а в полі «to» — те, на що хочете змінити.</p>
+<p>Регулярний вираз (наведений вище) видаляє префікс &ldquo;UA:&rdquo; з назв каналів. Наприклад: було «UA: Сhannel 5», стане «Сhannel 5».</p>
 <h3 id="кнопки">
   Кнопки
   <a class="anchor" href="#%d0%ba%d0%bd%d0%be%d0%bf%d0%ba%d0%b8">#</a>
 </h3>
 <ul>
 <li>«Create EPG» — створює програму. XMLTV-файл буде доступний за адресою: «http://ip-address:port/xmltv»</li>
+<li>«Clean auto EPG mapping» — очищає всі зіставлення, які «TVLINK» створив автоматично.</li>
 <li>«Clean manual EPG mapping» — очищає всі зіставлення, які ви зробили вручну.</li>
 </ul>
 <p>Після того, як ви натиснули кнопку в колонці «Update», можна перейти за посиланням з колонки «Name» і зіставити канали, які не зміг зіставити «TVLINK», або змінити зіставлення каналів, які вас не влаштовують.</p>
@@ -570,7 +567,6 @@ https://github.com/alex-shpak/hugo-book
 <p>Оскільки випадаючий список колонки «Manual EPG mapping» містить всі назви каналів з EPG-джерела, знайти потрібну досить важко.
 Щоб спростити завдання, потрібно ввести перші літери з назви каналу й список переміститься у потрібну позицію.</p>
 <p>Після налаштування поверніться на сторінку «Sources» і натисніть кнопку «Create EPG».</p>
-<p>У джерелах «EPG Static sources» ви маєте можливість змінити URL-адресу, якщо це необхідно. Для цього натисніть іконку «Edit» біля назви джерела.</p>
 <p>Періодичність оновлення джерел EPG задається на сторінці «Settings» у підрозділі «EPG settings».</p>
 </article>
  
@@ -617,7 +613,7 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#розклад-передач-epg">Розклад передач (EPG)</a>
           <ul>
-            <li><a href="#опції">Опції</a></li>
+            <li><a href="#стовпці-таблиці">Стовпці таблиці</a></li>
             <li><a href="#кнопки">Кнопки</a></li>
           </ul>
         </li>
